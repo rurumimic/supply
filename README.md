@@ -43,7 +43,7 @@ Change my Computer Name
 3. Settings in `General` Tab
 4. Settings in `Sidebar` Tab
 6. Settings in `Advanced` Tab
-   - Check: Show all filename extensions
+   - [x] Show all filename extensions
 
 ---
 
@@ -56,7 +56,7 @@ Change my Computer Name
 To use Text Editor(SpaceVim) conveniently
 
 1. `Keyboard` Tab
-2. Check: Use F1, F2, etc. keys as standard function keys
+   - [x] Use F1, F2, etc. keys as standard function keys
 
 #### Modifiers Keys...
 
