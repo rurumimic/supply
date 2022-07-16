@@ -221,3 +221,5 @@ mkdir -p ~/Code/github/rurumimic
       - in project dir: `yarn set version stable`
         - `yarn --version`: 3.2.1
    - spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
+- Markdown
+   - spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
