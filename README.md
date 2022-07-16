@@ -200,5 +200,24 @@ mkdir -p ~/Code/github/rurumimic
 
 ## Languages
 
-- Go
-   - [rurumimic/golang/install.md](https://github.com/rurumimic/golang/blob/main/install.md)
+- Go: [rurumimic/golang/install.md](https://github.com/rurumimic/golang/blob/main/install.md)
+   - gvm
+   - go
+   - protobuf3
+   - spacevim [Go IDE](https://spacevim.org/use-vim-as-a-go-ide/)
+- Node
+   - [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+      - Install by [ports](https://ports.macports.org/port/nvm/)
+         - `~/.zshrc`: `source /opt/local/share/nvm/init-nvm.sh`
+      - `nvm --help`
+   - node
+      - `nvm install --lts`: v16+
+      - `nvm ls`
+      - `node --version`
+      - `npm --version`
+   - yarn berry
+      - `corepack enable`
+      - `yarn --version`: 1.22.15
+      - in project dir: `yarn set version stable`
+        - `yarn --version`: 3.2.1
+   - spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
