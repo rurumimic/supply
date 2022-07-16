@@ -6,22 +6,22 @@ Start my macbook
 
 1. Computer Name
 2. Finder
-  - Preferneces: Side Menu
+   - Preferneces: Side Menu
 4. Keyboard
-  - Function keys
-  - Caps Lock → Control
-  - Turn off auto
-  - Shortcuts
+   - Function keys
+   - Caps Lock → Control
+   - Turn off auto
+   - Shortcuts
 5. Terminal
-  - Command Line Tools
-  - Warp Terminal
-  - MacPorts
-  - Neovim
-  - SpaceVim
-  - GitHub CLI
-  - Bat
+   - Command Line Tools
+   - Warp Terminal
+   - MacPorts
+   - Neovim
+   - SpaceVim
+   - GitHub CLI
+   - Bat
 6. Languages
-  - Go
+   - Go
 
 ---
 
@@ -42,7 +42,7 @@ Change my Computer Name
 3. Settings in `General` Tab
 4. Settings in `Sidebar` Tab
 6. Settings in `Advanced` Tab
-  - Check: Show all filename extensions
+   - Check: Show all filename extensions
 
 ---
 
@@ -71,11 +71,11 @@ To use Text Editor(SpaceVim) conveniently
 
 1. `Shortcuts` Tab
 2. `Input Sources`
-  - `Control + Space` → `Command + Space`: Select the previous input source
-  - `Control + Option + Space` → `Command + Option + Space`: Select next source in Input menu
+   - `Control + Space` → `Command + Space`: Select the previous input source
+   - `Control + Option + Space` → `Command + Option + Space`: Select next source in Input menu
 3. `Spotlight`
-  - `Commnad + Space` → `Option + Space`: Show spotlight search
-  - `Commnad + Option + Space` → `Option + Control + Space`: Show Finder search window
+   - `Commnad + Space` → `Option + Space`: Show spotlight search
+   - `Commnad + Option + Space` → `Option + Control + Space`: Show Finder search window
 
 ---
 
@@ -125,7 +125,7 @@ alias vi=nvim
 ### SpaceVim
 
 - [SpaceVim](https://spacevim.org)
-  - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
+   - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
 
 Check `install.sh`
 
@@ -156,7 +156,7 @@ Add layers:
 ### GitHub CLI
 
 - [GitHub CLI](https://cli.github.com)
-  - GitHub: [cli/cli](https://github.com/cli/cli)
+   - GitHub: [cli/cli](https://github.com/cli/cli)
 
 ```bash
 sudo port install gh
@@ -171,7 +171,7 @@ gh auth login
 ### Bat
 
 - GitHub: [sharkdp/bat](https://github.com/sharkdp/bat)
-  - Install by [port](https://github.com/sharkdp/bat#on-macos-via-macports)
+   - Install by [port](https://github.com/sharkdp/bat#on-macos-via-macports)
 
 ```bash
 sudo port install bat
@@ -190,4 +190,4 @@ mkdir -p ~/Code/github/rurumimic
 ## Languages
 
 - Go
-  - [rurumimic/golang/install.md](https://github.com/rurumimic/golang/blob/main/install.md)
+   - [rurumimic/golang/install.md](https://github.com/rurumimic/golang/blob/main/install.md)
