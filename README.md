@@ -115,7 +115,7 @@ sudo port selfupdate
 sudo port install neovim
 ```
 
-Alias `~/.zprofile`:
+Alias `~/.zshrc`:
 
 ```bash
 alias vi=nvim
