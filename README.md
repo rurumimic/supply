@@ -115,9 +115,14 @@ sudo port selfupdate
 sudo port install neovim
 ```
 
-Alias `~/.zshrc`:
+Add an alias to below `MacPort PATH` in `~/.zprofile`:
 
 ```bash
+# MacPorts Installer addition on 2022-07-16_at_13:57:34: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# alias
 alias vi=nvim
 # alias vim=nvim
 ```
