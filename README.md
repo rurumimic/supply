@@ -20,6 +20,7 @@ Start my macbook
    - SpaceVim
    - GitHub CLI
    - Bat
+   - Tree
 6. Languages
    - Go
 
@@ -119,6 +120,7 @@ Add an alias to `~/.zsrhc`:
 
 ```bash
 # alias
+alias ll='ls -alh'
 alias vi=nvim
 # alias vim=nvim
 ```
@@ -176,6 +178,14 @@ gh auth login
 
 ```bash
 sudo port install bat
+```
+
+### Tree
+
+[tree](http://mama.indstate.edu/users/ice/tree/)
+
+```bash
+sudo port install tree
 ```
 
 ---
