@@ -19,6 +19,7 @@ Start my macbook
   - Neovim
   - SpaceVim
   - GitHub CLI
+  - Bat
 6. Languages
   - Go
 
@@ -165,6 +166,15 @@ sudo port install gh
 
 ```bash
 gh auth login
+```
+
+### Bat
+
+- GitHub: [sharkdp/bat](https://github.com/sharkdp/bat)
+  - Install by [port](https://github.com/sharkdp/bat#on-macos-via-macports)
+
+```bash
+sudo port install bat
 ```
 
 ---
