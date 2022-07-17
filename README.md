@@ -15,12 +15,14 @@ Start my macbook
 5. Terminal
    - Command Line Tools
    - Warp Terminal
+   - Fig
    - MacPorts
    - Neovim
    - SpaceVim
    - GitHub CLI
    - Bat
    - Tree
+   - GNU Global
 6. Languages
    - Go
 
@@ -92,6 +94,10 @@ xcode-select --install
 ### Warp Terminal
 
 Install [warp](https://www.warp.dev)
+
+### Fig
+
+Install [fig](https://fig.io)
 
 ### MacPorts
 
@@ -186,6 +192,15 @@ sudo port install bat
 
 ```bash
 sudo port install tree
+```
+
+### GNU Global
+
+- GNU [Global](https://ports.macports.org/port/global/)
+- SpaceVim [gtags](https://spacevim.org/layers/gtags/)
+
+```bash
+sudo port install global
 ```
 
 ---
