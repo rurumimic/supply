@@ -12,7 +12,8 @@ Start my macbook
    - Caps Lock → Control
    - Turn off auto
    - Shortcuts
-5. Terminal
+4. Git
+6. Terminal
    - Command Line Tools
    - Warp Terminal
    - Fig
@@ -23,7 +24,7 @@ Start my macbook
    - Bat
    - Tree
    - GNU Global
-6. Languages
+5. Languages
    - Go
 
 ---
@@ -79,6 +80,19 @@ To use Text Editor(SpaceVim) conveniently
 3. `Spotlight`
    - `Commnad + Space` → `Option + Space`: Show spotlight search
    - `Commnad + Option + Space` → `Option + Control + Space`: Show Finder search window
+
+---
+
+## Git
+
+git: 1.6 Getting Started - [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+
+```bash
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --global core.editor vi
+git config --list
+```
 
 ---
 
