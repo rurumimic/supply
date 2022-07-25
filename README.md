@@ -226,6 +226,13 @@ sudo port install fzf
 sudo port install global
 ```
 
+Add lines to `~/.zsrhc`:
+
+```bash
+source /opt/local/share/fzf/shell/key-bindings.zsh # enable fzf keybindings
+source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
+```
+
 ---
 
 ## My Codes
