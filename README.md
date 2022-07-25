@@ -23,6 +23,7 @@ Start my macbook
    - GitHub CLI
    - Bat
    - Tree
+   - fzf
    - GNU Global
 5. Languages
    - Go
@@ -206,6 +207,14 @@ sudo port install bat
 
 ```bash
 sudo port install tree
+```
+
+### fzf
+
+[fzf](https://github.com/junegunn/fzf)
+
+```bash
+sudo port install fzf
 ```
 
 ### GNU Global
