@@ -271,6 +271,17 @@ mkdir -p ~/Code/github/rurumimic
         - `yarn --version`: 3.2.1
    - spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
 - Python
+  - pyenv 
+    - `sudo port seflupdate`
+    - `sudo port upgrade outdated`
+    - `sudo port install openssl readline sqlite3 xz zlib tcl sqlite3-tcl`
+    - `git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
+    - `cd ~/.pyenv && src/configure && make -C src`
+    - `echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc`
+    - `echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc`
+    - `echo 'eval "$(pyenv init -)"' >> ~/.zshrc`
+  - `pyenv install 3.10.5`
+  - `pyenv global 3.10.5`
 - Rust
 - Markdown
    - spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
