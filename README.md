@@ -27,6 +27,10 @@ Start my macbook
    - GNU Global
 5. Languages
    - Go
+   - Node
+   - Python
+   - Rust
+   - Markdown
 
 ---
 
@@ -266,5 +270,7 @@ mkdir -p ~/Code/github/rurumimic
       - in project dir: `yarn set version stable`
         - `yarn --version`: 3.2.1
    - spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
+- Python
+- Rust
 - Markdown
    - spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
