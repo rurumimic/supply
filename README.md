@@ -282,6 +282,8 @@ mkdir -p ~/Code/github/rurumimic
     - `echo 'eval "$(pyenv init -)"' >> ~/.zshrc`
   - `pyenv install 3.10.5`
   - `pyenv global 3.10.5`
+  - `pip install --upgrade pip`
+  - `pip install --upgrade --user pynvim`
 - Rust
 - Markdown
    - spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
