@@ -281,9 +281,17 @@ mkdir -p ~/Code/github/rurumimic
     - `echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc`
     - `echo 'eval "$(pyenv init -)"' >> ~/.zshrc`
   - `pyenv install 3.10.5`
-  - `pyenv global 3.10.5`
+  - `pyenv install 2.7.18`
+  - pyenv-virtualenv
+    - `pyenv virtualenv 3.10.5 vim3`
+    - `pyenv virtualenv 2.7.18 vim2`
   - `pip install --upgrade pip`
-  - `pip install --upgrade --user pynvim`
+  - `pip install --upgrade pynvim`
+  - `pyenv which python`: `$HOME/.pyenv/versions/vim3/bin/python`
+  - `vi ~/.SpaceVim/init.vim`
+    - `let g:python_host_prog='/Users/dodo/.pyenv/versions/vim2/bin/python'`
+    - `let g:python3_host_prog='/Users/dodo/.pyenv/versions/vim/bin/python'`
+  - `:checkhealth`
 - Rust
 - Markdown
    - spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
