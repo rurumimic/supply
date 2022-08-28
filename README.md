@@ -220,6 +220,7 @@ sudo port install tree
 
 ```bash
 sudo port install git-delta
+git config --global core.pager delta
 ```
 
 ### fzf
