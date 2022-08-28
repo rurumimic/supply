@@ -23,6 +23,7 @@ Start my macbook
    - GitHub CLI
    - Bat
    - Tree
+   - delta
    - fzf
    - GNU Global
 5. Languages
@@ -211,6 +212,14 @@ sudo port install bat
 
 ```bash
 sudo port install tree
+```
+
+### delta
+
+[delta](https://github.com/dandavison/delta)
+
+```bash
+sudo port install git-delta
 ```
 
 ### fzf
