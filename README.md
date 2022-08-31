@@ -292,15 +292,24 @@ mkdir -p ~/Code/github/rurumimic
     - `echo 'eval "$(pyenv init -)"' >> ~/.zshrc`
   - `pyenv install 3.10.5`
   - `pyenv install 2.7.18`
-  - pyenv-virtualenv
-    - `pyenv virtualenv 3.10.5 vim3`
-    - `pyenv virtualenv 2.7.18 vim2`
-  - `pip install --upgrade pip`
-  - `pip install --upgrade pynvim`
-  - `pyenv which python`: `$HOME/.pyenv/versions/vim3/bin/python`
+  - [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+    - install
+      - `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
+      - `echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc`
+    - python
+      - `pyenv virtualenv 3.10.5 vim3`
+        - `pyenv activate vim3`
+        - `pip install --upgrade pip`
+        - `pip install pynvim`
+      - `pyenv virtualenv 2.7.18 vim2`
+        - `pyenv activate vim2`
+        - `pip install pynvim`
+  - `pyenv which python`
+    - `/Users/<USERNAME>/.pyenv/versions/vim2/bin/python`
+    - `/Users/<USERNAME>/.pyenv/versions/vim3/bin/python`
   - `vi ~/.SpaceVim/init.vim`
-    - `let g:python_host_prog='/Users/dodo/.pyenv/versions/vim2/bin/python'`
-    - `let g:python3_host_prog='/Users/dodo/.pyenv/versions/vim/bin/python'`
+    - `let g:python_host_prog='/Users/<USERNAME>/.pyenv/versions/vim2/bin/python'`
+    - `let g:python3_host_prog='/Users/<USERNAME>/.pyenv/versions/vim3/bin/python'`
   - `:checkhealth`
 - Rust
 - Markdown
