@@ -291,6 +291,8 @@ mkdir -p ~/Code/github/rurumimic
     - `echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc`
     - `echo 'eval "$(pyenv init -)"' >> ~/.zshrc`
   - `pyenv install 3.10.5`
+    - `pyenv global 3.10.5`
+    - `pip install --upgrade pip`
   - `pyenv install 2.7.18`
   - [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
     - install
