@@ -26,6 +26,7 @@ Start my macbook
    - delta
    - fzf
    - GNU Global
+   - Universal Ctags
 5. Languages
    - Go
    - Node
@@ -245,6 +246,14 @@ Add lines to `~/.zsrhc`:
 ```bash
 source /opt/local/share/fzf/shell/key-bindings.zsh # enable fzf keybindings
 source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
+```
+
+### Universal Ctags
+
+- [Universal Ctags](https://ctags.io)
+
+```bash
+sudo port install universal-ctags
 ```
 
 ---
