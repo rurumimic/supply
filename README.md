@@ -239,6 +239,19 @@ git config --global core.pager delta
 sudo port install fzf
 ```
 
+```bash
+Zsh
+===
+
+Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
+
+  source /opt/local/share/fzf/shell/key-bindings.zsh
+
+Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
+
+  source /opt/local/share/fzf/shell/completion.zsh
+```
+
 ### GNU Global
 
 - GNU [Global](https://ports.macports.org/port/global/)
