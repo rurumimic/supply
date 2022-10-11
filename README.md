@@ -317,7 +317,7 @@ mkdir -p ~/Code/github/rurumimic
    - spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
 - Python
   - pyenv 
-    - `sudo port seflupdate`
+    - `sudo port selfupdate`
     - `sudo port upgrade outdated`
     - `sudo port install openssl readline sqlite3 xz zlib tcl sqlite3-tcl`
     - `git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
