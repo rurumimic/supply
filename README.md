@@ -7,13 +7,13 @@ Start my macbook
 1. Computer Name
 2. Finder
    - Preferneces: Side Menu
-4. Keyboard
+3. Keyboard
    - Function keys
    - Caps Lock → Control
    - Turn off auto
    - Shortcuts
 4. Git
-6. Terminal
+5. Terminal
    - Command Line Tools
    - Warp Terminal
    - Fig
@@ -27,7 +27,8 @@ Start my macbook
    - fzf
    - GNU Global
    - Universal Ctags
-5. Languages
+6. Docker Desktop
+7. Languages
    - Go
    - Node
    - Python
@@ -56,6 +57,12 @@ Change my Computer Name
    - [x] Show all filename extensions
 
 ---
+
+### Trackpad
+
+**System Preferences** -> **Trackpad**
+
+Check all
 
 ### Keyboard
 
@@ -263,6 +270,12 @@ sudo port install universal-ctags
 ```bash
 mkdir -p ~/Code/github/rurumimic
 ```
+
+---
+
+## Docker Desktop
+
+[docker desktop](https://www.docker.com/products/docker-desktop/)
 
 ---
 
