@@ -302,6 +302,7 @@ mkdir -p ~/Code/github/rurumimic
 - Node
    - [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
       - Install by [ports](https://ports.macports.org/port/nvm/)
+         - `sudo port install nvm` 
          - `~/.zshrc`: `source /opt/local/share/nvm/init-nvm.sh`
       - `nvm --help`
    - node
