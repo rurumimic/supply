@@ -34,6 +34,9 @@ Start my macbook
    - Python
    - Rust
    - Markdown
+8. Virtual Machine
+   - Virtual Box
+   - Vagrant
 
 ---
 
@@ -352,3 +355,22 @@ mkdir -p ~/Code/github/rurumimic
 - Rust
 - Markdown
    - spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
+
+---
+
+## Virtual Machine
+
+### VirtualBox
+
+[Download](https://www.virtualbox.org/wiki/Downloads)
+
+```bash
+mkdir -p ~/vm/virtualbox
+```
+
+1. Preferences
+2. Default machine folder: `~/vm/virtualbox`
+
+### Vagrant
+
+[Download](https://www.vagrantup.com/downloads)
