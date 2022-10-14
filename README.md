@@ -284,7 +284,7 @@ sudo port install universal-ctags
 ## My Codes
 
 ```bash
-mkdir -p ~/Code/github/rurumimic
+mkdir -p ~/code/github/rurumimic
 ```
 
 ---
