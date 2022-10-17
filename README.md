@@ -27,6 +27,7 @@ Start my macbook
    - fzf
    - GNU Global
    - Universal Ctags
+   - clang
 6. Docker Desktop
 7. Languages
    - Go
@@ -277,6 +278,14 @@ source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
 
 ```bash
 sudo port install universal-ctags
+```
+
+### Clang
+
+```bash
+sudo port install clang-15
+port select --list clang
+port select --set clang mp-clang-15
 ```
 
 ---
