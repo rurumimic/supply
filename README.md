@@ -280,12 +280,22 @@ source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
 sudo port install universal-ctags
 ```
 
-### Clang
+### (option) Clang
+
+- pyenv issue
+   - apple clang: [comment](https://github.com/pyenv/pyenv/issues/2143#issuecomment-1072032647)
+   - bug: [](https://bugs.python.org/issue45405)
 
 ```bash
-sudo port install clang-15
+sudo port install clang-12
 port select --list clang
-port select --set clang mp-clang-15
+port select --set clang mp-clang-12
+```
+
+install old python:
+
+```bash
+CC=/opt/local/bin/clang pyenv install 3.7.0
 ```
 
 ---
