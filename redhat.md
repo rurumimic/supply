@@ -68,6 +68,13 @@ sudo dnf groupinfo "Development Tools"
 sudo dnf group install -y "Development Tools"
 ```
 
+#### locale
+
+```bash
+sudo dnf search locale ko
+sudo dnf install -y glibc-langpack-ko
+```
+
 #### neofetch
 
 ```bash
