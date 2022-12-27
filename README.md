@@ -2,6 +2,9 @@
 
 Start my macbook
 
+- [ubuntu](ubuntu.md)
+- [redhat](redhat.md)
+
 ## Follow these steps
 
 1. Computer Name
