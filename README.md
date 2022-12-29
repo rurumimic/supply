@@ -201,13 +201,21 @@ Add layers:
 
 ```toml
 [[layers]]
-    name = 'git'
+name = 'git'
 
 [[layers]]
-    name = 'VersionControl'
+name = 'VersionControl'
+    
+[[layers]]
+name = 'lang#c'
+enable_clang_syntax_highlight = true
 ```
 
 Open: `vi ~/.SpaceVim/init.vim`
+
+```bash
+let g:clang_library_path='/usr/lib/llvm-14/lib'
+```
 
 ### GitHub CLI
 
