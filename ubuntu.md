@@ -58,6 +58,14 @@ sudo apt update
 sudo apt install gh
 ```
 
+### xclip
+
+[xclip](https://github.com/astrand/xclip)
+
+```bash
+sudo apt install xclip
+```
+
 ### Bat
 
 ```bash
@@ -106,7 +114,7 @@ sudo apt install cscope
 ```bash
 sudo apt install global
 ```
-
+set clipboard+=unnameplus
 ---
 
 ## Terminal
