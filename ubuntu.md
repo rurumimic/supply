@@ -4,6 +4,8 @@
 
 ### zsh
 
+[rurumimic/zsh](https://www.github.com/rurumimic/zsh)
+
 ```bash
 sudo apt install zsh
 ```
@@ -105,3 +107,31 @@ sudo apt install cscope
 sudo apt install global
 ```
 
+---
+
+## Terminal
+
+### kitty
+
+[install](https://sw.kovidgoyal.net/kitty/binary/)
+
+```bash
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+
+config: `ctrl+shift+f2`
+
+```bash
+font_family Hack
+
+map alt+c copy_to_clipboard
+map alt+v paste_from _clipboard
+```
+
+### highlight
+
+[andre-simon.de](http://www.andre-simon.de/index.php)
+
+```bash
+sudo apt install highlight
+```
