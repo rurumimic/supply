@@ -76,3 +76,32 @@ sudo apt install tree
 sudo apt install fzf
 ```
 
+### fd
+
+fd: [installation](https://github.com/sharkdp/fd#installation)
+
+```bash
+sudo apt install fd-find
+ln -s $(which fdfind) ~/.local/bin/fd
+```
+
+### ripgrep
+
+ripgrep: [install](https://github.com/BurntSushi/ripgrep#installation)
+
+```bash
+sudo apt install ripgrep
+```
+
+### cscope
+
+```bash
+sudo apt install cscope
+```
+
+### global
+
+```bash
+sudo apt install global
+```
+
