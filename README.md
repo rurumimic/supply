@@ -183,7 +183,17 @@ curl -sLf https://spacevim.org/install.sh | zsh -s -- -h
 curl -sLf https://spacevim.org/install.sh | zsh -s -- --install neovim
 ```
 
+#### Debug SpaceVim
+
+```bash
+space + b + m
+:checkhealth
+:SPDebugInfo!
+```
+
 #### Setting
+
+`space + f + v + d`
 
 Open: `vi ~/.SpaceVim.d/init.toml`
 
@@ -196,6 +206,8 @@ Add layers:
 [[layers]]
     name = 'VersionControl'
 ```
+
+Open: `vi ~/.SpaceVim/init.vim`
 
 ### GitHub CLI
 
