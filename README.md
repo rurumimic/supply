@@ -211,11 +211,7 @@ name = 'lang#c'
 enable_clang_syntax_highlight = true
 ```
 
-Open: `vi ~/.SpaceVim/init.vim`
-
-```bash
-let g:clang_library_path='/usr/lib/llvm-14/lib'
-```
+[~/.SpaceVim/init.vim](#init.vim)
 
 ### GitHub CLI
 
@@ -517,3 +513,29 @@ mkdir -p ~/vm/virtualbox
 ### Vagrant
 
 [Download](https://www.vagrantup.com/downloads)
+
+---
+
+## init.vim
+
+```bash
+Open: `vi ~/.SpaceVim/init.vim`
+```
+
+```lua
+let g:python_host_prog='~/.pyenv/versions/vim2/bin/python'
+let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
+
+let g:clang_library_path='/usr/lib/llvm-14/lib'
+
+let project_dir = g:SpaceVim#plugins#projectmanager#current_root()
+
+if filereadable("./cscope.out")
+  cs add cscope.out
+endif
+
+if filereadable("./GTAGS")
+  let $GTAGSROOT=project_dir
+  let $GTAGSDBPATH=project_dir
+endif
+```
