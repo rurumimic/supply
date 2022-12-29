@@ -70,4 +70,9 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 sudo apt install tree
 ```
 
----
+### fzf
+
+```bash
+sudo apt install fzf
+```
+
