@@ -319,64 +319,165 @@ mkdir -p ~/code/github/rurumimic
 
 ## Languages
 
-- Go: [rurumimic/golang/install.md](https://github.com/rurumimic/golang/blob/main/install.md)
-   - gvm
-   - go
-   - protobuf3
-   - spacevim [Go IDE](https://spacevim.org/use-vim-as-a-go-ide/)
-- Node
-   - [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
-      - Install by [ports](https://ports.macports.org/port/nvm/)
-         - `sudo port install nvm` 
-         - `~/.zshrc`: `source /opt/local/share/nvm/init-nvm.sh`
-      - `nvm --help`
-   - node
-      - `nvm install --lts`: v16+
-      - `nvm ls`
-      - `node --version`
-      - `npm --version`
-   - yarn berry
-      - `corepack enable`
-      - `yarn --version`: 1.22.15
-      - in project dir: `yarn set version stable`
-        - `yarn --version`: 3.2.1
-   - spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
-- Python
-  - pyenv 
-    - `sudo port selfupdate`
-    - `sudo port upgrade outdated`
-    - `sudo port install openssl readline sqlite3 xz zlib tcl sqlite3-tcl`
-    - `git clone https://github.com/pyenv/pyenv.git ~/.pyenv`
-    - `cd ~/.pyenv && src/configure && make -C src`
-    - `echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc`
-    - `echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc`
-    - `echo 'eval "$(pyenv init -)"' >> ~/.zshrc`
-  - `pyenv install 3.10.5`
-    - `pyenv global 3.10.5`
-    - `pip install --upgrade pip`
-  - `pyenv install 2.7.18`
-  - [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
-    - install
-      - `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
-      - `echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc`
-    - python
-      - `pyenv virtualenv 3.10.5 vim3`
-        - `pyenv activate vim3`
-        - `pip install --upgrade pip setuptools`
-        - `pip install pynvim`
-      - `pyenv virtualenv 2.7.18 vim2`
-        - `pyenv activate vim2`
-        - `pip install pynvim`
-  - `pyenv which python`
-    - `/Users/<USERNAME>/.pyenv/versions/vim2/bin/python`
-    - `/Users/<USERNAME>/.pyenv/versions/vim3/bin/python`
-  - `vi ~/.SpaceVim/init.vim`
-    - `let g:python_host_prog='/Users/<USERNAME>/.pyenv/versions/vim2/bin/python'`
-    - `let g:python3_host_prog='/Users/<USERNAME>/.pyenv/versions/vim3/bin/python'`
-  - `:checkhealth`
-- Rust
-- Markdown
-   - spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
+### Go
+
+[rurumimic/golang/install.md](https://github.com/rurumimic/golang/blob/main/install.md)
+
+- gvm
+- go
+- protobuf3
+- spacevim [Go IDE](https://spacevim.org/use-vim-as-a-go-ide/)
+
+### Node
+
+#### Install NVM
+
+- [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+   - Install by [ports](https://ports.macports.org/port/nvm/)
+
+```bash
+sudo port install nvm
+
+# ~/.zshrc
+source /opt/local/share/nvm/init-nvm.sh
+
+nvm --help
+```
+
+#### Install Node
+
+```bash
+nvm install --lts # v18+
+nvm ls
+node --version
+npm --version
+```
+
+#### Setup Yarn
+
+```bash
+corepack enable
+yarn --version # 1.22.19
+```
+
+##### Yarn v3
+
+in project dir:
+
+```bash
+yarn set version stable
+yarn --version # 3+
+```
+
+- spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
+
+### Python
+
+#### Install Dependencies
+
+pyenv: [wiki](https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
+
+```bash
+sudo port selfupdate
+sudo port upgrade outdated
+sudo port install openssl readline sqlite3 xz zlib tcl sqlite3-tcl
+```
+
+#### Install pyenv
+
+pyenv/pyenv: [installation](https://github.com/pyenv/pyenv#installation)
+
+```bash
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+cd ~/.pyenv && src/configure && make -C src
+```
+
+#### Install pyenv-virtualenv
+
+pyenv/pyenv-virtualenv: [installation](https://github.com/pyenv/pyenv-virtualenv#installation)
+
+```bash
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+```
+
+#### Setup .zshrc
+
+```bash
+# ~/.zshrc
+export PYENV_ROOT="$HOME/.pyenv"`
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+#### Download python
+
+```bash
+pyenv install --list
+pyenv install 3.11.1
+pyenv install 2.7.18
+```
+
+#### Global Python 3.11
+
+```bash
+pyenv global 3.11.1
+pip install --upgrade pip
+```
+
+#### for nvim env
+
+```bash
+pyenv virtualenv 3.10.5 vim3
+pyenv activate vim3
+pip install --upgrade pip setuptools
+pip install pynvim
+```
+
+```bash
+pyenv virtualenv 2.7.18 vim2
+pyenv activate vim2
+pip install pynvim
+```
+
+```bash
+pyenv which python
+
+~/.pyenv/versions/vim2/bin/python
+~/.pyenv/versions/vim3/bin/python
+```
+
+```bash
+vi ~/.SpaceVim/init.vim
+
+let g:python_host_prog='~/.pyenv/versions/vim2/bin/python'
+let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
+```
+
+```bash
+# vi
+
+:checkhealth
+```
+
+```bash
+## Python 3 provider (optional)
+  - INFO: pyenv: Path: ~/.pyenv/libexec/pyenv
+  - INFO: pyenv: Root: ~/.pyenv
+  - INFO: Using: g:python3_host_prog = "~/.pyenv/versions/vim3/bin/python"
+  - INFO: Executable: ~/.pyenv/versions/vim3/bin/python
+  - INFO: Python version: 3.11.1
+  - INFO: pynvim version: 0.4.3
+  - OK: Latest pynvim is installed.
+```
+
+### Rust
+
+[rurumimic/rust](https://github.com/rurumimic/rust#install-by-rustup)
+
+### Markdown
+
+- spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
 
 ---
 
