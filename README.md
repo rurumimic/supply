@@ -436,9 +436,12 @@ pyenv install 2.7.18
 
 #### Global Python 3.11
 
+[black](https://github.com/psf/black)
+
 ```bash
 pyenv global 3.11.1
 pip install --upgrade pip
+pip install black
 ```
 
 #### for nvim env
