@@ -40,7 +40,7 @@ ip addr
 - name: `redhat8`
 - iso: `rhel-8.7-x86_64-dvd.iso`
 - unattended install
-   - username & password
+   - username == Host username
    - hostname: `redhat`
    - domain name: `macintosh.localhost`
 - hardware
