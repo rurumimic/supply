@@ -223,14 +223,14 @@ pyenv install 2.7.18
 
 ```bash
 pyenv global 3.11.1
-pip install --upgrade pip
+pip install --upgrade pip setuptools
 pip install black
 ```
 
 #### for nvim env
 
 ```bash
-pyenv virtualenv 3.10.5 vim3
+pyenv virtualenv 3.11.1 vim3
 pyenv activate vim3
 pip install --upgrade pip setuptools
 pip install pynvim
