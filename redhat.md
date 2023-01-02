@@ -169,17 +169,204 @@ alias vi=nvim
 
 ### Python
 
-#### pyenv
+pyenv: [wiki](https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
+
+```bash
+sudo dnf install -y make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz-devel libuuid-devel gdbm-devel libnsl2-devel
+```
+
+#### Install pyenv
+
+pyenv/pyenv: [installation](https://github.com/pyenv/pyenv#installation)
 
 ```bash
 curl https://pyenv.run | zsh
 ```
 
+#### Setup .zshrc
+
 ```bash
 # ~/.zshrc
-export PYENV_ROOT="$HOME/.pyenv"`
+export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
+#### Download python
 
+```bash
+pyenv install --list
+pyenv install 3.11.1
+pyenv install 2.7.18
+```
+
+#### Global Python 3.11
+
+[black](https://github.com/psf/black)
+
+```bash
+pyenv global 3.11.1
+pip install --upgrade pip
+pip install black
+```
+
+#### for nvim env
+
+```bash
+pyenv virtualenv 3.10.5 vim3
+pyenv activate vim3
+pip install --upgrade pip setuptools
+pip install pynvim
+```
+
+```bash
+pyenv virtualenv 2.7.18 vim2
+pyenv activate vim2
+pip install pynvim
+```
+
+```bash
+pyenv which python
+
+~/.pyenv/versions/vim2/bin/python
+~/.pyenv/versions/vim3/bin/python
+```
+
+```bash
+vi ~/.SpaceVim/init.vim
+
+let g:python_host_prog='~/.pyenv/versions/vim2/bin/python'
+let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
+```
+
+```bash
+# vi
+
+:checkhealth
+```
+
+```bash
+## Python 3 provider (optional)
+  - INFO: pyenv: Path: ~/.pyenv/libexec/pyenv
+  - INFO: pyenv: Root: ~/.pyenv
+  - INFO: Using: g:python3_host_prog = "~/.pyenv/versions/vim3/bin/python"
+  - INFO: Executable: ~/.pyenv/versions/vim3/bin/python
+  - INFO: Python version: 3.11.1
+  - INFO: pynvim version: 0.4.3
+  - OK: Latest pynvim is installed.
+```
+
+### Go
+
+[rurumimic/golang/install.md](https://github.com/rurumimic/golang/blob/main/install.md)
+
+- gvm
+- go
+- protobuf3
+- spacevim [Go IDE](https://spacevim.org/use-vim-as-a-go-ide/)
+
+### Node
+
+#### Install NVM
+
+- [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# ~/.zshrc
+source /opt/local/share/nvm/init-nvm.sh
+
+nvm --help
+```
+
+#### Install Node
+
+```bash
+nvm install --lts # v18+
+nvm ls
+node --version
+npm --version
+```
+
+#### Setup Yarn
+
+```bash
+corepack enable
+yarn --version # 1.22.19
+```
+
+##### Yarn v3
+
+in project dir:
+
+```bash
+yarn set version stable
+yarn --version # 3+
+```
+
+- spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
+
+### Rust
+
+[rurumimic/rust](https://github.com/rurumimic/rust#install-by-rustup)
+
+### Markdown
+
+- spacevim [markdown layer](https://spacevim.org/layers/lang/markdown/)
+
+---
+
+## Neovim
+
+### Debug SpaceVim
+
+```bash
+space + b + m
+:checkhealth
+:SPDebugInfo!
+```
+
+### init.toml
+
+`space + f + v + d`
+
+Open: `vi ~/.SpaceVim.d/init.toml`
+
+Add layers:
+
+```toml
+[[layers]]
+name = 'git'
+
+[[layers]]
+name = 'VersionControl'
+    
+[[layers]]
+name = 'lang#c'
+enable_clang_syntax_highlight = true
+```
+
+### init.vim
+
+```bash
+Open: `vi ~/.SpaceVim/init.vim`
+```
+
+```lua
+let g:python_host_prog='~/.pyenv/versions/vim2/bin/python'
+let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
+
+let g:clang_library_path='/usr/lib/llvm-14/lib'
+
+let project_dir = g:SpaceVim#plugins#projectmanager#current_root()
+
+if filereadable("./cscope.out")
+  cs add cscope.out
+endif
+
+if filereadable("./GTAGS")
+  let $GTAGSROOT=project_dir
+  let $GTAGSDBPATH=project_dir
+endif
+```
