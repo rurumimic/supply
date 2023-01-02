@@ -2,6 +2,28 @@
 
 - download: [Red Hat Enterprise Linux](https://developers.redhat.com/products/rhel/download)
 
+## VirtualBox
+
+### Host-only network
+
+1. File → Tool → Network Manager
+2. Add Host-only Network
+
+### Install
+
+- name: `redhat8`
+- iso: `rhel-8.7-x86_64-dvd.iso`
+- unattended install
+   - username & password
+   - hostname: `redhat`
+   - domain name: `macintosh.localhost`
+- hardware
+   - memory: `8192 MB`
+   - cpu: `4`
+- hard disk: `50 GB` VDI
+
+---
+
 ## Start
 
 ### Subscription Manager
