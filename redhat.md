@@ -4,6 +4,14 @@
 
 ## VirtualBox
 
+### /etc/hosts on Host
+
+```bash
+sudo vi /etc/hosts
+
+192.168.8.2 redhat
+```
+
 ### Host-only network
 
 1. File → Tool → Network Manager
@@ -16,7 +24,7 @@
 5. IP: `192.168.8.2`
 
 ```bash
-ssh 192.168.8.2
+ssh redhat
 ip addr
 
 3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
