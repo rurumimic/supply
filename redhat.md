@@ -10,9 +10,22 @@
 2. Add Host-only Network
    - Name: `RedhatNetwork`
    - Mask: `255.255.255.0`
-   - Lower Bound: `192.168.57.1`
-   - Upper Bound: `192.168.57.3`
+   - Lower Bound: `192.168.8.1`
+   - Upper Bound: `192.168.8.3`
 4. Add Network Adapter: Host-only Network
+5. IP: `192.168.8.2`
+
+```bash
+ssh 192.168.8.2
+ip addr
+
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:a8:f4:ee brd ff:ff:ff:ff:ff:ff
+    inet 192.168.8.2/24 brd 192.168.8.255 scope global dynamic noprefixroute enp0s8
+       valid_lft 86365sec preferred_lft 86365sec
+    inet6 fe80::1829:531b:8f5f:58db/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+```
 
 ### Install
 
