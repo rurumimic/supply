@@ -8,7 +8,11 @@
 
 1. File → Tool → Network Manager
 2. Add Host-only Network
-3. Add Network Adapter: Host-only Network
+   - Name: `RedhatNetwork`
+   - Mask: `255.255.255.0`
+   - Lower Bound: `192.168.8.7`
+   - Upper Bound: `192.168.8.7`
+4. Add Network Adapter: Host-only Network
 
 ### Install
 
