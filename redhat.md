@@ -71,6 +71,13 @@ sudo subscription-manager attach --auto
 # sudo subscription-manager attach --pool=<POOL-ID>
 ```
 
+#### locale
+
+```bash
+sudo dnf search locale ko
+sudo dnf install -y glibc-langpack-ko
+```
+
 ### EPEL: Extra Packages for Enterprise Linux
 
 - doc: [epel](https://docs.fedoraproject.org/en-US/epel/)
@@ -106,13 +113,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```bash
 sudo dnf groupinfo "Development Tools"
 sudo dnf group install -y "Development Tools"
-```
-
-#### locale
-
-```bash
-sudo dnf search locale ko
-sudo dnf install -y glibc-langpack-ko
 ```
 
 #### neofetch
