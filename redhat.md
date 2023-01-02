@@ -185,6 +185,11 @@ curl -sLf https://spacevim.org/install.sh | zsh -s -- --install neovim
 curl -sLf https://spacevim.org/install.sh | zsh -s -- --no-fonts --install neovim
 ```
 
+```bash
+ln -s ~/.SpaceVim ~/.vim
+ln -s ~/.SpaceVim ~/.config/nvim
+```
+
 ##### (Option) Font
 
 ```bash
