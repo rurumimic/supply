@@ -408,6 +408,13 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 cd ~/.pyenv && src/configure && make -C src
 ```
 
+```bash
+# ~/.zshrc
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+```
+
 #### Install pyenv-virtualenv
 
 pyenv/pyenv-virtualenv: [installation](https://github.com/pyenv/pyenv-virtualenv#installation)
@@ -420,9 +427,6 @@ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/py
 
 ```bash
 # ~/.zshrc
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
