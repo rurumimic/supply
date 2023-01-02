@@ -162,3 +162,24 @@ sudo dnf install -y neovim python3-neovim
 alias ll='ls -alh'
 alias vi=nvim
 ```
+
+---
+
+## Languages
+
+### Python
+
+#### pyenv
+
+```bash
+curl https://pyenv.run | zsh
+```
+
+```bash
+# ~/.zshrc
+export PYENV_ROOT="$HOME/.pyenv"`
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
