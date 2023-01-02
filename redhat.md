@@ -19,7 +19,7 @@ sudo vi /etc/hosts
 - unattended install
    - username == Host username
    - hostname: `redhat`
-   - domain name: `macintosh.localhost`
+   - domain name: `vm.macintosh`
 - hardware
    - memory: `8192 MB`
    - cpu: `4`
@@ -46,6 +46,20 @@ ip addr
        valid_lft 86365sec preferred_lft 86365sec
     inet6 fe80::1829:531b:8f5f:58db/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
+```
+
+### SSH
+
+```bash
+ssh redhat
+
+sudo hostnamectl set-hostname redhat.vm.macintosh
+```
+
+```bash
+sudo vi /etc/hosts
+
+192.168.8.2 redhat.vm.macintosh redhat
 ```
 
 ---
