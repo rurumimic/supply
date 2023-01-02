@@ -8,6 +8,7 @@
 
 1. File → Tool → Network Manager
 2. Add Host-only Network
+3. Add Network Adapter: Host-only Network
 
 ### Install
 
