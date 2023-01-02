@@ -168,6 +168,15 @@ alias vi=nvim
 - [SpaceVim](https://spacevim.org)
    - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
 
+##### Font
+
+```bash
+curl -sLfO https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/install.sh
+./install.sh Hack, SourceCodeProComplete
+```
+
+##### Install
+
 Check `install.sh`
 
 ```bash
