@@ -163,6 +163,23 @@ alias ll='ls -alh'
 alias vi=nvim
 ```
 
+#### SpaceVim
+
+- [SpaceVim](https://spacevim.org)
+   - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
+
+Check `install.sh`
+
+```bash
+curl -sLf https://spacevim.org/install.sh | zsh -s -- -h
+```
+
+#### Install SpaceVim for neovim only
+
+```bash
+curl -sLf https://spacevim.org/install.sh | zsh -s -- --install neovim
+```
+
 ---
 
 ## Languages
