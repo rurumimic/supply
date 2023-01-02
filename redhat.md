@@ -44,6 +44,13 @@ ip addr
 
 ## Start
 
+### sudo
+
+```bash
+su
+usermod -aG wheel <USER>
+```
+
 ### Subscription Manager
 
 - article: [How to renew your Red Hat Developer Subscription for Red Hat Enterprise Linux](https://developers.redhat.com/articles/renew-your-red-hat-developer-program-subscription#how_to_re_register_for_your_red_hat_developer_subscription)
@@ -62,13 +69,6 @@ sudo subscription-manager attach --auto
 
 # sudo subscription-manager list --available
 # sudo subscription-manager attach --pool=<POOL-ID>
-```
-
-### sudo
-
-```bash
-su
-usermod -aG wheel <USER>
 ```
 
 ### EPEL: Extra Packages for Enterprise Linux
