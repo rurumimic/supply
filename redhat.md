@@ -12,6 +12,19 @@ sudo vi /etc/hosts
 192.168.8.2 redhat
 ```
 
+### Install
+
+- name: `redhat8`
+- iso: `rhel-8.7-x86_64-dvd.iso`
+- unattended install
+   - username == Host username
+   - hostname: `redhat`
+   - domain name: `macintosh.localhost`
+- hardware
+   - memory: `8192 MB`
+   - cpu: `4`
+- hard disk: `50 GB` VDI
+
 ### Host-only network
 
 1. File → Tool → Network Manager
@@ -34,19 +47,6 @@ ip addr
     inet6 fe80::1829:531b:8f5f:58db/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 ```
-
-### Install
-
-- name: `redhat8`
-- iso: `rhel-8.7-x86_64-dvd.iso`
-- unattended install
-   - username == Host username
-   - hostname: `redhat`
-   - domain name: `macintosh.localhost`
-- hardware
-   - memory: `8192 MB`
-   - cpu: `4`
-- hard disk: `50 GB` VDI
 
 ---
 
