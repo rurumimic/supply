@@ -10,8 +10,8 @@
 2. Add Host-only Network
    - Name: `RedhatNetwork`
    - Mask: `255.255.255.0`
-   - Lower Bound: `192.168.8.7`
-   - Upper Bound: `192.168.8.7`
+   - Lower Bound: `192.168.57.1`
+   - Upper Bound: `192.168.57.3`
 4. Add Network Adapter: Host-only Network
 
 ### Install
