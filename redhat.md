@@ -9,7 +9,7 @@
 ```bash
 sudo vi /etc/hosts
 
-192.168.8.2 redhat
+192.168.8.2 redhat.vm.macintosh redhat
 ```
 
 ### Install
