@@ -455,12 +455,14 @@ pyenv virtualenv 3.11.1 vim3
 pyenv activate vim3
 pip install --upgrade pip setuptools
 pip install pynvim
+pyenv deactivate
 ```
 
 ```bash
 pyenv virtualenv 2.7.18 vim2
 pyenv activate vim2
 pip install pynvim
+pyenv deactivate
 ```
 
 ```bash
