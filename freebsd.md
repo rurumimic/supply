@@ -7,3 +7,15 @@
 ```bash
 ifconfig_em1="inet 192.168.13.2 netmask 255.255.255.0"
 ```
+
+### su
+
+```bash
+pw group show -n wheel
+# wheel:*:0:root
+
+pw group mod -n wheel -m keanu
+
+pw group show -n wheel
+# wheel:*:0:root,keanu
+```
