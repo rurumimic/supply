@@ -129,7 +129,7 @@ sed -i 's/mmcblk0/mmcblk1/g' root/etc/fstab
 
 ```bash
 # <file system> <dir> <type> <options> <dump> <pass>
-/dev/mmcblk0p1  /boot   vfat    defaults        0       0
+/dev/mmcblk1p1  /boot   vfat    defaults        0       0
 ```
 
 #### Unmount the two partitions
