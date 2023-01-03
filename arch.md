@@ -7,8 +7,6 @@
    - Raspberry Pi 4 [Installation](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4)
    - [Downloads](https://archlinuxarm.org/about/downloads)
 
-ARMv8 Raspberry Pi 3/4: `ArchLinuxARM-rpi-aarch64-latest.tar.gz`
-
 ### SD card
 
 ```bash
@@ -50,7 +48,7 @@ c # 0c W95 FAT32 (LBA)
 ```bash
 n # add a new partition
 p # primary (1 primary, 0 extended, 3 free)
-1 # partition number
+2 # partition number
 # enter. first sector default: 411648
 # enter. last sector default: 62357503
 ```
@@ -100,7 +98,8 @@ sudo su
 option: `apt install libarchive-tools`
 
 ```bash
-bsdtar -xpf ArchLinuxARM-rpi-aarch64-latest.tar.gz -C root
+bsdtar -xpf ArchLinuxARM-rpi-armv7-latest.tar.gz -C root
+# bsdtar -xpf ArchLinuxARM-rpi-aarch64-latest.tar.gz -C root
 sync
 ```
 
@@ -110,7 +109,7 @@ sync
 mv root/boot/* boot
 ```
 
-#### for AArch64 Image
+#### (option) AArch64 Image
 
 This provides an installation using the mainline kernel and U-Boot. Use this installation only if you have no dependencies on the closed source vendor libraries shipped in the ARMv7 release. This installation has near full support for the device, including the VC4 graphics.
 
