@@ -444,7 +444,7 @@ pyenv install 2.7.18
 
 ```bash
 pyenv global 3.11.1
-pip install --upgrade pip
+pip install --upgrade pip setuptools
 pip install black
 ```
 
