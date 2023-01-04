@@ -430,3 +430,16 @@ if filereadable("./GTAGS")
   let $GTAGSDBPATH=project_dir
 endif
 ```
+
+---
+
+## Podman
+
+doc: [installation](https://podman.io/getting-started/installation)
+
+```bash
+sudo dnf module list container-tools
+sudo dnf module enable -y container-tools:rhel8
+sudo dnf module install -y container-tools:rhel8
+```
+
