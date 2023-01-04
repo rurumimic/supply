@@ -548,3 +548,41 @@ if filereadable("./GTAGS")
   let $GTAGSDBPATH=project_dir
 endif
 ```
+
+---
+
+## Shell
+
+### Fish
+
+```bash
+sudo port install fish
+sudo port install xsel
+```
+
+```bash
+sudo chpass -s /opt/local/bin/fish ${USER}
+sudo sh -c 'echo /opt/local/bin/fish >> /etc/shells'
+```
+
+#### pyenv
+
+```bash
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+```
+
+```bash
+# ~/.config/fish/config.fish
+pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
+```
+
+#### others
+
+```bash
+# alias
+alias ll='ls -alh'
+alias vi=nvim
+# alias vim=nvim
+```
