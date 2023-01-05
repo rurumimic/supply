@@ -247,6 +247,26 @@ sudo dnf install gh
 gh auth login
 ```
 
+#### Universal Ctags
+
+github: [universal-ctags/ctags](https://github.com/universal-ctags/ctags)
+
+```bash
+sudo mkdir /opt/ctags
+
+git clone https://github.com/universal-ctags/ctags.git
+cd ctags
+./autogen.sh
+./configure --prefix=/opt/ctags # defaults to /usr/local
+make
+sudo make install # may require extra privileges depending on where to install
+```
+
+```bash
+# ~/.zshrc
+export PATH="/opt/ctags/bin:$PATH"
+```
+
 ---
 
 ## Languages
