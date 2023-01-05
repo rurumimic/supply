@@ -110,6 +110,17 @@ sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noa
 sudo dnf update
 ```
 
+### Git
+
+git: 1.6 Getting Started - [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+
+```bash
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --global core.editor vi
+git config --list
+```
+
 ### Recommended packages
 
 #### zsh
@@ -219,6 +230,22 @@ unzip SourceCodePro.zip -d patched-fonts
 curl -O https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/install.sh
 chmod +x install.sh
 ./install.sh
+```
+
+#### GitHub CLI
+
+gh: [install](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#fedora-centos-red-hat-enterprise-linux-dnf) on redhat
+
+```bash
+sudo dnf install 'dnf-command(config-manager)'
+sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh
+```
+
+##### Login GitHub CLI
+
+```bash
+gh auth login
 ```
 
 ---
