@@ -505,6 +505,7 @@ Created symlink ~/.config/systemd/user/sockets.target.wants/podman.socket → /u
 
 ```bash
 loginctl enable-linger $USER
+loginctl user-status $USER
 ```
 
 ```bash
@@ -592,4 +593,68 @@ podman images
 
 REPOSITORY              TAG          IMAGE ID      CREATED       SIZE
 docker.io/library/rust  1.66-alpine  b97871448127  3 weeks ago   819 MB
+```
+
+### Run a privileged container
+
+- redhat: [13.7. Running Podman with extended privileges](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/building_running_and_managing_containers/assembly_running-skopeo-buildah-and-podman-in-a-container_building-running-and-managing-containers#proc_running-podman-with-extended-privileges_assembly_running-skopeo-buildah-and-podman-in-a-container)
+- [How to use Podman inside of a container](https://www.redhat.com/sysadmin/podman-inside-container)
+
+```bash
+ls -al podman
+
+-rwxr-xr-x. 1 root root /usr/bin/podman
+
+ls -al /usr/lib64/libsubid.so.3
+
+lrwxrwxrwx. 1 root root /usr/lib64/libsubid.so.3 -> libsubid.so.3.0.0
+```
+
+```bash
+podman pull registry.access.redhat.com/ubi8/podman
+podman pull docker.io/library/ubuntu:22.04
+```
+
+```bash
+podman run \
+--privileged \
+--name=privileged_podman \
+registry.access.redhat.com/ubi8/podman \
+podman run docker.io/library/ubuntu:22.04 echo hello
+
+hello
+```
+
+#### Rootful Podman in rootful Podman without --privileged
+
+```bash
+podman run \
+--cap-add=sys_admin,mknod \
+--device=/dev/fuse \
+--security-opt label=disable \
+registry.access.redhat.com/ubi8/podman \
+podman run docker.io/library/ubuntu:22.04 echo hello
+
+hello
+```
+
+- Capabilities: `--cap-add=sys_admin,mknod` We need to add two Linux capabilities.
+   - **CAP_SYS_ADMIN** is required for the Podman running as root inside of the container to mount the required file systems.
+   - **CAP_MKNOD** is required for Podman running as root inside of the container to create the devices in /dev. (Note that Docker allows this by default).
+- Devices: The `--device /dev/fuse` flag must use fuse-overlayfs inside the container. This option tells Podman on the host to add `/dev/fuse` to the container so that containerized Podman can use it.
+- Disable SELinux: The `--security-opt label=disable` option tells the host's Podman to disable SElinux separation for the container. SELinux does not allow containerized processes to mount all of the file systems required to run inside a container.
+
+#### Rootless Podman in rootful Podman without --privileged
+
+(option): `--security-opt unmask=ALL`
+
+```bash
+podman run \
+--user podman \
+--security-opt label=disable \
+--device=/dev/fuse \
+registry.access.redhat.com/ubi8/podman \
+podman run docker.io/library/ubuntu:22.04 echo hello
+
+hello
 ```
