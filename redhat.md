@@ -581,6 +581,13 @@ host:
 ```
 
 ```bash
+podman machine list
+
+NAME        VM TYPE     CREATED     LAST UP     CPUS        MEMORY      DISK SIZE
+
+```
+
+```bash
 podman images
 
 REPOSITORY              TAG          IMAGE ID      CREATED       SIZE
