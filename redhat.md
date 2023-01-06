@@ -541,8 +541,10 @@ cat $HOME/.ssh/id_ed25519.pub
 
 #### redhat
 
+add `id_ed25519.pub`
+
 ```bash
-vi $HOME/.ssh/id_ed25519.pub
+vi $HOME/.ssh/authorized_keys
 ```
 
 #### macOS
