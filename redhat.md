@@ -489,3 +489,63 @@ sudo dnf module enable -y container-tools:rhel8
 sudo dnf module install -y container-tools:rhel8
 ```
 
+### remote client on macOS 
+
+- port: [podman](https://ports.macports.org/port/podman/)
+- doc: [remote client](https://www.redhat.com/sysadmin/podman-clients-macos-windows)
+   - [github](https://github.com/containers/podman/blob/main/docs/tutorials/mac_win_client.md)
+
+#### redhat
+
+```bash
+systemctl --user enable --now podman.socket
+
+Created symlink ~/.config/systemd/user/sockets.target.wants/podman.socket → /usr/lib/systemd/user/podman.socket
+```
+
+```bash
+loginctl enable-linger $USER
+```
+
+```bash
+podman --remote info
+
+host:
+  arch: amd64
+  buildahVersion: 1.27.1
+  cgroupControllers: []
+  cgroupManager: cgroupfs
+  cgroupVersion: v1
+  conmon:
+    package: conmon-2.1.4-1.module+el8.7.0+17064+3b31f55c.x86_64
+```
+
+```bash
+sudo systemctl status sshd
+sudo systemctl enable --now sshd
+```
+
+#### macOS
+
+```bash
+sudo port install podman
+```
+
+```bash
+ssh-keygen -t ed25519
+```
+
+```bash
+podman system connection add $USER --identity $HOME/.ssh/id_ed25519 ssh://$USER@redhat/run/user/1000/podman/podman.sock
+```
+
+```bash
+podman system connection list
+
+Name        URI                                                     Identity                      Default
+<USER>      ssh://keanu@redhat:22/run/user/1000/podman/podman.sock  $HOME/.ssh/id_ed25519         true
+```
+
+```bash
+podman info
+```
