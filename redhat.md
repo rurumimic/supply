@@ -579,3 +579,10 @@ host:
   eventLogger: file
   hostname: redhat.vm.macintosh
 ```
+
+```bash
+podman images
+
+REPOSITORY              TAG          IMAGE ID      CREATED       SIZE
+docker.io/library/rust  1.66-alpine  b97871448127  3 weeks ago   819 MB
+```
