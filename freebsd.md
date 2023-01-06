@@ -35,3 +35,133 @@ portsnap extract
 portsnap fetch
 portsnap update
 ```
+
+### pkg
+
+```bash
+sudo pkg update -f
+```
+
+### git
+
+```bash
+sudo pkg install git
+```
+
+### zsh
+
+```bash
+sudo pkg install zsh
+```
+
+```bash
+sudo chsh -s /usr/local/bin/zsh
+chsh -s /usr/local/bin/zsh $USER
+```
+
+#### ohmyzsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### neofetch
+
+install: [FreeBSD](https://github.com/dylanaraps/neofetch/wiki/Installation#freebsd)
+
+```bash
+sudo pkg install neofetch
+```
+
+### Python
+
+#### pyenv
+
+```bash
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+cd ~/.pyenv && src/configure && make -C src
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+```
+
+```bash
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+```
+
+```bash
+sudo pkg install databases/sqlite3
+```
+
+```bash
+pyenv install 3.11.1
+pyenv global 3.11.1
+pip install -U pip setuptools
+```
+
+### Neovim
+
+- [Neovim](https://github.com/neovim/neovim)
+  - [Install](https://github.com/neovim/neovim/wiki/Installing-Neovim#freebsd)
+
+```bash
+sudo pkg install neovim
+```
+
+Add an alias to `~/.zsrhc`:
+
+```bash
+# alias
+alias ll='ls -alh'
+alias vi=nvim
+# alias vim=nvim
+```
+
+### SpaceVim
+
+- [SpaceVim](https://spacevim.org)
+   - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
+
+Check `install.sh`
+
+```bash
+curl -sLf https://spacevim.org/install.sh | zsh -s -- -h
+```
+
+#### Install SpaceVim for neovim only
+
+```bash
+curl -sLf https://spacevim.org/install.sh | zsh -s -- --install neovim
+```
+
+#### Debug SpaceVim
+
+```bash
+space + b + m
+:checkhealth
+:SPDebugInfo!
+```
+
+#### Setting
+
+`space + f + v + d`
+
+Open: `vi ~/.SpaceVim.d/init.toml`
+
+Add layers:
+
+```toml
+[[layers]]
+name = 'git'
+
+[[layers]]
+name = 'VersionControl'
+    
+[[layers]]
+name = 'lang#c'
+enable_clang_syntax_highlight = true
+```
+
+[~/.SpaceVim/init.vim](#init.vim)
+
