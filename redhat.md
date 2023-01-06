@@ -536,6 +536,18 @@ ssh-keygen -t ed25519
 ```
 
 ```bash
+cat $HOME/.ssh/id_ed25519.pub
+```
+
+#### redhat
+
+```bash
+vi $HOME/.ssh/id_ed25519.pub
+```
+
+#### macOS
+
+```bash
 podman system connection add $USER --identity $HOME/.ssh/id_ed25519 ssh://$USER@redhat/run/user/1000/podman/podman.sock
 ```
 
