@@ -513,11 +513,14 @@ podman --remote info
 host:
   arch: amd64
   buildahVersion: 1.27.1
-  cgroupControllers: []
-  cgroupManager: cgroupfs
-  cgroupVersion: v1
-  conmon:
-    package: conmon-2.1.4-1.module+el8.7.0+17064+3b31f55c.x86_64
+
+  ...
+
+  distribution:
+    distribution: '"rhel"'
+    version: "8.7"
+  eventLogger: file
+  hostname: redhat.vm.macintosh
 ```
 
 ```bash
@@ -563,4 +566,16 @@ Name        URI                                                     Identity    
 
 ```bash
 podman info
+
+host:
+  arch: amd64
+  buildahVersion: 1.27.1
+  
+  ...
+
+  distribution:
+    distribution: '"rhel"'
+    version: "8.7"
+  eventLogger: file
+  hostname: redhat.vm.macintosh
 ```
