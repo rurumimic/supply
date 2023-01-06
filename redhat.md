@@ -545,6 +545,7 @@ add `id_ed25519.pub`
 
 ```bash
 vi $HOME/.ssh/authorized_keys
+chmod 600 $HOME/.ssh/authorized_keys
 ```
 
 #### macOS
