@@ -362,6 +362,18 @@ let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
   - OK: Latest pynvim is installed.
 ```
 
+#### autoenv
+
+```bash
+git clone https://github.com/hyperupcall/autoenv ~/.autoenv
+
+echo -e '\n# autoenv' >> ~/.zshrc
+echo "AUTOENV_ENV_FILENAME='.autoenv'" >> ~/.zprofile
+echo "AUTOENV_ENV_LEAVE_FILENAME='.autoenv.leave'" >> ~/.zprofile
+echo "AUTOENV_ENABLE_LEAVE='enabled'" >> ~/.zprofile
+echo 'source ~/.autoenv/activate.sh' >> ~/.zprofile
+```
+
 ### Go
 
 [rurumimic/golang/install.md](https://github.com/rurumimic/golang/blob/main/install.md)
