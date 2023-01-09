@@ -366,7 +366,12 @@ let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
 
 ```bash
 git clone https://github.com/hyperupcall/autoenv ~/.autoenv
-printf '%s\n' "source ~/.autoenv/activate.sh" >> "${ZDOTDIR:-$HOME}/.zprofile"
+
+echo -e '\n# autoenv' >> ~/.zshrc
+echo "AUTOENV_ENV_FILENAME='.autoenv'" >> ~/.zprofile
+echo "AUTOENV_ENV_LEAVE_FILENAME='.autoenv.leave'" >> ~/.zprofile
+echo "AUTOENV_ENABLE_LEAVE='enabled'" >> ~/.zprofile
+echo 'source ~/.autoenv/activate.sh' >> ~/.zprofile
 ```
 
 ### Go
