@@ -114,7 +114,24 @@ sudo apt install cscope
 ```bash
 sudo apt install global
 ```
+
+```lua
 set clipboard+=unnameplus
+```
+
+### delta
+
+- doc: [install](https://dandavison.github.io/delta/installation.html)
+- [releases](https://github.com/dandavison/delta/releases)
+
+```bash
+dpkg -i git-delta_0.15.1_amd64.deb 
+```
+
+```bash
+vi ~/.gitconfig
+```
+
 ---
 
 ## Terminal

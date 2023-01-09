@@ -27,13 +27,13 @@ pw group show -n wheel
 ### ports
 
 ```bash
-portsnap fetch
-portsnap extract
+sudo portsnap fetch
+sudo portsnap extract
 ```
 
 ```bash
-portsnap fetch
-portsnap update
+sudo portsnap fetch
+sudo portsnap update
 ```
 
 ### pkg
@@ -73,6 +73,12 @@ install: [FreeBSD](https://github.com/dylanaraps/neofetch/wiki/Installation#free
 sudo pkg install neofetch
 ```
 
+### curl
+
+```bash
+sudo pkg install curl
+```
+
 ### Python
 
 #### pyenv
@@ -91,13 +97,30 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 ```
 
 ```bash
-sudo pkg install databases/sqlite3
+pyenv install -v 3.11.1
+pyenv global 3.11.1
 ```
 
 ```bash
-pyenv install 3.11.1
-pyenv global 3.11.1
-pip install -U pip setuptools
+pip install --upgrade pip setuptools wheel
+pip install black
+```
+
+#### for nvim env
+
+```bash
+pyenv virtualenv 3.11.1 vim3
+pyenv activate vim3
+pip install --upgrade pip setuptools wheel 
+pip install pynvim
+pyenv deactivate
+```
+
+```bash
+pyenv virtualenv 2.7.18 vim2
+pyenv activate vim2
+pip install pynvim
+pyenv deactivate
 ```
 
 ### Neovim
@@ -135,6 +158,12 @@ curl -sLf https://spacevim.org/install.sh | zsh -s -- -h
 curl -sLf https://spacevim.org/install.sh | zsh -s -- --install neovim
 ```
 
+#### ~/.config/nvim
+
+```bash
+ln -s ~/.SpaceVim ~/.config/nvim
+```
+
 #### Debug SpaceVim
 
 ```bash
@@ -164,4 +193,25 @@ enable_clang_syntax_highlight = true
 ```
 
 [~/.SpaceVim/init.vim](#init.vim)
+
+
+```lua
+let g:python_host_prog='~/.pyenv/versions/vim2/bin/python'
+let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
+
+" let g:clang_library_path='/usr/lib/llvm-14/lib'
+
+call SpaceVim#end()
+
+let project_dir = g:SpaceVim#plugins#projectmanager#current_root()
+
+if filereadable("./cscope.out")
+  cs add cscope.out
+endif
+
+if filereadable("./GTAGS")
+  let $GTAGSROOT=project_dir
+  let $GTAGSDBPATH=project_dir
+endif
+```
 
