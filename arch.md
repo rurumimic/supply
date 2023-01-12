@@ -4,8 +4,8 @@
 
 - Raspberry Pi 4: [Specifications](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/)
 - Arch Linux ARM
-   - Raspberry Pi 4 [Installation](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4)
-   - [Downloads](https://archlinuxarm.org/about/downloads)
+  - Raspberry Pi 4 [Installation](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4)
+  - [Downloads](https://archlinuxarm.org/about/downloads)
 
 ### SD card
 
@@ -24,7 +24,7 @@ o # clear out all partitions
 p # list partitions. no partitions left.
 ```
 
-####  first partition
+#### first partition
 
 ```bash
 n # add a new partition

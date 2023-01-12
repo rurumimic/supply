@@ -17,12 +17,12 @@ sudo vi /etc/hosts
 - name: `redhat8`
 - iso: `rhel-8.7-x86_64-dvd.iso`
 - unattended install
-   - username == Host username
-   - hostname: `redhat`
-   - domain name: `vm.macintosh`
+  - username == Host username
+  - hostname: `redhat`
+  - domain name: `vm.macintosh`
 - hardware
-   - memory: `8192 MB`
-   - cpu: `4`
+  - memory: `8192 MB`
+  - cpu: `4`
 - hard disk: `50 GB` VDI
 
 ### Host-only network
@@ -112,41 +112,7 @@ sudo dnf update
 
 ### Git
 
-git: 1.6 Getting Started - [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
-
-```bash
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
-git config --global core.editor vi
-git config --list
-```
-
 ### Recommended packages
-
-#### zsh
-
-install: [zsh on rhel](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#centosrhel)
-
-```bash
-sudo dnf install -y zsh
-sudo chsh -s $(which zsh)
-chsh -s $(which zsh)
-```
-
-#### ohmyzsh
-
-github: [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-#### development tools
-
-```bash
-sudo dnf groupinfo "Development Tools"
-sudo dnf group install -y "Development Tools"
-```
 
 #### neofetch
 
@@ -191,8 +157,8 @@ alias vi=nvim
 #### SpaceVim
 
 - [SpaceVim](https://spacevim.org)
-   - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
-   - [Install Manually](https://spacevim.org/faq/#how-to-install-spacevim-manually)
+  - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
+  - [Install Manually](https://spacevim.org/faq/#how-to-install-spacevim-manually)
 
 ##### Install
 
@@ -233,19 +199,6 @@ chmod +x install.sh
 ```
 
 #### GitHub CLI
-
-gh: [install](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#fedora-centos-red-hat-enterprise-linux-dnf) on redhat
-
-```bash
-sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh
-```
-
-##### Login GitHub CLI
-
-```bash
-gh auth login
-```
 
 #### Universal Ctags
 
@@ -296,6 +249,7 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 ```
+
 #### Download python
 
 ```bash
@@ -501,11 +455,11 @@ sudo dnf module enable -y container-tools:rhel8
 sudo dnf module install -y container-tools:rhel8
 ```
 
-### remote client on macOS 
+### remote client on macOS
 
 - port: [podman](https://ports.macports.org/port/podman/)
 - doc: [remote client](https://www.redhat.com/sysadmin/podman-clients-macos-windows)
-   - [github](https://github.com/containers/podman/blob/main/docs/tutorials/mac_win_client.md)
+  - [github](https://github.com/containers/podman/blob/main/docs/tutorials/mac_win_client.md)
 
 #### redhat
 
@@ -651,8 +605,8 @@ hello
 ```
 
 - Capabilities: `--cap-add=sys_admin,mknod` We need to add two Linux capabilities.
-   - **CAP_SYS_ADMIN** is required for the Podman running as root inside of the container to mount the required file systems.
-   - **CAP_MKNOD** is required for Podman running as root inside of the container to create the devices in /dev. (Note that Docker allows this by default).
+  - **CAP_SYS_ADMIN** is required for the Podman running as root inside of the container to mount the required file systems.
+  - **CAP_MKNOD** is required for Podman running as root inside of the container to create the devices in /dev. (Note that Docker allows this by default).
 - Devices: The `--device /dev/fuse` flag must use fuse-overlayfs inside the container. This option tells Podman on the host to add `/dev/fuse` to the container so that containerized Podman can use it.
 - Disable SELinux: The `--security-opt label=disable` option tells the host's Podman to disable SElinux separation for the container. SELinux does not allow containerized processes to mount all of the file systems required to run inside a container.
 

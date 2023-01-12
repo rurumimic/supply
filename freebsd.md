@@ -50,29 +50,6 @@ sudo pkg install git
 
 ### zsh
 
-```bash
-sudo pkg install zsh
-```
-
-```bash
-sudo chsh -s /usr/local/bin/zsh
-chsh -s /usr/local/bin/zsh $USER
-```
-
-#### ohmyzsh
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-### neofetch
-
-install: [FreeBSD](https://github.com/dylanaraps/neofetch/wiki/Installation#freebsd)
-
-```bash
-sudo pkg install neofetch
-```
-
 ### curl
 
 ```bash
@@ -144,7 +121,7 @@ alias vi=nvim
 ### SpaceVim
 
 - [SpaceVim](https://spacevim.org)
-   - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
+  - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
 
 Check `install.sh`
 
@@ -194,7 +171,6 @@ enable_clang_syntax_highlight = true
 
 [~/.SpaceVim/init.vim](#init.vim)
 
-
 ```lua
 let g:python_host_prog='~/.pyenv/versions/vim2/bin/python'
 let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
@@ -214,4 +190,3 @@ if filereadable("./GTAGS")
   let $GTAGSDBPATH=project_dir
 endif
 ```
-
