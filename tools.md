@@ -1,6 +1,114 @@
 # CLI Tools
 
-## tool kit
+## shell
+
+### zsh
+
+- [zsh](https://www.zsh.org/)
+- ohmyzsh/wiki: [RHEL](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#centosrhel)
+
+```bash
+# ubuntu
+sudo apt install zsh
+
+autoload -Uz zsh-newuser-install
+zsh-newuser-install -f
+
+chsh -s /usr/bin/zsh
+
+
+# redhat
+sudo dnf install -y zsh
+sudo chsh -s $(which zsh) # root
+chsh -s $(which zsh)      # user
+
+
+# freebsd
+sudo pkg install zsh
+
+sudo chsh -s /usr/local/bin/zsh  # root
+chsh -s /usr/local/bin/zsh $USER # user
+```
+
+### ohmyzsh
+
+- [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+#### Theme
+
+- [typewritten](https://typewritten.dev/#/installation?id=oh-my-zsh)
+
+```bash
+git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
+ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
+ln -s "$ZSH_CUSTOM/themes/typewritten/async.zsh" "$ZSH_CUSTOM/themes/async"
+```
+
+```bash
+# ~/.zshrc
+
+ZSH_THEME="typewritten"
+```
+
+```bash
+# ~/.zprofile
+
+# typewritten
+export TYPEWRITTEN_SYMBOL="λ"
+export TYPEWRITTEN_CURSOR="block"
+export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+# export TYPEWRITTEN_PROMPT_LAYOUT="singleline_verbose"
+export TYPEWRITTEN_PROMPT_LAYOUT="pure_verbose"
+export TYPEWRITTEN_LEFT_PROMPT_PREFIX_FUNCTION=(date +%H:%M:%S)
+```
+
+### noefetch
+
+- [dylanaraps/neofetch](https://github.com/dylanaraps/neofetch)
+  - [neofetch/wiki](https://github.com/dylanaraps/neofetch/wiki/)
+  - [macports](https://ports.macports.org/port/neofetch/)
+
+```bash
+# mac
+sudo port install neofetch
+
+# ubuntu
+sudo apt install neofetch
+
+# redhat
+sudo dnf install neofetch
+
+# freebsd
+sudo pkg install neofetch
+```
+
+- ascii arts: [neofetch/ascii](neofetch/ascii)
+- [neofetch/config.conf](neofetch/config.conf)
+
+### highlight
+
+- [andre-simon.de](http://www.andre-simon.de/index.php)
+
+```bash
+# mac
+sudo port install highlight
+
+# ubuntu
+sudo apt install highlight
+
+# freebsd
+sudo pkg install highlight
+```
+
+---
+
+## Packages
+
+### developer tool kit
 
 - mac: command line tools
 - ubuntu: build essential
@@ -21,6 +129,184 @@ sudo dnf groupinfo "Development Tools"
 sudo dnf group install -y "Development Tools"
 ```
 
+### bat
+
+- GitHub: [sharkdp/bat](https://github.com/sharkdp/bat)
+  - [releases](https://github.com/sharkdp/bat/releases)
+  - [macports](https://github.com/sharkdp/bat#on-macos-via-macports)
+
+```bash
+# mac
+sudo port install bat
+```
+
+#### bat on ubuntu
+
+```bash
+sudo apt install bat
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+```
+
+#### bat on redhat
+
+```bash
+curl -fsSL -O https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-v0.22.1-x86_64-unknown-linux-gnu.tar.gz
+tar xzf bat-v0.22.1-x86_64-unknown-linux-gnu.tar.gz
+sudo mv bat-v0.22.1-x86_64-unknown-linux-gnu /opt/bat
+rm -rf bat-v0.22.1-x86_64-unknown-linux-gnu
+```
+
+```bash
+vi ~/.zshrc
+alias bat="/opt/bat/bat"
+```
+
+### tree
+
+- [tree](http://mama.indstate.edu/users/ice/tree/)
+
+```bash
+# mac
+sudo port install tree
+
+# ubuntu
+sudo apt install tree
+
+# redhat
+sudo dnf install tree
+```
+
+### fzf
+
+- [fzf](https://github.com/junegunn/fzf)
+
+```bash
+# mac
+sudo port install fzf
+
+# ubuntu
+sudo apt install fzf
+```
+
+```bash
+Zsh
+===
+
+Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
+
+  source /opt/local/share/fzf/shell/key-bindings.zsh
+
+Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
+
+  source /opt/local/share/fzf/shell/completion.zsh
+```
+
+```bash
+# ~/.zshrc
+plugins=(git fzf)
+
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+```
+
+### fd
+
+- fd: [installation](https://github.com/sharkdp/fd#installation)
+
+```bash
+# ubuntu
+sudo apt install fd-find
+ln -s $(which fdfind) ~/.local/bin/fd
+```
+
+### ripgrep
+
+- ripgrep: [install](https://github.com/BurntSushi/ripgrep#installation)
+
+```bash
+# ubuntu
+sudo apt install ripgrep
+```
+
+### delta
+
+- [delta](https://github.com/dandavison/delta)
+  - [install](https://dandavison.github.io/delta/installation.html)
+  - [releases](https://github.com/dandavison/delta/releases)
+
+```bash
+# mac
+sudo port install git-delta
+
+# ubuntu
+dpkg -i git-delta_0.15.1_amd64.deb 
+```
+
+```bash
+vi ~/.gitconfig
+```
+
+full code: [.gitconfig](https://gist.github.com/rurumimic/82b58259cc43debf546461d45f904a0b)
+
+### GNU Global
+
+- GNU Global
+  - [macports](https://ports.macports.org/port/global)
+- SpaceVim [gtags](https://spacevim.org/layers/gtags/)
+
+```bash
+# mac
+sudo port install global
+
+# ubuntu
+sudo apt install global
+```
+
+Add lines to `~/.zsrhc`:
+
+```bash
+source /opt/local/share/fzf/shell/key-bindings.zsh # enable fzf keybindings
+source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
+```
+
+### cscope
+
+- [cscope](https://cscope.sourceforge.net/)
+
+```bash
+# ubuntu
+sudo apt install cscope
+```
+
+### Universal Ctags
+
+- [universal-ctags/ctags](https://github.com/universal-ctags/ctags)
+
+```bash
+# mac
+sudo port install universal-ctags
+```
+
+#### Ctags on RedHat
+
+```bash
+sudo mkdir /opt/ctags
+
+git clone https://github.com/universal-ctags/ctags.git
+cd ctags
+./autogen.sh
+./configure --prefix=/opt/ctags # defaults to /usr/local
+make
+sudo make install # may require extra privileges depending on where to install
+```
+
+```bash
+# ~/.zshrc
+export PATH="/opt/ctags/bin:$PATH"
+```
+
 ---
 
 ## git
@@ -28,6 +314,9 @@ sudo dnf group install -y "Development Tools"
 ```bash
 # ubuntu
 sudo apt install git
+
+# freebsd
+sudo pkg install git
 ```
 
 ### config
@@ -77,65 +366,63 @@ gh auth login
 
 ---
 
-## shell
-
-### zsh
-
-- ohmyzsh/wiki: [RHEL](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#centosrhel)
-
-```bash
-# ubuntu
-sudo apt install zsh
-
-autoload -Uz zsh-newuser-install
-zsh-newuser-install -f
-
-chsh -s /usr/bin/zsh
-
-
-# redhat
-sudo dnf install -y zsh
-sudo chsh -s $(which zsh) # root
-chsh -s $(which zsh)      # user
-
-
-# freebsd
-sudo pkg install zsh
-
-sudo chsh -s /usr/local/bin/zsh  # root
-chsh -s /usr/local/bin/zsh $USER # user
-```
-
-### ohmyzsh
-
-- [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-### noefetch
-
-- [dylanaraps/neofetch](https://github.com/dylanaraps/neofetch)
-  - [neofetch/wiki](https://github.com/dylanaraps/neofetch/wiki/)
-  - [freebsd](https://github.com/dylanaraps/neofetch/wiki/Installation#freebsd)
-
-```bash
-# freebsd
-sudo pkg install neofetch
-```
-
----
-
 ## terminal
 
 ### kitty
 
 - kitty/[install](https://sw.kovidgoyal.net/kitty/binary/)
 
+```bash
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+
+- mac: `/Applications/kitty.app`
+- linux: `~/.local/kitty.app`
+
+#### kitty configuration
+
+- mac: `cmd + ,`
+- linux: `ctrl+shift+f2`
+
+```bash
+font_family Hack
+
+map alt+c copy_to_clipboard
+map alt+v paste_from _clipboard
+```
+
+#### Desktop integration on Linux
+
+```bash
+# linux
+ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+```
+
+#### Icon
+
+- kitty: [icon](https://sw.kovidgoyal.net/kitty/faq/#i-do-not-like-the-kitty-icon)
+- [DinkDonk/kitty-icon](https://github.com/DinkDonk/kitty-icon)
+
+```bash
+# mac
+## 1. Find `kitty.app` in the `Applications folder`, select it and press `⌘ cmd + i`.
+## 2. Drag `kitty-dark.icns` or `kitty-light.icns` onto the application icon in the `kitty info` pane.
+## 3. Delete the icon cache and restart Dock:
+rm /var/folders/*/*/*/com.apple.dock.iconcache; killall Dock
+
+# linux
+## ~/.local/kitty.app/share/icons/hicolor/256x256/apps
+cd ~/.local/kitty.app/lib/kitty/logo
+kitty +runpy 'from kitty.fast_data_types import cocoa_set_app_icon; import sys; cocoa_set_app_icon(*sys.argv[1:]); print("OK")' kitty.png
+```
+
 ### warp
 
-- [warp](https://www.warp.dev/) only mac
+- [warp](https://www.warp.dev/)
 
 ### fig
 

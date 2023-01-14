@@ -13,7 +13,7 @@ sudo port install ripgrep
 sudo port install fd
 ```
 
-### Emacs
+### Install Emacs
 
 default port variants: `+nativecomp` `+rsvg`
 
