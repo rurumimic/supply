@@ -31,3 +31,20 @@ Comment out line 39:
 # PS1="$PS1"'`__git_ps1`' # bash function
 ```
 
+---
+
+## Commands
+
+### Powershell
+
+#### Compress and Extract
+
+- Microsoft PowerShell Archive
+  - [Compress-Archive](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-7.3)
+  - [Expand-Archive](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.3)
+
+```ps1
+Compress-Archive .\directory archive.zip
+Expand-Archive .\archive.zip
+```
+
