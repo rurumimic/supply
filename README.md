@@ -15,7 +15,7 @@
   - [redhat](redhat.md): [podman](docs/podman.md)
   - [arch](arch.md)
 - [freebsd](freebsd.md)
-- windows
+- [windows](windows.md)
 
 ## CLI tools
 
