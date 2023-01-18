@@ -205,6 +205,13 @@ Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
   source /opt/local/share/fzf/shell/completion.zsh
 ```
 
+Add lines to `~/.zsrhc`:
+
+```bash
+source /opt/local/share/fzf/shell/key-bindings.zsh # enable fzf keybindings
+source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
+```
+
 ```bash
 # ~/.zshrc
 plugins=(git fzf)
@@ -230,7 +237,11 @@ ln -s $(which fdfind) ~/.local/bin/fd
 tar xf fd-v*-x86_64-unknown-linux-gnu.tar.gz
 sudo chown -R root:root fd-v*-x86_64-unknown-linux-gnu
 sudo cd fd-v*-x86_64-unknown-linux-gnu
-sudo cp fd /bin
+
+sudo mkdir -p /opt/fd/bin
+sudo cp fd /opt/fd/bin/fd
+sudo ln -s /opt/fd/bin/fd /usr/local/bin
+
 sudo gzip fd.1
 sudo chown root:root fd.1.gz
 sudo cp fd.1.gz /usr/share/man/man1
@@ -265,8 +276,12 @@ sudo port install git-delta
 dpkg -i git-delta_0.15.1_amd64.deb 
 
 # redhat
-tar xf delta-*-x86_64-unknown-linux-gnu.tar.gz
+tar xf delta-*-x86_64-unknown-linux-musl.tar.gz
+cd delta-*-x86_64-unknown-linux-musl
 
+sudo mkdir -p /opt/delta/bin
+sudo cp delta /opt/delta/bin/delta
+sudo ln -s /opt/delta/bin/delta /usr/local/bin
 ```
 
 1. install [git](#git)
@@ -277,6 +292,8 @@ git diff: `git lg -n 5`
 ### GNU Global
 
 - GNU Global
+  - [download](https://www.gnu.org/software/global/download.html)
+  - ftp: [global](https://ftp.gnu.org/pub/gnu/global/)
   - [macports](https://ports.macports.org/port/global)
 - SpaceVim [gtags](https://spacevim.org/layers/gtags/)
 
@@ -286,13 +303,14 @@ sudo port install global
 
 # ubuntu
 sudo apt install global
-```
 
-Add lines to `~/.zsrhc`:
-
-```bash
-source /opt/local/share/fzf/shell/key-bindings.zsh # enable fzf keybindings
-source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
+# redhat
+wget https://ftp.gnu.org/pub/gnu/global/global-*.tar.gz
+tar xf global-*.tar.gz
+cd global-*
+./configure --prefix=/opt/global
+make
+sudo make install
 ```
 
 ### cscope
@@ -302,6 +320,9 @@ source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
 ```bash
 # ubuntu
 sudo apt install cscope
+
+# redhat
+sudo dnf install cscope
 ```
 
 ### Universal Ctags
