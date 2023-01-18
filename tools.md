@@ -244,11 +244,8 @@ sudo port install git-delta
 dpkg -i git-delta_0.15.1_amd64.deb 
 ```
 
-```bash
-vi ~/.gitconfig
-```
-
-full code: [.gitconfig](https://gist.github.com/rurumimic/82b58259cc43debf546461d45f904a0b)
+1. install [git](#git)
+2. edit: [~/.gitconfig](config/gitconfig)
 
 ### GNU Global
 
@@ -330,6 +327,9 @@ git config --global user.email johndoe@example.com
 git config --global core.editor vi
 git config --list
 ```
+
+1. install [delta](#delta)
+2. edit: [~/.gitconfig](config/gitconfig)
 
 ### github cli
 
