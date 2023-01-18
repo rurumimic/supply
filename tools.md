@@ -247,6 +247,8 @@ dpkg -i git-delta_0.15.1_amd64.deb
 1. install [git](#git)
 2. edit: [~/.gitconfig](config/gitconfig)
 
+git diff: `git lg -n 5`
+
 ### GNU Global
 
 - GNU Global
@@ -330,6 +332,8 @@ git config --list
 
 1. install [delta](#delta)
 2. edit: [~/.gitconfig](config/gitconfig)
+
+git diff: `git lg -n 5`
 
 ### github cli
 
