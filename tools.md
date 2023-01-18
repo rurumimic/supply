@@ -187,6 +187,9 @@ sudo port install fzf
 
 # ubuntu
 sudo apt install fzf
+
+# redhat
+
 ```
 
 ```bash
@@ -214,11 +217,26 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 ### fd
 
 - fd: [installation](https://github.com/sharkdp/fd#installation)
+  - [releases](https://github.com/sharkdp/fd/releases)
 
 ```bash
 # ubuntu
 sudo apt install fd-find
 ln -s $(which fdfind) ~/.local/bin/fd
+
+
+# redhat
+# https://github.com/sharkdp/fd/releases
+tar xf fd-v*-x86_64-unknown-linux-gnu.tar.gz
+sudo chown -R root:root fd-v*-x86_64-unknown-linux-gnu
+sudo cd fd-v*-x86_64-unknown-linux-gnu
+sudo cp fd /bin
+sudo gzip fd.1
+sudo chown root:root fd.1.gz
+sudo cp fd.1.gz /usr/share/man/man1
+sudo cp autocomplete/fd.bash /usr/share/bash-completion/completions/fd
+source /usr/share/bash-completion/completions/fd
+fd
 ```
 
 ### ripgrep
@@ -228,6 +246,9 @@ ln -s $(which fdfind) ~/.local/bin/fd
 ```bash
 # ubuntu
 sudo apt install ripgrep
+
+# redhat
+sudo dnf install ripgrep
 ```
 
 ### delta
@@ -242,6 +263,10 @@ sudo port install git-delta
 
 # ubuntu
 dpkg -i git-delta_0.15.1_amd64.deb 
+
+# redhat
+tar xf delta-*-x86_64-unknown-linux-gnu.tar.gz
+
 ```
 
 1. install [git](#git)
