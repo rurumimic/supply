@@ -473,7 +473,16 @@ kitty +runpy 'from kitty.fast_data_types import cocoa_set_app_icon; import sys; 
 ### warp
 
 - [warp](https://www.warp.dev/)
+  - [custom themes](https://docs.warp.dev/appearance/custom-themes#how-do-i-use-a-custom-theme-in-warp)
+- themes: [wapr-theme](https://github.com/austintraver/warp-theme)
+  - [monoka pro](https://github.com/austintraver/warp-theme/blob/main/monokai_pro.yaml)
+
+```bash
+mkdir -p ~/.warp/themes/
+vi ~/.warp/themes/monokai_pro.yaml
+```
 
 ### fig
 
 - [fig](https://fig.io/)
+

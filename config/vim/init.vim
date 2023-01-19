@@ -6,67 +6,18 @@
 " License: GPLv3
 "=============================================================================
 
-" set default encoding to utf-8
-" Let Vim use utf-8 internally, because many scripts require this
-set encoding=utf-8
-scriptencoding utf-8
+execute 'source' fnamemodify(expand('<sfile>'), ':h').'/main.vim'
 
-let g:python_host_prog='~/.pyenv/versions/vim2/bin/python'
-let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
-
-let g:clang_library_path='/usr/lib/llvm-14/lib'
-
-" Enable nocompatible
-if &compatible
-  set nocompatible
-endif
-
-let g:_spacevim_root_dir = escape(fnamemodify(resolve(fnamemodify(expand('<sfile>'),
-      \ ':p:h:gs?\\?'.((has('win16') || has('win32')
-      \ || has('win64'))?'\':'/') . '?')), ':p:gs?[\\/]?/?'), ' ')
-lockvar g:_spacevim_root_dir
-if has('nvim')
-  let s:qtdir = split(&rtp, ',')[-1]
-  if s:qtdir =~# 'nvim-qt'
-    let &rtp = s:qtdir . ',' . g:_spacevim_root_dir . ',' . $VIMRUNTIME
-  else
-    let &rtp = g:_spacevim_root_dir . ',' . $VIMRUNTIME
-  endif
+if exists('g:vscode')
+    " VSCode extension
 else
-  let &rtp = g:_spacevim_root_dir . ',' . $VIMRUNTIME
-endif
-call SpaceVim#logger#info('Loading SpaceVim from: ' . g:_spacevim_root_dir)
-
-if has('vim_starting')
-  " python host
-  " @bug python2 error on neovim 0.6.1
-  " let g:loaded_python_provider = 0
-  if !empty($PYTHON_HOST_PROG)
-    let g:python_host_prog  = $PYTHON_HOST_PROG
-    call SpaceVim#logger#info('$PYTHON_HOST_PROG is not empty, setting g:python_host_prog:' . g:python_host_prog)
-  endif
-  if !empty($PYTHON3_HOST_PROG)
-    let g:python3_host_prog = $PYTHON3_HOST_PROG
-    call SpaceVim#logger#info('$PYTHON3_HOST_PROG is not empty, setting g:python3_host_prog:' . g:python3_host_prog)
-    if !has('nvim') 
-          \ && (has('win16') || has('win32') || has('win64'))
-          \ && exists('&pythonthreedll')
-          \ && exists('&pythonthreehome')
-      let &pythonthreedll = get(split(globpath(fnamemodify($PYTHON3_HOST_PROG, ':h'), 'python*.dll'), '\n'), -1, '')
-      call SpaceVim#logger#info('init &pythonthreedll:' . &pythonthreedll)
-      let &pythonthreehome = fnamemodify($PYTHON3_HOST_PROG, ':h')
-      call SpaceVim#logger#info('init &pythonthreehome:' . &pythonthreehome)
-    endif
-  endif
+    " ordinary neovim
 endif
 
-call SpaceVim#begin()
+let g:python_host_prog='/Users/wick/.pyenv/versions/vim2/bin/python'
+let g:python3_host_prog='/Users/wick/.pyenv/versions/vim3/bin/python'
 
-call SpaceVim#custom#load()
-
-call SpaceVim#default#keyBindings()
-
-call SpaceVim#end()
+"let g:clang_library_path='/usr/lib/llvm-14/lib'
 
 let project_dir = g:SpaceVim#plugins#projectmanager#current_root()
 
@@ -79,5 +30,60 @@ if filereadable("./GTAGS")
   let $GTAGSDBPATH=project_dir
 endif
 
-call SpaceVim#logger#info('finished loading spacevim!')
-" vim:set et sw=2 cc=80:
+" rusty-tags
+autocmd BufRead *.rs :setlocal tags=./tags;,./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+" autocmd BufRead *.rs :setlocal tags=./tags;/,$RUST_SRC_PATH/rusty-tags.vi
+autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+let g:rust_use_custom_ctags_defs = 1
+let g:tagbar_type_rust = {
+  \ 'ctagsbin' : '/opt/local/bin/uctags',
+  \ 'ctagstype' : 'rust',
+  \ 'kinds' : [
+      \ 'n:modules',
+      \ 's:structures:1',
+      \ 'i:interfaces',
+      \ 'c:implementations',
+      \ 'f:functions:1',
+      \ 'g:enumerations:1',
+      \ 't:type aliases:1:0',
+      \ 'v:constants:1:0',
+      \ 'M:macros:1',
+      \ 'm:fields:1:0',
+      \ 'e:enum variants:1:0',
+      \ 'P:methods:1',
+  \ ],
+  \ 'sro': '::',
+  \ 'kind2scope' : {
+      \ 'n': 'module',
+      \ 's': 'struct',
+      \ 'i': 'interface',
+      \ 'c': 'implementation',
+      \ 'f': 'function',
+      \ 'g': 'enum',
+      \ 't': 'typedef',
+      \ 'v': 'variable',
+      \ 'M': 'macro',
+      \ 'm': 'field',
+      \ 'e': 'enumerator',
+      \ 'P': 'method',
+  \ },
+\ }
+
+function! CheckBackSpace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+\ coc#pum#visible() ? coc#pum#next(1):
+\ CheckBackSpace() ? "\<Tab>" :
+\ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
