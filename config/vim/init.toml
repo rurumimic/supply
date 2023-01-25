@@ -15,23 +15,30 @@
     # layer
     colorscheme = "monokai_pro"
     colorscheme_bg = "dark"
-    default_indednt = 4
+    default_indent = 4
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
-    enable_guicolors = false
+    enable_guicolors = true
     filemanager = "defx"
-    guifonts = "Hack:h11"
+    # webdevicons_enable = 1
+    guifont = "Hack:h11"
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
-    statusline_separator = "nil"
-    statusline_iseparator = "bar"
-    buffer_index_type = 4
-    windows_index_type = 3
-    enable_tabline_filetype_icon = false
-    enable_statusline_mode = false
+    statusline_separator = "arrow"
+    statusline_iseparator = "arrow"
     statusline_unicode = false
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_mode = false
+    enabled_formater = "prettier"
     vimcompatible = true
-    project_rooter_patterns = [".git/", "_darcs/", ".hg/", ".bzr/", ".svn/"]
+    project_rooter_patterns = ['.git/', '_darcs/', '.hg/', '.bzr/', '.svn/', '!node_packages/']
+
+[[layers]]
+name = 'core'
+filetree_show_hidden = true
+enable_filetree_gitstatus = true
+enable_filetree_filetypeicon = true
 
 [[layers]]
 name = "default"
@@ -39,7 +46,8 @@ name = "default"
 # Enable autocomplete layer
 [[layers]]
 name = "autocomplete"
-auto_completion_return_key_behavior = "complete"
+#auto_completion_return_key_behavior = "complete"
+auto_completion_return_key_behavior = "smart"
 auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
@@ -58,6 +66,17 @@ name = "VersionControl"
 
 [[layers]]
 name = "format"
+format_on_save = true
+
+[[layers]]
+name = "ctrlp"
+
+[[layers]]
+name = "fzf"
+
+[[layers]]
+name = "gtags"
+#gtagslabel = "uctags" # "pygments"
 
 [[layers]]
 name = "zettelkasten"
@@ -72,6 +91,7 @@ name = "treesitter"
 name = "gtags"
 auto_update = false
 ctags_bin = "global"
+#gtagslabel = "uctags" # "pygments"
 
 [[layers]]
 name = "cscope"
@@ -81,11 +101,49 @@ auto_update = false
 name = "lang#go"
 
 [[layers]]
-name = "lang#rust"
-
-[[layers]]
 name = "lang#c"
 enable_clang_syntax_highlight = true
 
 [[layers]]
-name = "markdown"
+name = "lang#javascript"
+
+[[layers]]
+name = "lang#markdown"
+
+[[layers]]
+name = "lang#rust"
+
+[[layers]]
+name = "lang#python"
+
+#[[custom_plugins]]
+#  repo = 'Xuyuanp/nerdtree-git-plugin'
+#  merged = false
+
+#[[custom_plugins]]
+#  repo = 'ryanoasis/vim-devicons'
+#  merged = false
+
+[[custom_plugins]]
+  repo = 'kristijanhusak/defx-icons'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'kristijanhusak/defx-git'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'tenfyzhong/tagbar-rust.vim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'yegappan/taglist'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'liuchengxu/vista.vim'
+  merged = false
+
+[[custom_plugins]]
+repo = 'phanviet/vim-monokai-pro'
+merged = 0
