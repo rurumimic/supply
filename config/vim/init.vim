@@ -6,6 +6,9 @@
 " License: GPLv3
 "=============================================================================
 
+let g:python_host_prog='/Users/wick/.pyenv/versions/vim2/bin/python'
+let g:python3_host_prog='/Users/wick/.pyenv/versions/vim3/bin/python'
+
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/main.vim'
 
 if exists('g:vscode')
@@ -13,9 +16,6 @@ if exists('g:vscode')
 else
     " ordinary neovim
 endif
-
-let g:python_host_prog='/Users/wick/.pyenv/versions/vim2/bin/python'
-let g:python3_host_prog='/Users/wick/.pyenv/versions/vim3/bin/python'
 
 "let g:clang_library_path='/usr/lib/llvm-14/lib'
 "let g:clang_library_path='/opt/local/libexec/llvm-14/lib'
