@@ -64,6 +64,8 @@
   - go
   - protobuf3
   - spacevim [Go IDE](https://spacevim.org/use-vim-as-a-go-ide/)
+- [Java](languages/java.md)
+  - [jenv](https://github.com/jenv/jenv)
 
 ## Virtualization
 
