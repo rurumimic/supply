@@ -289,6 +289,28 @@ sudo ln -s /opt/delta/bin/delta /usr/local/bin
 
 git diff: `git lg -n 5`
 
+### clang
+
+- [llvm](https://llvm.org)
+  - [github](https://github.com/llvm/llvm-project)
+  - clang: [get started](https://clang.llvm.org/get_started.html)
+
+```bash
+# mac
+sudo port install clang-14
+
+ls /opt/local/libexec/llvm-14/bin
+
+sudo port select --list llvm
+sudo port select --list clang
+
+sudo port select --set llvm mp-llvm-14
+sudo port select --set clang mp-clang-14
+
+llc --version
+clang --version
+```
+
 ### GNU Global
 
 - GNU Global

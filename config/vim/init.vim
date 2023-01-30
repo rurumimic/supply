@@ -18,6 +18,7 @@ let g:python_host_prog='/Users/wick/.pyenv/versions/vim2/bin/python'
 let g:python3_host_prog='/Users/wick/.pyenv/versions/vim3/bin/python'
 
 "let g:clang_library_path='/usr/lib/llvm-14/lib'
+"let g:clang_library_path='/opt/local/libexec/llvm-14/lib'
 
 let project_dir = g:SpaceVim#plugins#projectmanager#current_root()
 
