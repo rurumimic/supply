@@ -5,6 +5,9 @@
 ## Install JDK
 
 ```bash
+# mac
+sudo port install openjdk17
+
 # redhat
 sudo dnf install java-17-openjdk-devel
 ```
@@ -41,6 +44,9 @@ jenv doctor
 ### Add Java version
 
 ```bash
+# mac
+jenv add /Library/Java/JavaVirtualMachines/openjdk17/Contents/Home
+
 # redhat
 jenv add /usr/lib/jvm/java-17-openjdk-17.0.6.0.10-3.el8_7.x86_64
 ```
