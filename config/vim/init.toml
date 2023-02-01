@@ -105,6 +105,9 @@ name = "lang#c"
 enable_clang_syntax_highlight = true
 
 [[layers]]
+name = "lang#cmake"
+
+[[layers]]
 name = "lang#javascript"
 
 [[layers]]

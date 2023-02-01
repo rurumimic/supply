@@ -311,6 +311,16 @@ llc --version
 clang --version
 ```
 
+### cmake
+
+- [cmake](https://cmake.org)
+  - [install](https://cmake.org/install/)
+
+```bash
+# mac
+sudo port install cmake
+```
+
 ### GNU Global
 
 - GNU Global
