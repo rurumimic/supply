@@ -321,6 +321,17 @@ clang --version
 sudo port install cmake
 ```
 
+### ninja
+
+- [ninja](https://ninja-build.org)
+  - [github](https://github.com/ninja-build/ninja)
+  - [install](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
+
+```bash
+# mac
+sudo port install ninja
+```
+
 ### GNU Global
 
 - GNU Global

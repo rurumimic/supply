@@ -34,6 +34,7 @@
   - [delta](tools.md#delta): syntax-highlighting pager for git, diff, and grep output
   - [clang](tools.md#clang): c language family frontend for llvm 
   - [cmake](tools.md#cmake): build, test and package
+  - [ninja](tools.md#ninja): small build system
   - [gnu global](tools.md#gnu-global): source code tag system
   - [cscope](tools.md#cscope): developer's tool for browsing source code
   - [universal ctags](tools.md#universal-ctags): maintained ctags implementation
