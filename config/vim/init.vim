@@ -24,11 +24,13 @@ let project_dir = g:SpaceVim#plugins#projectmanager#current_root()
 
 if filereadable("./cscope.out")
   cs add cscope.out
+  call SpaceVim#logger#info('load cscope')
 endif
 
 if filereadable("./GTAGS")
   let $GTAGSROOT=project_dir
   let $GTAGSDBPATH=project_dir
+  call SpaceVim#logger#info('load gtags')
 endif
 
 " rusty-tags

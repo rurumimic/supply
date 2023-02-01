@@ -32,7 +32,7 @@
     enable_statusline_mode = false
     enabled_formater = "prettier"
     vimcompatible = true
-    project_rooter_patterns = ['.git/', '_darcs/', '.hg/', '.bzr/', '.svn/', '!node_packages/']
+    project_rooter_patterns = ['.git/', '_darcs/', '.hg/', '.bzr/', '.svn/', '!node_packages/', 'GTAGS']
 
 [[layers]]
 name = 'core'
