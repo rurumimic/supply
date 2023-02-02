@@ -33,6 +33,7 @@
     enabled_formater = "prettier"
     vimcompatible = true
     project_rooter_patterns = ['.git/', '_darcs/', '.hg/', '.bzr/', '.svn/', '!node_packages/', 'GTAGS']
+    project_rooter_outermost = false
 
 [[layers]]
 name = 'core'

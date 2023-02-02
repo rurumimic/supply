@@ -312,7 +312,7 @@ clang --version
 
 
 # redhat
-sudo dnf install clang
+sudo dnf install llvm-toolset
 ```
 
 ### cmake

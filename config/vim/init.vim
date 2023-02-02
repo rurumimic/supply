@@ -6,8 +6,8 @@
 " License: GPLv3
 "=============================================================================
 
-let g:python_host_prog='/Users/wick/.pyenv/versions/vim2/bin/python'
-let g:python3_host_prog='/Users/wick/.pyenv/versions/vim3/bin/python'
+let g:python_host_prog='~/.pyenv/versions/vim2/bin/python'
+let g:python3_host_prog='~/.pyenv/versions/vim3/bin/python'
 
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/main.vim'
 
@@ -17,8 +17,9 @@ else
     " ordinary neovim
 endif
 
-"let g:clang_library_path='/usr/lib/llvm-14/lib'
-"let g:clang_library_path='/opt/local/libexec/llvm-14/lib'
+"let g:clang_library_path='/opt/local/libexec/llvm-14/lib' "mac
+"let g:clang_library_path='/usr/lib/llvm-14/lib' "ubuntu
+"let g:clang_library_path='/usr/lib64/clang/14/lib' "redhat
 
 let project_dir = g:SpaceVim#plugins#projectmanager#current_root()
 
