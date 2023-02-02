@@ -75,10 +75,6 @@ name = "ctrlp"
 name = "fzf"
 
 [[layers]]
-name = "gtags"
-#gtagslabel = "uctags" # "pygments"
-
-[[layers]]
 name = "zettelkasten"
 
 [[layers]]
