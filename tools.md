@@ -309,6 +309,10 @@ sudo port select --set clang mp-clang-14
 
 llc --version
 clang --version
+
+
+# redhat
+sudo dnf install clang
 ```
 
 ### cmake
@@ -319,6 +323,9 @@ clang --version
 ```bash
 # mac
 sudo port install cmake
+
+# redhat
+sudo dnf install cmake
 ```
 
 ### ninja
