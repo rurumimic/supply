@@ -135,12 +135,14 @@ pyenv deactivate
 
 ```bash
 git clone https://github.com/hyperupcall/autoenv ~/.autoenv
+```
 
-echo -e '\n# autoenv' >> ~/.zshrc
-echo "AUTOENV_ENV_FILENAME='.autoenv'" >> ~/.zprofile
-echo "AUTOENV_ENV_LEAVE_FILENAME='.autoenv.leave'" >> ~/.zprofile
-echo "AUTOENV_ENABLE_LEAVE='enabled'" >> ~/.zprofile
-echo 'source ~/.autoenv/activate.sh' >> ~/.zprofile
+```bash
+# ~/.zshrc
+export AUTOENV_ENV_FILENAME='.autoenv'
+export AUTOENV_ENV_LEAVE_FILENAME='.autoenv.leave'
+export AUTOENV_ENABLE_LEAVE='enabled'
+source ~/.autoenv/activate.sh
 ```
 
 ## poetry
