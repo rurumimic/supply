@@ -114,6 +114,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+export AUTOENV_ENV_FILENAME='.autoenv'
+export AUTOENV_ENV_LEAVE_FILENAME='.autoenv.leave'
+export AUTOENV_ENABLE_LEAVE='enabled'
+source ~/.autoenv/activate.sh
 
 ### Node
 export NVM_DIR="$HOME/.nvm"
@@ -126,4 +130,8 @@ source "$HOME/.cargo/env"
 ### Go
 [[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
 
+### Zig
+export PATH="$PATH:$HOME/.zig"
+
 neofetch --ascii ~/.config/neofetch/batman.ascii
+
