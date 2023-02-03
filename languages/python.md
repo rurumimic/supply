@@ -142,3 +142,29 @@ echo "AUTOENV_ENV_LEAVE_FILENAME='.autoenv.leave'" >> ~/.zprofile
 echo "AUTOENV_ENABLE_LEAVE='enabled'" >> ~/.zprofile
 echo 'source ~/.autoenv/activate.sh' >> ~/.zprofile
 ```
+
+## poetry
+
+- [poetry](https://python-poetry.org/)
+  - [docs](https://python-poetry.org/docs/)
+
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+poetry self update
+```
+
+```bash
+# ohmyzsh
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+```
+
+```bash
+# ~/.zshrc
+plugins(
+	poetry
+	...
+	)
+
+export PATH="$HOME/.local/bin:$PATH"
+```

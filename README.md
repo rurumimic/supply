@@ -56,6 +56,9 @@
 ## Languages
 
 - [Python](languages/python.md)
+  - pyenv & virtualenv
+  - autoenv
+  - poetry
 - [Node](languages/node.md)
   - nvm
   - node
