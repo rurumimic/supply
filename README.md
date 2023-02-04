@@ -52,6 +52,9 @@
   - spacevim: [init.toml](config/vim/init.toml), [init.vim](config/vim/init.vim)
 - [emacs](emacs.md)
   - doom emacs
+- [code](code.md)
+  - extensions
+  - themes
 
 ## Languages
 
@@ -107,3 +110,4 @@ mkdir -p ~/vm/virtualbox
 └── vm/
     └── virtualbox/      # virtual box files: .vbox, .vmdk
 ```
+
