@@ -17,8 +17,17 @@ nvm --help
 ## Install Node
 
 ```bash
-nvm install --lts # v18+
+nvm install lts/hydrogen # v18+
+nvm install lts/gallium  # v16+
 nvm ls
+```
+
+```bash
+nvm alias default lts/gallium
+default -> lts/gallium (-> v16.19.1)
+```
+
+```bash
 node --version
 npm --version
 ```
