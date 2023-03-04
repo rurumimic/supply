@@ -428,11 +428,13 @@ sudo pkg install git
 
 - git: 1.6 Getting Started - [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 - github → settings → [emails](https://github.com/settings/emails)
+- ref: [vim.md#edit-gitconfig](vim.md#edit-gitconfig)
 
 ```bash
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
-git config --global core.editor vi
+#git config --global core.editor vi
+git config --global core.editor nvim # /usr/bin/nvim
 git config --list
 ```
 
@@ -545,4 +547,3 @@ vi ~/.warp/themes/monokai_pro.yaml
 ### fig
 
 - [fig](https://fig.io/)
-

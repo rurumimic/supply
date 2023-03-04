@@ -64,6 +64,20 @@ ln -s ~/.SpaceVim ~/.vim
 ln -s ~/.SpaceVim ~/.config/nvim
 ```
 
+### Edit .gitconfig
+
+- edit: [~/.gitconfig](config/gitconfig)
+- ref: [tools.md#git](tools.md#git)
+
+```bash
+git config --global core.editor /usr/bin/nvim
+```
+
+```toml
+[core]
+editor = /usr/bin/nvim
+```
+
 #### Fonts on RedHat
 
 ```bash
