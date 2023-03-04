@@ -76,7 +76,7 @@ CC=/opt/local/bin/clang pyenv install 3.7.0
 - [black](https://github.com/psf/black)
 
 ```bash
-pyenv global 3.11.1
+pyenv global system 3.11.1
 pip install --upgrade pip setuptools wheel
 pip install black
 ```

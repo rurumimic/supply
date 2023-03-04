@@ -402,6 +402,16 @@ sudo make install # may require extra privileges depending on where to install
 export PATH="/opt/ctags/bin:$PATH"
 ```
 
+### Astyle
+
+- [astyle](https://astyle.sourceforge.net/)
+- vscode: [astyle](https://marketplace.visualstudio.com/items?itemName=chiehyu.vscode-astyle)
+
+```bash
+# ubuntu
+sudo apt install astyle
+```
+
 ---
 
 ## git

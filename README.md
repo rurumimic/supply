@@ -38,6 +38,7 @@
   - [gnu global](tools.md#gnu-global): source code tag system
   - [cscope](tools.md#cscope): developer's tool for browsing source code
   - [universal ctags](tools.md#universal-ctags): maintained ctags implementation
+  - [astyle](tools.md#astyle): source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages
 - [git](tools.md#git)
   - [github cli](tools.md#github-cli)
 - [terminal](tools.md#terminal)
