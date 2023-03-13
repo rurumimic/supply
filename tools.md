@@ -412,6 +412,15 @@ export PATH="/opt/ctags/bin:$PATH"
 sudo apt install astyle
 ```
 
+### GDB
+
+- [gdb](https://www.sourceware.org/gdb/)
+
+```bash
+# mac
+sudo port install gdb
+```
+
 ---
 
 ## git
