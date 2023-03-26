@@ -294,6 +294,8 @@ git diff: `git lg -n 5`
 - [llvm](https://llvm.org)
   - [github](https://github.com/llvm/llvm-project)
   - clang: [get started](https://clang.llvm.org/get_started.html)
+- install
+  - [ubuntu](https://apt.llvm.org/)
 
 ```bash
 # mac
@@ -313,6 +315,14 @@ clang --version
 
 # redhat
 sudo dnf install llvm-toolset
+
+# ubuntu: llvm 17
+echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy main" | sudo tee -a /etc/apt/sources.list.d/llvm.list
+echo "deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy main" | sudo tee -a /etc/apt/sources.list.d/llvm.list
+sudo aptitude update
+sudo apt install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang
+## wasm
+### sudo apt install libclang-rt-17-dev-wasm32 libclang-rt-17-dev-wasm64 libc++-17-dev-wasm32 libc++abi-17-dev-wasm32
 ```
 
 ### cmake
