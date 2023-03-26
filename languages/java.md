@@ -10,6 +10,9 @@ sudo port install openjdk17
 
 # redhat
 sudo dnf install java-17-openjdk-devel
+
+# ubuntu
+sudo apt install openjdk-17-jdk
 ```
 
 ## jenv
@@ -49,6 +52,9 @@ jenv add /Library/Java/JavaVirtualMachines/openjdk17/Contents/Home
 
 # redhat
 jenv add /usr/lib/jvm/java-17-openjdk-17.0.6.0.10-3.el8_7.x86_64
+
+# ubuntu
+jenv add /usr/lib/jvm/java-17-openjdk-amd64
 ```
 
 output:

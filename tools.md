@@ -326,6 +326,9 @@ sudo port install cmake
 
 # redhat
 sudo dnf install cmake
+
+# ubuntu
+sudo apt install cmake
 ```
 
 ### ninja
