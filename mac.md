@@ -76,7 +76,7 @@ sudo port selfupdate
 
 #### using Git
 
-- [git install]()
+- [git install](https://guide.macports.org/#installing.macports.git)
 
 `sudo port -vd sync`
 
