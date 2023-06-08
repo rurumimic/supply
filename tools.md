@@ -227,6 +227,9 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
   - [releases](https://github.com/sharkdp/fd/releases)
 
 ```bash
+# mac
+sudo port install fd
+
 # ubuntu
 sudo apt install fd-find
 ln -s $(which fdfind) ~/.local/bin/fd
@@ -255,6 +258,9 @@ fd
 - ripgrep: [install](https://github.com/BurntSushi/ripgrep#installation)
 
 ```bash
+# mac
+sudo port install ripgrep
+
 # ubuntu
 sudo apt install ripgrep
 
