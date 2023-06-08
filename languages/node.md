@@ -37,6 +37,11 @@ npm --version
 ```bash
 corepack enable
 yarn --version # 1.22.19
+
+npm config set "strict-ssl" false -g
+yarn config set "strict-ssl" false -g
+set NODE_TLS_REJECT_UNAUTHORIZED=0
+export NODE_TLS_REJECT_UNAUTHORIZED=0
 ```
 
 ---
