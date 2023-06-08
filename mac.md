@@ -74,6 +74,12 @@ Update:
 sudo port selfupdate
 ```
 
+#### using Git
+
+- [git install]()
+
+`sudo port -vd sync`
+
 ---
 
 ## Commands
