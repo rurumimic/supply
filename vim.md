@@ -23,7 +23,7 @@ sudo dnf install neovim python3-neovim
 sudo pkg install neovim
 ```
 
-Add an alias to `~/.zsrhc`:
+Add an alias to `~/.zshrc`:
 
 ```bash
 # alias
