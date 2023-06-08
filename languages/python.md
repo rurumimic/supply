@@ -53,6 +53,16 @@ pyenv install 3.11.1
 pyenv install 2.7.18
 ```
 
+```bash
+# curl-config --ca
+port info zlib
+port contents zlib
+export LDFLAGS="-L/opt/local/lib"
+export CPPFLAGS="-I/opt/local/include"
+
+pyenv install 3.11.4
+```
+
 #### (optional) Clang on mac
 
 - pyenv issue
