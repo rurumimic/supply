@@ -305,15 +305,15 @@ git diff: `git lg -n 5`
 
 ```bash
 # mac
-sudo port install clang-14
+sudo port install clang-16
 
-ls /opt/local/libexec/llvm-14/bin
+ls /opt/local/libexec/llvm-16/bin
 
 sudo port select --list llvm
 sudo port select --list clang
 
-sudo port select --set llvm mp-llvm-14
-sudo port select --set clang mp-clang-14
+sudo port select --set llvm mp-llvm-16
+sudo port select --set clang mp-clang-16
 
 llc --version
 clang --version
