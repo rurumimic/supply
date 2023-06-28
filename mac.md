@@ -80,6 +80,11 @@ sudo port selfupdate
 
 `sudo port -vd sync`
 
+```bash
+sudo port outdated
+sudo port upgrade outdated
+```
+
 ---
 
 ## Commands
