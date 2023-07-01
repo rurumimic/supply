@@ -96,4 +96,3 @@ without `.DS_Store` and `__MACOSX`
 ```bash
 zip -r archive.zip . -x ".*" -x "__MACOSX" -q
 ```
-

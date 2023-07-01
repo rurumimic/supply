@@ -8,4 +8,3 @@
 # ubuntu
 sudo dpkg -i code_***.deb
 ```
-

@@ -49,7 +49,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
 ```bash
 pyenv install --list
-pyenv install 3.11.1
+pyenv install 3.11.4
 pyenv install 2.7.18
 ```
 
@@ -61,6 +61,32 @@ export LDFLAGS="-L/opt/local/lib"
 export CPPFLAGS="-I/opt/local/include"
 
 pyenv install 3.11.4
+```
+
+#### Offline Install
+
+Check available Python versions:
+
+```bash
+pyenv install --list
+```
+
+If you don't have the version you want, update pyenv.
+
+Download Python `.tar.xz` archive and save:
+
+```bash
+mkdir -p ~/.pyenv/sources
+cd ~/.pyenv/sources
+
+VERSION=3.11.4
+curl -O https://www.python.org/ftp/python/$VERSION/Python-$VERSION.tar.xz
+```
+
+Install Python:
+
+```bash
+pyenv install -k -v $VERSION
 ```
 
 #### (optional) Clang on mac
@@ -86,7 +112,7 @@ CC=/opt/local/bin/clang pyenv install 3.7.0
 - [black](https://github.com/psf/black)
 
 ```bash
-pyenv global system 3.11.1
+pyenv global system 3.11.4
 pip install --upgrade pip setuptools wheel
 pip install black
 ```
@@ -96,7 +122,7 @@ pip install black
 #### vim3
 
 ```bash
-pyenv virtualenv 3.11.1 vim3
+pyenv virtualenv 3.11.4 vim3
 pyenv activate vim3
 
 pyenv which python # ~/.pyenv/versions/vim3/bin/python
@@ -134,7 +160,7 @@ pyenv deactivate
   - INFO: pyenv: Root: ~/.pyenv
   - INFO: Using: g:python3_host_prog = "~/.pyenv/versions/vim3/bin/python"
   - INFO: Executable: ~/.pyenv/versions/vim3/bin/python
-  - INFO: Python version: 3.11.1
+  - INFO: Python version: 3.11.4
   - INFO: pynvim version: 0.4.3
   - OK: Latest pynvim is installed.
 ```
@@ -174,9 +200,9 @@ poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 ```bash
 # ~/.zshrc
 plugins(
-	poetry
-	...
-	)
+  poetry
+  ...
+)
 
 export PATH="$HOME/.local/bin:$PATH"
 ```
