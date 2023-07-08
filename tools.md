@@ -560,6 +560,22 @@ cd ~/.local/kitty.app/lib/kitty/logo
 kitty +runpy 'from kitty.fast_data_types import cocoa_set_app_icon; import sys; cocoa_set_app_icon(*sys.argv[1:]); print("OK")' kitty.png
 ```
 
+#### with Remote SSH
+
+Save in `.terminfo`:
+
+```bash
+infocmp -a xterm-kitty
+```
+
+Apply to remote server:
+
+```bash
+tic -x -o ~/.terminfo
+```
+
+Stored in `~/.terminfo/x/xterm-kitty`
+
 ### warp
 
 - [warp](https://www.warp.dev/)
