@@ -565,13 +565,13 @@ kitty +runpy 'from kitty.fast_data_types import cocoa_set_app_icon; import sys; 
 Save in `.terminfo`:
 
 ```bash
-infocmp -a xterm-kitty
+infocmp -a xterm-kitty > xterm-kitty
 ```
 
 Apply to remote server:
 
 ```bash
-tic -x -o ~/.terminfo
+tic -x -o ~/.terminfo xterm-kitty
 ```
 
 Stored in `~/.terminfo/x/xterm-kitty`
