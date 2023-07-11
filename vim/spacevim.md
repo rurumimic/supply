@@ -1,38 +1,4 @@
-# vim
-
-## neovim
-
-- [neovim](https://github.com/neovim/neovim)
-  - [install](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-    - [macports](https://github.com/neovim/neovim/wiki/Installing-Neovim#macports)
-    - [ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
-    - [rhel 8](https://github.com/neovim/neovim/wiki/Installing-Neovim#centos-8--rhel-8)
-    - [freebsd](https://github.com/neovim/neovim/wiki/Installing-Neovim#freebsd)
-
-```bash
-# mac
-sudo port install neovim
-
-# ubuntu
-sudo apt install neovim
-
-# redhat (epel)
-sudo dnf install neovim python3-neovim
-
-# freebsd
-sudo pkg install neovim
-```
-
-Add an alias to `~/.zshrc`:
-
-```bash
-# alias
-alias ll='ls --color=auto -alFh'
-alias vi=nvim
-# alias vim=nvim
-```
-
-## SpaceVim
+# SpaceVim
 
 - [SpaceVim](https://spacevim.org)
   - [Quick Start Guide](https://spacevim.org/quick-start-guide/)
@@ -67,7 +33,7 @@ ln -s ~/.SpaceVim ~/.config/nvim
 ### Edit .gitconfig
 
 - edit: [~/.gitconfig](config/gitconfig)
-- ref: [tools.md#git](tools.md#git)
+- ref: [tools.md#git](/tools.md#git)
 
 ```bash
 git config --global core.editor /usr/bin/nvim
@@ -137,12 +103,4 @@ if filereadable("./GTAGS")
   let $GTAGSROOT=project_dir
   let $GTAGSDBPATH=project_dir
 endif
-```
-
----
-
-Optional:
-
-```lua
-set clipboard+=unnameplus
 ```

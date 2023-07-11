@@ -456,7 +456,7 @@ sudo pkg install git
 
 - git: 1.6 Getting Started - [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 - github → settings → [emails](https://github.com/settings/emails)
-- ref: [vim.md#edit-gitconfig](vim.md#edit-gitconfig)
+- ref: [vim.md#edit-gitconfig](vim/README.md#edit-gitconfig)
 
 ```bash
 git config --global user.name "John Doe"
