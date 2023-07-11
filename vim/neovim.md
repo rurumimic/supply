@@ -13,6 +13,9 @@
 # mac
 sudo port install neovim
 
+# ubuntu
+sudo apt install neovim
+
 # redhat (epel)
 sudo dnf install neovim python3-neovim
 
