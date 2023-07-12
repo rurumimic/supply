@@ -23,6 +23,12 @@ curl -sLf https://spacevim.org/install.sh | zsh -s -- --install neovim
 curl -sLf https://spacevim.org/install.sh | zsh -s -- --no-fonts --install neovim
 ```
 
+### Uninstall SpaceVim
+
+```bash
+curl -sLf https://spacevim.org/install.sh | zsh -s -- --uninstall
+```
+
 ### Optional Setup
 
 ```bash

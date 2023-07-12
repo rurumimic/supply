@@ -54,7 +54,7 @@
     - package manager
     - plugins
   - [spacevim](vim/spacevim.md): [init.toml](config/vim/init.toml), [init.vim](config/vim/init.vim)
-- [emacs](emacs.md)
+- [emacs](emacs/README.md)
   - doom emacs
 - [code](code.md)
   - extensions

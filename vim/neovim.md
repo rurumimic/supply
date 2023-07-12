@@ -59,13 +59,25 @@ sudo port install ninja cmake gettext
 
 ```bash
 git clone https://github.com/neovim/neovim
-cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd neovim
+
+# make CMAKE_BUILD_TYPE=RelWithDebInfo
+# or
+git checkout stable
+make CMAKE_BUILD_TYPE=Release
 
 # ubuntu / debian
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 
-# others
+# other linux
 sudo make install
+```
+
+#### Remove Neovim
+
+```bash
+sudo dpkg -l neovim
+sudo dpkg -P neovim
 ```
 
 ---
