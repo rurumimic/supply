@@ -55,7 +55,7 @@
     - plugins
   - [spacevim](vim/spacevim.md): [init.toml](config/vim/init.toml), [init.vim](config/vim/init.vim)
 - [emacs](emacs/README.md)
-  - doom emacs
+  - [doom emacs](emacs/doomemacs.md)
 - [code](code.md)
   - extensions
   - themes

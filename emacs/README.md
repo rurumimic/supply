@@ -1,11 +1,10 @@
 # Emacs
 
 - [GNU Emacs](https://www.gnu.org/s/emacs/)
-  - [build](https://github.com/jimeh/emacs-builds)
+  - [build](https://github.com/jimeh/emacs-builds) for macos
   - install
     - [linux](https://www.gnu.org/software/emacs/download.html#gnu-linux)
-- [Doom Emacs](https://github.com/doomemacs/doomemacs)
-
+  
 ## Install
 
 ### Prerequisites
@@ -21,52 +20,28 @@ sudo port install fd
 default port variants: `+nativecomp` `+rsvg`
 
 ```bash
+# mac
 sudo port install emacs
+
+# ubuntu
+sudo apt install emacs
 ```
 
-### Doom Emacs
+### Open in terminal
 
 ```bash
-# rm -rf ~/.emacs.d
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-```
-
-```bash
-# ~/.zshrc
-export PATH="$HOME/.emacs.d/bin:$PATH"
+emacs ~/.zshrc
 ```
 
 ```bash
-doom doctor
+alias emacs='emacs -nw' # --no-window-system
 ```
 
-#### Help
+---
+
+## Init File
 
 ```bash
-emacs ~/.doom.d/init.el
-emacs ~/.doom.d/packages.el
-
-doom sync
-```
-
-```bash
-doom doctor
-```
-
-```bash
-doom upgrade
-```
-
-Doom Documentation:
-
-- `SPC h d h`
-- `C-h d h`
-- `M-x doom/help`
-
-#### macOS bug
-
-```bash
-# ~/.doom.d/init.el
-(when (eq system-type 'darwin) (customize-set-variable 'native-comp-driver-options '("-Wl,-w")))
+mkdir -p ~/.emacs.d
+emacs -nw ~/.emacs.d/init.el
 ```

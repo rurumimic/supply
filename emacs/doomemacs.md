@@ -1,27 +1,8 @@
-# Emacs
+# Doom Emacs
 
-- [GNU Emacs](https://www.gnu.org/s/emacs/)
-  - [build](https://github.com/jimeh/emacs-builds)
 - [Doom Emacs](https://github.com/doomemacs/doomemacs)
 
 ## Install
-
-### Prerequisites
-
-```bash
-sudo port install ripgrep
-sudo port install fd
-```
-
-### Install Emacs
-
-default port variants: `+nativecomp` `+rsvg`
-
-```bash
-sudo port install emacs
-```
-
-### Doom Emacs
 
 ```bash
 # rm -rf ~/.emacs.d
@@ -38,7 +19,7 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 doom doctor
 ```
 
-#### Help
+## Help
 
 ```bash
 emacs ~/.doom.d/init.el
@@ -61,7 +42,7 @@ Doom Documentation:
 - `C-h d h`
 - `M-x doom/help`
 
-#### macOS bug
+### macOS bug
 
 ```bash
 # ~/.doom.d/init.el
