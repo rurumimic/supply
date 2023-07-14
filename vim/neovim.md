@@ -6,6 +6,8 @@
     - [ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
     - [rhel 8](https://github.com/neovim/neovim/wiki/Installing-Neovim#centos-8--rhel-8)
     - [freebsd](https://github.com/neovim/neovim/wiki/Installing-Neovim#freebsd)
+  - docs
+    - [initialization](https://neovim.io/doc/user/starting.html#initialization)
 
 ## Install
 
@@ -87,11 +89,80 @@ sudo dpkg -P neovim
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
+
+```bash
+mkdir -p ~/.config/nvim
+vi ~/.config/nvim/init.lua
+```
+
+### lazy.nvim
+
+```bash
+mkdir -p ~/.config/nvim/lua/plugins
+```
+
+#### bootstrap lazy.nvim
+
+```bash
+vi ~/.config/nvim/init.lua
+```
+
+```lua
+vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+```
+
+#### setup lazy.nvim
+
+```bash
+vi ~/.config/nvim/init.lua
+```
+
+```lua
+require("lazy").setup("plugins")
+```
+
+#### Check lazy.nvim
+
+```bash
+:checkhealth lazy
+```
+
 ---
 
 ## Plugins
 
-### Color Schemes
+```bash
+vi ~/.config/nvim/lua/plugins/<name>.lua
+```
 
-- monokai
-- [rose-pine/nvim](https://github.com/rose-pine/neovim)
+```lua
+return {
+  "user/plugin",
+  version = "*",
+  lazy = false,
+  dependencies = {},
+  config = function()
+    require("plugin").setup {}
+  end,
+}
+```
+
+- Color Schemes
+  - monokai
+  - [rose-pine/nvim](https://github.com/rose-pine/neovim)
+- File Explorer
+  - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+  - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
