@@ -20,10 +20,8 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
 ---- load plugins with lazy
 require("lazy").setup("plugins")
-
--- colorscheme
-vim.cmd[[colorscheme monokai-pro]]
 
 
