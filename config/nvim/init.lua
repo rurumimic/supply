@@ -24,6 +24,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 -- colorscheme
---vim.cmd.colorscheme "everblush"
+vim.cmd[[colorscheme monokai-pro]]
 
 

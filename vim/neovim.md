@@ -92,7 +92,6 @@ sudo dpkg -P neovim
 
 ```bash
 mkdir -p ~/.config/nvim
-vi ~/.config/nvim/init.lua
 ```
 
 ### lazy.nvim
@@ -140,6 +139,18 @@ require("lazy").setup("plugins")
 :checkhealth lazy
 ```
 
+#### data location
+
+```bash
+ls ~/.local/share/nvim/lazy
+```
+
+#### Key
+
+```bash
+:Lazy home
+```
+
 ---
 
 ## Plugins
@@ -161,9 +172,10 @@ return {
 ```
 
 - Color Schemes
-  - monokai
+  - [loctvl842/monokai-pro.nvim](https://github.com/loctvl842/monokai-pro.nvim)
   - [rose-pine/nvim](https://github.com/rose-pine/neovim)
   - [Everblush/everblush.vim](https://github.com/Everblush/everblush.vim)
 - File Explorer
   - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua): [recipes](https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes), [tips](https://github.com/nvim-tree/nvim-tree.lua/wiki/Tips)
   - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+

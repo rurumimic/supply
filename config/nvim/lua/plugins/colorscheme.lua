@@ -1,6 +1,9 @@
 return {
   {
-    "Everblush/everblush.vim",
-    lazy = true,
+    "loctvl842/monokai-pro.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   }
 }
+
