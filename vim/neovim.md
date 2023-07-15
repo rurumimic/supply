@@ -193,3 +193,7 @@ return {
   - [crispgm/nvim-tabline](https://github.com/crispgm/nvim-tabline)
 - Cursorline
   - [yamatsum/nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
+- Git
+  - [f-person/git-blame.nvim](https://github.com/f-person/git-blame.nvim)
+  - [NeogitOrg/neogit](https://github.com/NeogitOrg/neogit)
+
