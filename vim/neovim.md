@@ -163,6 +163,7 @@ return {
 - Color Schemes
   - monokai
   - [rose-pine/nvim](https://github.com/rose-pine/neovim)
+  - [Everblush/everblush.vim](https://github.com/Everblush/everblush.vim)
 - File Explorer
-  - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+  - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua): [recipes](https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes), [tips](https://github.com/nvim-tree/nvim-tree.lua/wiki/Tips)
   - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)

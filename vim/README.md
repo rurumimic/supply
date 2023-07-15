@@ -3,9 +3,15 @@
 - [Neovim](neovim.md)
 - [SpaceVim](spacevim.md)
 
+## Refs
+
+- [vimcolorschems](https://vimcolorschemes.com/)
+
 ---
 
-Optional:
+## Scripts
+
+### Clipboard
 
 ```lua
 set clipboard+=unnameplus
