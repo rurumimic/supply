@@ -177,7 +177,7 @@ return {
   - [Everblush/everblush.vim](https://github.com/Everblush/everblush.vim)
 - File Explorer
   - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua): [recipes](https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes), [tips](https://github.com/nvim-tree/nvim-tree.lua/wiki/Tips)
-  - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+  - [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim)
 - Fuzzy Finder
   - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
     - require: [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep), CMake
@@ -185,3 +185,11 @@ return {
   - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - Keybinding
   - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+- Statusline
+  - [nvimdev/galaxyline.nvim](https://github.com/nvimdev/galaxyline.nvim)
+  - [rebelot/heirline.nvim](https://github.com/rebelot/heirline.nvim)
+  - [ojroques/nvim-hardline](https://github.com/ojroques/nvim-hardline)
+- Buffeline
+  - [crispgm/nvim-tabline](https://github.com/crispgm/nvim-tabline)
+- Cursorline
+  - [yamatsum/nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
