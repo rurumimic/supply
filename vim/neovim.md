@@ -178,4 +178,10 @@ return {
 - File Explorer
   - [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua): [recipes](https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes), [tips](https://github.com/nvim-tree/nvim-tree.lua/wiki/Tips)
   - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
-
+- Fuzzy Finder
+  - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+    - require: [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep), CMake
+- Syntax
+  - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- Keybinding
+  - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)

@@ -23,7 +23,7 @@ local function attach(bufnr)
       -- open file
       api.node.open.edit()
       -- Close the tree if file was opened
-      --api.tree.close()
+      api.tree.close()
     end
   end
 
@@ -38,14 +38,14 @@ local function attach(bufnr)
       -- open file as vsplit
       api.node.open.vertical()
     end
- 
+
     -- Finally refocus on tree if it was lost
     api.tree.focus()
   end
 
   vim.keymap.set("n", "l", edit_or_open,          opts("Edit Or Open"))
   --vim.keymap.set("n", "L", vsplit_preview,        opts("Vsplit Preview"))
-  --vim.keymap.set("n", "h", api.tree.close,        opts("Close"))
+  vim.keymap.set("n", "h", api.tree.close,        opts("Close"))
   vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse All"))
 end
 
@@ -56,12 +56,11 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  config = function()
-    require("nvim-tree").setup {
+  opts = {
       on_attach = attach,
       sort_by = "case_sensitive",
       view = {
-	width = 30,
+        width = 30,
       },
       renderer = {
         group_empty = true,
@@ -69,8 +68,9 @@ return {
       filters = {
         dotfiles = true,
       },
-    }
-
+  },
+  config = function(_, opts)
+    require("nvim-tree").setup(opts) 
     vim.api.nvim_set_keymap("n", "<C-h>", ":NvimTreeToggle<cr>", {silent = true, noremap = true})
   end,
 }
