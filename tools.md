@@ -591,3 +591,14 @@ vi ~/.warp/themes/monokai_pro.yaml
 ### fig
 
 - [fig](https://fig.io/)
+
+### tmux
+
+- [tmux](https://github.com/tmux/tmux)
+  - [wiki](https://github.com/tmux/tmux/wiki)
+
+```bash
+# mac
+sudo port install tmux
+```
+

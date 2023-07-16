@@ -46,6 +46,7 @@
   - [kitty](tools.md#kitty): fast, feature-rich, GPU based terminal emulator
   - [warp](tools.md#warp): blazingly fast, rust-based terminal
   - [fig](tools.md#fig): command line tool
+  - [tmux](tools.md#tmux): a terminal multiplexer
 
 ## Editor
 
