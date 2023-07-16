@@ -8,6 +8,7 @@
     - [freebsd](https://github.com/neovim/neovim/wiki/Installing-Neovim#freebsd)
   - docs
     - [initialization](https://neovim.io/doc/user/starting.html#initialization)
+- [neovimcraft](https://neovimcraft.com)
 
 ## Install
 
@@ -196,4 +197,5 @@ return {
 - Git
   - [f-person/git-blame.nvim](https://github.com/f-person/git-blame.nvim)
   - [NeogitOrg/neogit](https://github.com/NeogitOrg/neogit)
+  - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 
