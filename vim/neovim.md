@@ -198,4 +198,16 @@ return {
   - [f-person/git-blame.nvim](https://github.com/f-person/git-blame.nvim)
   - [NeogitOrg/neogit](https://github.com/NeogitOrg/neogit)
   - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+- Language Server Protocol
+  - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+  - [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
+  - [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
+- Debug Adapter Protocol
+  - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
+  - [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+- Linters
+  - [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+  - [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
+- Formatters
+  - [mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim)
 
