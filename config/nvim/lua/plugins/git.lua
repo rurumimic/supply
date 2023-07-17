@@ -6,7 +6,7 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     keys = {
-      { "<leader>g", desc = "Git" },
+      { "<leader>g", desc = "+Git" },
       { "<leader>gn", "<cmd>Neogit kind=auto<cr>", desc = "Neogit" },
     },
     config = function()

@@ -2,9 +2,9 @@ return {
   "nvim-telescope/telescope.nvim",
   lazy = false,
   tag = "0.1.2",
-  dependencies = { 
+  dependencies = {
     "nvim-lua/plenary.nvim",
-    { 
+    {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
     }
@@ -27,9 +27,9 @@ return {
     --vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 
     -- keymap with which-key 
-    local wk = require("which-key") 
+    local wk = require("which-key")
     wk.register({
-      ["<leader>f"] = { name = "+file" },
+      ["<leader>f"] = { name = "Find" },
       ["<leader>ff"] = { builtin.find_files, "Find Files" },
       ["<leader>fg"] = { builtin.live_grep, "Live Grep" },
       ["<leader>fb"] = { builtin.buffers, "Find Buffers" },
