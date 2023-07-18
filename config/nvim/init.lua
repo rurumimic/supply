@@ -2,6 +2,9 @@
 ---- Make sure to set `mapleader` before lazy so your mappings are correct
 require("config.options")
 
+vim.g.python2_host_prog = '~/.pyenv/versions/vim2/bin/python'
+vim.g.python3_host_prog = '~/.pyenv/versions/vim3/bin/python'
+
 -- nvim-tree
 ---- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
