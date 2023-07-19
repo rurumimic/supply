@@ -11,6 +11,8 @@ return {
         -- "nvim-tree",
         "telescope",
         "which-key",
+        "nvim-cmp",
+        "cmp",
       },
     },
     config = function(_, opts)

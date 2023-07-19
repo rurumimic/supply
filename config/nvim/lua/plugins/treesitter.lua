@@ -11,7 +11,7 @@ return {
         "lua", "vim", "vimdoc",
       },
       sync_install = false,
-      highlight = { enable = true },
+      highlight = { enable = true, use_languagetree = true },
       indent = { enable = true },
     })
   end,
