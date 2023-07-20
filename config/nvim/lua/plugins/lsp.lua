@@ -29,9 +29,12 @@ return {
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
+          -- lua
 					"stylua",
-					"clang-format",
-          "cpplint",
+          -- c/c++
+					"clang-format", "cpplint",
+          -- markdown
+          "markdownlint", "mdformat",
 				},
 			})
 		end,
@@ -40,8 +43,9 @@ return {
 		"mfussenegger/nvim-lint",
     config = function()
       require("lint").linter_by_ft = {
-        lua = {'stylua',},
-        c = {'cpplint',},
+        lua = {"stylua"},
+        c = {"cpplint"},
+        markdown = { "markdownlint" },
       }
     end,
 	},

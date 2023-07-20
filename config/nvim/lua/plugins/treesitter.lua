@@ -9,6 +9,7 @@ return {
         "c", "cpp",
         "python",
         "lua", "vim", "vimdoc",
+        "markdown", "markdown_inline",
       },
       sync_install = false,
       highlight = { enable = true, use_languagetree = true },

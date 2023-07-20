@@ -18,6 +18,9 @@ return {
     keys = {
       { "<leader>gf", "<cmd>G<cr>", desc = "Fugitive" },
     },
+  },
+  {
+    "sindrets/diffview.nvim",
   }
 }
 
