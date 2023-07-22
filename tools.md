@@ -129,6 +129,15 @@ sudo dnf groupinfo "Development Tools"
 sudo dnf group install -y "Development Tools"
 ```
 
+### git
+
+- [git](https://git-scm.com)
+
+```bash
+# mac
+sudo port install git
+```
+
 ### bat
 
 - GitHub: [sharkdp/bat](https://github.com/sharkdp/bat)
