@@ -10,6 +10,12 @@
     - [initialization](https://neovim.io/doc/user/starting.html#initialization)
 - [neovimcraft](https://neovimcraft.com)
 
+## Prerequisites
+
+- git, cc
+- python, node
+- unzip, wget, curl, gzip, tar, bash, sh, ripgreg, fd, fzf
+
 ## Install
 
 ```bash

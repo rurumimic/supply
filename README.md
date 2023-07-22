@@ -51,6 +51,7 @@
 
 ## Editor
 
+- sudo: `sudo -E vi file`
 - [vim](vim/README.md)
   - [neovim](vim/neovim.md)
     - package manager
