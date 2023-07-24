@@ -26,7 +26,7 @@
   - [neofetch](tools.md#noefetch): command-line system information tool
   - [highlight](tools.md#highlight): syntax highlighting
 - [packages](tools.md#packages)
-  - [developer tool kit](tools.md#developer-tool-kit
+  - [developer tool kit](tools.md#developer-tool-kit)
   - [git](tools.md#git): distributed version control system
   - [bat](tools.md#bat): cat(1) clone with wings
   - [tree](tools.md#tree): recursive directory listing command
