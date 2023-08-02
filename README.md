@@ -1,12 +1,5 @@
 # Supply
 
-<div style="margin: auto; font-family: serif;">
-    <p>전차가 1천 대, 보급 차량이 1천 량, 무장병 10만에, 양식은 1천 리를 보내야 하며, 전쟁에 관련된 국내의 비용과 전지의 비용, 접대비, 병기 수리용 자재, 군수품 조달 등 날마다 1천 금의 거액을 소비하여야 한다.<br>그런 다음에라야 10만의 군사를 출동시킬 수가 있다.</p>
-  <footer align="left"><i>손자병법, 작전편</i></footer>
-</div>
-
----
-
 ## Operating system
 
 - [mac](mac.md)
@@ -54,6 +47,7 @@
 - sudo: `sudo -E vi file`
 - [vim](vim/README.md)
   - [neovim](vim/neovim.md)
+    - my [.config/nvim/lua/custom](https://github.com/rurumimic/nvim)
     - package manager
     - plugins
   - [spacevim](vim/spacevim.md): [init.toml](config/vim/init.toml), [init.vim](config/vim/init.vim)

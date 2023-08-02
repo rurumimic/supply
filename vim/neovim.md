@@ -91,6 +91,14 @@ sudo dpkg -P neovim
 
 ---
 
+## NvChad
+
+- [NvChad/NvChad](https://github.com/NvChad/NvChad)
+
+my [.config/nvim/lua/custom](https://github.com/rurumimic/nvim)
+
+---
+
 ## Package Manager
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
