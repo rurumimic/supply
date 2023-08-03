@@ -97,6 +97,13 @@ sudo dpkg -P neovim
 
 my [.config/nvim/lua/custom](https://github.com/rurumimic/nvim)
 
+```bash
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+cd $HOME/.config/nvim/lua/
+rm -rf custom
+git clone https://github.com/rurumimic/nvim custom
+```
+
 ---
 
 ## Package Manager

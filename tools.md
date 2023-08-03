@@ -172,6 +172,12 @@ vi ~/.zshrc
 alias bat="/opt/bat/bat"
 ```
 
+#### bat on freebsd
+
+```bash
+sudo pkg install bat
+```
+
 ### tree
 
 - [tree](http://mama.indstate.edu/users/ice/tree/)
@@ -185,6 +191,9 @@ sudo apt install tree
 
 # redhat
 sudo dnf install tree
+
+# freebsd
+sudo pkg install tree
 ```
 
 ### fzf
@@ -198,8 +207,8 @@ sudo port install fzf
 # ubuntu
 sudo apt install fzf
 
-# redhat
-
+# freebsd
+sudo apt install fzf
 ```
 
 ```bash
@@ -218,8 +227,13 @@ Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
 Add lines to `~/.zsrhc`:
 
 ```bash
+# mac
 source /opt/local/share/fzf/shell/key-bindings.zsh # enable fzf keybindings
 source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
+
+# freebsd
+source /usr/local/share/examples/fzf/shell/key-bindings.zsh
+source /usr/local/share/examples/fzf/shell/completion.zsh
 ```
 
 ```bash
@@ -261,6 +275,10 @@ sudo cp fd.1.gz /usr/share/man/man1
 sudo cp autocomplete/fd.bash /usr/share/bash-completion/completions/fd
 source /usr/share/bash-completion/completions/fd
 fd
+
+
+# freebsd
+sudo pkg install fd-find
 ```
 
 ### ripgrep
@@ -276,6 +294,9 @@ sudo apt install ripgrep
 
 # redhat
 sudo dnf install ripgrep
+
+# freebsd
+sudo pkg install ripgrep
 ```
 
 ### delta
@@ -294,10 +315,12 @@ dpkg -i git-delta_0.15.1_amd64.deb
 # redhat
 tar xf delta-*-x86_64-unknown-linux-musl.tar.gz
 cd delta-*-x86_64-unknown-linux-musl
-
 sudo mkdir -p /opt/delta/bin
 sudo cp delta /opt/delta/bin/delta
 sudo ln -s /opt/delta/bin/delta /usr/local/bin
+
+# freebsd
+sudo pkg install git-delta
 ```
 
 1. install [git](#git)
