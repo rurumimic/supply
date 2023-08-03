@@ -488,11 +488,11 @@ git diff: `git lg -n 5`
   - Installing gh on Linux and BSD
   - [debian, ubuntu, raspberry pi](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
   - [fedora, centos, redhat](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#fedora-centos-red-hat-enterprise-linux-dnf)
+  - [freebsd](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#freebsd)
 
 ```bash
 # mac
 sudo port install gh
-
 
 # ubuntu
 type -p curl >/dev/null || sudo apt install curl -y
@@ -502,10 +502,12 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt update \
 && sudo apt install gh -y
 
-
 # redhat
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
 sudo dnf install gh
+
+# freebsd
+sudo pkg install gh
 ```
 
 #### Login GitHub CLI
