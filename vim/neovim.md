@@ -13,7 +13,7 @@
 ## Prerequisites
 
 - git, cc
-- python, node
+- [python](https://github.com/rurumimic/supply/blob/master/languages/python.md), [node](https://github.com/rurumimic/supply/blob/master/languages/node.md)
 - unzip, wget, curl, gzip, tar, bash, sh, ripgreg, fd, fzf
 
 ## Install
@@ -100,9 +100,16 @@ my [.config/nvim/lua/custom](https://github.com/rurumimic/nvim)
 ```bash
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 cd $HOME/.config/nvim/lua/
-rm -rf custom
+# rm -rf custom
 git clone https://github.com/rurumimic/nvim custom
 ```
+
+```bash
+nvim
+```
+
+1. `:checkhealth` 
+2. `:MasonInstallAll`
 
 ---
 
