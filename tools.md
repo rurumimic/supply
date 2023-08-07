@@ -10,12 +10,10 @@
 ```bash
 # ubuntu
 sudo apt install zsh
-
-autoload -Uz zsh-newuser-install
-zsh-newuser-install -f
-
+# autoload -Uz zsh-newuser-install
+# zsh-newuser-install -f
 chsh -s /usr/bin/zsh
-
+# vagrant password is vagrant
 
 # redhat
 sudo dnf install -y zsh
