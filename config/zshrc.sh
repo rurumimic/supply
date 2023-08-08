@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi=nvim
+alias emacs='emacs -nw' # --no-window-system
 # linux
 alias ll='ls --color=auto -alFhv'
 # macos
@@ -112,29 +113,42 @@ export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap 
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # Languages
-### Python
+## Python
+### pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+### pyenv-virtualenv
 eval "$(pyenv virtualenv-init -)"
+### autoenv
 export AUTOENV_ENV_FILENAME='.autoenv'
 export AUTOENV_ENV_LEAVE_FILENAME='.autoenv.leave'
 export AUTOENV_ENABLE_LEAVE='enabled'
 source ~/.autoenv/activate.sh
 
-### Node
+## Node
+### nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-### Rust
+## Rust
 source "$HOME/.cargo/env"
 
-### Go
+## Go
 [[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
 
-### Zig
+## Zig
 export PATH="$PATH:$HOME/.zig"
+
+## WASM
+export PATH="$PATH:$HOME/.local/share/emsdk"
+export EMSDK_QUIET=1
+source $HOME/.local/share/emsdk/emsdk_env.sh
+
+## Java
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 neofetch --ascii ~/.config/neofetch/batman.ascii
 

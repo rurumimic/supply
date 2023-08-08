@@ -209,25 +209,16 @@ sudo apt install fzf
 sudo apt install fzf
 ```
 
-```bash
-Zsh
-===
-
-Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
-
-  source /opt/local/share/fzf/shell/key-bindings.zsh
-
-Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
-
-  source /opt/local/share/fzf/shell/completion.zsh
-```
-
 Add lines to `~/.zsrhc`:
 
 ```bash
 # mac
 source /opt/local/share/fzf/shell/key-bindings.zsh # enable fzf keybindings
 source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
+
+# ubuntu
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 # freebsd
 source /usr/local/share/examples/fzf/shell/key-bindings.zsh
