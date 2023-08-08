@@ -102,9 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi=nvim
 # linux
-alias ll='ls --color=auto -alFh'
+alias ll='ls --color=auto -alFhv'
 # macos
-alias ll='ls -alFhG'
+alias ll='ls -alFhGv'
 
 # fzf
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
