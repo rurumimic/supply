@@ -137,6 +137,16 @@ sudo dnf group install -y "Development Tools"
 sudo port install git
 ```
 
+#### global gitignore
+
+- [.gitignore](https://www.toptal.com/developers/gitignore?templates=vim,emacs,linux,macos,windows,visualstudiocode,tags)
+- [subfuzion/global-gitignore.md](https://gist.github.com/subfuzion/db7f57fff2fb6998a16c)
+
+```bash
+vi ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
+```
+
 ### bat
 
 - GitHub: [sharkdp/bat](https://github.com/sharkdp/bat)
