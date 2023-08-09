@@ -363,6 +363,10 @@ sudo apt install clang-format clang-tidy clang-tools clang clangd libc++-dev lib
 ### sudo apt install libclang-rt-17-dev-wasm32 libclang-rt-17-dev-wasm64 libc++-17-dev-wasm32 libc++abi-17-dev-wasm32
 ```
 
+#### link clang
+
+- [update alternatives](https://gist.github.com/junkdog/70231d6953592cd6f27def59fe19e50d)
+
 ### cmake
 
 - [cmake](https://cmake.org)
