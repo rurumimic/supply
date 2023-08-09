@@ -630,6 +630,40 @@ vi ~/.warp/themes/monokai_pro.yaml
 
 - [fig](https://fig.io/)
 
+### alacritty
+
+- [alacritty](https://github.com/alacritty/alacritty)
+  - [releases](https://github.com/alacritty/alacritty/releases)
+
+```bash
+cargo install alacritty
+
+# ubuntu
+curl -L -O https://github.com/alacritty/alacritty/releases/download/v0.12.2/Alacritty.desktop
+sudo desktop-file-install Alacritty.desktop
+
+curl -L -O https://github.com/alacritty/alacritty/releases/download/v0.12.2/Alacritty.svg
+sudo cp Alacritty.svg /usr/share/pixmaps/Alacritty.svg
+sudo update-desktop-database
+```
+
+#### alacritty.yml
+
+```bash
+mkdir -p ~/.config/alacritty
+curl -L -o ~/.config/alacritty/alacritty.yml https://github.com/alacritty/alacritty/releases/download/v0.12.2/alacritty.yml
+```
+
+```yml
+window:
+ dimensions:
+    columns: 140
+    lines: 40
+font:
+  normal:
+   family: Hack Nerd Font
+```
+
 ### tmux
 
 > kovidgoyal: [do not use terminal multiplexers](https://sw.kovidgoyal.net/kitty/faq/#i-am-using-tmux-and-have-a-problem)
