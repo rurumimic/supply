@@ -1,15 +1,15 @@
 [user]
-	name = 
-	email = 
+  name = 
+  email = 
 
 [core]
-	editor = nvim
-	pager = delta
-
+  editor = nvim
+  pager = delta
+  excludesfile = ~/.gitignore
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [add.interactive]
-    useBuiltin = false # required for git 2.37.0
+  useBuiltin = false # required for git 2.37.0
 
 [delta]
   navigate = true    # use n and N to move between diff sections
@@ -25,4 +25,19 @@
 
 [alias]
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+
+# [credential "https://github.com"]
+#   helper =
+#   helper = !/usr/bin/gh auth git-credential
+# [credential "https://gist.github.com"]
+#   helper =
+#   helper = !/usr/bin/gh auth git-credential
+
+# [filter "lfs"]
+#   process = git-lfs filter-process
+#   required = true
+#   clean = git-lfs clean -- %f
+#   smudge = git-lfs smudge -- %f
+# [init]
+#   defaultBranch = master
 
