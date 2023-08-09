@@ -108,6 +108,15 @@ alias ll='ls --color=auto -alFhv'
 alias ll='ls -alFhGv'
 
 # fzf
+# mac
+## source /opt/local/share/fzf/shell/key-bindings.zsh # enable fzf keybindings
+## source /opt/local/share/fzf/shell/completion.zsh # enable fuzzy auto-completion
+# ubuntu
+## source /usr/share/doc/fzf/examples/key-bindings.zsh
+## source /usr/share/doc/fzf/examples/completion.zsh
+# freebsd
+## source /usr/local/share/examples/fzf/shell/key-bindings.zsh
+## source /usr/local/share/examples/fzf/shell/completion.zsh
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
