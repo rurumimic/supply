@@ -58,6 +58,13 @@
   - extensions
   - themes
 
+### Fonts
+
+- [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+- [Hasklig](https://github.com/i-tu/Hasklig): `editor.fontWeight: 500`
+- [MesloLGS NF](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+- [Cartograph CF](https://connary.com/cartograph.html): $50
+
 ## Languages
 
 - [Python](languages/python.md)
@@ -99,6 +106,15 @@ mkdir -p ~/vm/virtualbox
 
 ---
 
+## Refs
+
+### Templates
+
+- [.gitignore](https://www.toptal.com/developers/gitignore?templates=vim,emacs,linux,macos,windows,visualstudiocode,tags): macos,windows,linux,vim,emacs,visualstudiocode,tags
+- [readme](https://readme.so/editor)
+
+---
+
 ## Code hierarchy
 
 ```bash
@@ -112,4 +128,3 @@ mkdir -p ~/vm/virtualbox
 └── vm/
     └── virtualbox/      # virtual box files: .vbox, .vmdk
 ```
-

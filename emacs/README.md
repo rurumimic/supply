@@ -4,6 +4,7 @@
   - [build](https://github.com/jimeh/emacs-builds) for macos
   - install
     - [linux](https://www.gnu.org/software/emacs/download.html#gnu-linux)
+  - [wiki](https://www.emacswiki.org/emacs?interface=en)
   
 ## Install
 

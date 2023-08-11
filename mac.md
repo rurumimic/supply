@@ -96,3 +96,15 @@ without `.DS_Store` and `__MACOSX`
 ```bash
 zip -r archive.zip . -x ".*" -x "__MACOSX" -q
 ```
+
+---
+
+## XCode
+
+### Themes
+
+[codetheme.net](https://www.codethemes.net/themes/popular/dark)
+
+- save: `/Users/${USER}/Library/Developer/Xcode/UserData/FontAndColorThemes`
+- [Ego 2](https://www.codethemes.net/theme/ego_2)
+- [Mangold](https://www.codethemes.net/theme/mangold)
