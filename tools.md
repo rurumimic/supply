@@ -325,7 +325,15 @@ sudo pkg install git-delta
 1. install [git](#git)
 2. edit: [~/.gitconfig](config/gitconfig)
 
-git diff: `git lg -n 5`
+
+```bash
+git lg -n 5
+git lg -5
+```
+
+```bash
+git diff | delta
+```
 
 ### clang
 
