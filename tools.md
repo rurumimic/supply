@@ -355,9 +355,11 @@ sudo port select --list clang
 sudo port select --set llvm mp-llvm-16
 sudo port select --set clang mp-clang-16
 
+sudo ln -s $(which clangd-mp-16) /opt/local/bin/clangd
+
 llc --version
 clang --version
-
+clangd --version
 
 # redhat
 sudo dnf install llvm-toolset
