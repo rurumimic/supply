@@ -342,10 +342,12 @@ git diff | delta
   - clang: [get started](https://clang.llvm.org/get_started.html)
 - install
   - [ubuntu](https://apt.llvm.org/)
+- lldb
+  - [code sign](https://lldb.llvm.org/resources/build.html#code-signing-on-macos)
 
 ```bash
 # mac
-sudo port install clang-16
+sudo port install clang-16 llvm-16 lldb-16
 
 ls /opt/local/libexec/llvm-16/bin
 
@@ -356,10 +358,18 @@ sudo port select --set llvm mp-llvm-16
 sudo port select --set clang mp-clang-16
 
 sudo ln -s $(which clangd-mp-16) /opt/local/bin/clangd
+sudo ln -s $(which lldb-16) /opt/local/bin/lldb
 
 llc --version
 clang --version
 clangd --version
+lldb --version
+
+# Code Signing on macOS
+/opt/local/libexec/llvm-16/scripts/lldb/macos-setup-codesign.sh
+sudo codesign --force --deep \
+--preserve-metadata=identifier,entitlements,requirements,flags,team-identifier \
+--sign lldb_codesign /opt/local/libexec/llvm-16/bin/lldb-server
 
 # redhat
 sudo dnf install llvm-toolset
