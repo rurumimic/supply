@@ -401,6 +401,9 @@ sudo dnf install cmake
 
 # ubuntu
 sudo apt install cmake
+
+# freebsd
+sudo pkg install cmake
 ```
 
 ### ninja
@@ -411,6 +414,9 @@ sudo apt install cmake
 
 ```bash
 # mac
+sudo port install ninja
+
+# freebsd
 sudo port install ninja
 ```
 
