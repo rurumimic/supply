@@ -1,0 +1,4 @@
+- name: Hello
+  shell: |
+    echo Hello, World!
+

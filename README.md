@@ -104,6 +104,12 @@ mkdir -p ~/vm/virtualbox
 1. Preferences
 2. Default machine folder: `~/vm/virtualbox`
 
+### Vagrant
+
+- Ubuntu
+  - 23.10: Mantic Minotaur
+    - AMD64: [Vagrantfile](vagrant/ubuntu/23.10-amd64/Vagrantfile)
+
 ---
 
 ## Refs
