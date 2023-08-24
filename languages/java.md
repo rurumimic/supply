@@ -97,3 +97,15 @@ javac -version
 javac 17.0.6
 ```
 
+---
+
+## Path
+
+### OpenJDK
+#### macOS
+- /Library/Java/JavaVirtualMachines/openjdk17/Contents/Home
+
+### Oracle JDK
+#### macOS
+- /Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home
+- /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home
