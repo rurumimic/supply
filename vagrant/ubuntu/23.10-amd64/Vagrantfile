@@ -1,13 +1,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$ip = "192.168.56.231"
+$IP = "192.168.56.231"
+$CERT = "self.signed.pem"
 
 Vagrant.configure("2") do |config|
 
   config.vm.box = "ubuntu/mantic64"
 
-  config.vm.network "private_network", ip: $ip
+  config.vm.network "private_network", ip: $IP
 
   config.vm.synced_folder "./certs", "/certs"
   config.vm.synced_folder "./share", "/share"
@@ -18,7 +19,14 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    echo Provision Ubuntu
+    if [ -z "$SSL_CERT_FILE" ]; then
+      echo "Activate Certs!"
+      echo "SSL_CERT_FILE=/certs/#{$CERT}" >> /etc/environment
+      echo "ca_certificate=/certs/#{$CERT}" >> /etc/wgetrc
+      cat "/certs/#{$CERT}" | tee -a /etc/ssl/certs/ca-certificates.crt > /dev/null
+    else
+      echo "Certs Already Activated."
+    fi
   SHELL
 
   config.vm.provision "ansible" do |ansible|
