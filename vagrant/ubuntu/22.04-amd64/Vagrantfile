@@ -1,0 +1,48 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$IP = "192.168.56.231"
+
+## Activate, when you are at work
+# $CERT = "self.signed.crt"
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+
+  config.vm.network "private_network", ip: $IP
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.cpus = 1
+    vb.memory = "1024"
+  end
+
+  config.vm.synced_folder "./share", "/share"
+
+  ## Activate, when you are at work
+  # config.vm.synced_folder "./certs", /certs
+  #
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   if [ -z "$SSL_CERT_FILE" ]; then
+  #     echo "Activate Certs!"
+  #     echo "SSL_CERT_FILE=/certs/#{$CERT}" >> /etc/environment
+  #     echo "ca_certificate=/certs/#{$CERT}" >> /etc/wgetrc
+  #     cat "/certs/#{$CERT}" | tee -a /etc/ssl/certs/ca-certificates.crt > /dev/null
+  #   else
+  #     echo "Certs Already Activated."
+  #   fi
+  # SHELL
+
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "ansible/playbook.yaml"
+    ansible.limit = "all"
+    ansible.verbose = "v"
+    ansible.extra_vars = {
+      user: "vagrant",
+
+      ## Activate, when you are at work
+      # certs: "/certs",
+    }
+  end
+
+end
+

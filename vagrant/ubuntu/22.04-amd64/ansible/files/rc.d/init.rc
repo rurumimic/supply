@@ -1,0 +1,4 @@
+alias ll='ls -alGFh'
+
+export PATH="$HOME/.local/bin:$PATH"
+

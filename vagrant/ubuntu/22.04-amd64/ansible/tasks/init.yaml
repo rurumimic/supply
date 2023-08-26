@@ -1,0 +1,59 @@
+################################################################################
+- name: Essential Packages
+  become: yes
+  apt:
+    name:
+      - build-essential
+    update_cache: yes
+################################################################################
+# User
+################################################################################
+- name: Make .local/bin
+  become_user: "{{ user }}"
+  file:
+    path: "{{ ansible_env.HOME }}/.local/bin"
+    state: directory
+- name: Make .local/share
+  become_user: "{{ user }}"
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share"
+    state: directory
+################################################################################
+# Get all your settings in one place
+################################################################################
+- name: Make .config/rc.d
+  become_user: "{{ user }}"
+  file:
+    path: "{{ ansible_env.HOME }}/.config/rc.d"
+    state: directory
+- name: Source rc.d
+  become_user: "{{ user }}"
+  blockinfile:
+    path: "{{ ansible_env.HOME }}/.bashrc"
+    create: true
+    marker_begin: INIT_BEGIN
+    marker_end: INIT_END
+    block: |
+      for RC in "$HOME/.config/rc.d/"*.rc; do
+        source "${RC}"
+      done
+- name: init.rc
+  become_user: "{{ user }}"
+  copy:
+    src: rc.d/init.rc
+    dest: "{{ ansible_env.HOME }}/.config/rc.d/init.rc"
+################################################################################
+# Git
+################################################################################
+- name: Global .gitignore
+  become_user: "{{ user }}"
+  copy:
+    src: git/global.gitignore
+    dest: "{{ ansible_env.HOME }}/.gitignore"
+- name: Git Configuration
+  become_user: "{{ user }}"
+  copy:
+    src: git/init.gitconfig
+    dest: "{{ ansible_env.HOME }}/.gitconfig"
+################################################################################
+

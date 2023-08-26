@@ -1,0 +1,20 @@
+################################################################################
+# Pass Corporate SSL Certificates
+################################################################################
+- name: Install Packages
+  become: yes
+  apt:
+    name:
+      - ca-certificates
+    update_cache: yes
+- name: Copy Self-Signed Certs
+  become: yes
+  copy:
+    # src path ends with "/", inside contents are copied
+    src: "{{ certs }}/"
+    dest: /usr/local/share/ca-certificates/
+- name: Update CA Certs
+  become: yes
+  shell: update-ca-certificates
+################################################################################
+
