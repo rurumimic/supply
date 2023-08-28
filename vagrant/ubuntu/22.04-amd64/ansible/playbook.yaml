@@ -1,5 +1,9 @@
 ---
 - hosts: all
+  vars:
+    user: vagrant
+    zsh:
+      omz: yes
   tasks:
     - import_tasks: tasks/init.yaml
     # Activate, when you are at work

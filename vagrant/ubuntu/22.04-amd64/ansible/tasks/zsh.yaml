@@ -1,34 +1,47 @@
-- name: Install zsh
-  become: yes
-  apt:
-    name:
-      - zsh
-    update_cache: yes
-- name: Install oh-my-zsh
-  become_user: "{{ user }}"
-  git:
-    repo: https://github.com/ohmyzsh/ohmyzsh.git
-    dest: "{{ ansible_env.HOME }}/.config/oh-my-zsh"
-- name: .zshrc
-  become_user: "{{ user }}"
-  copy:
-    src: zsh/zshrc.zsh-template
-    dest: "{{ ansible_env.HOME }}/.zshrc"
-- name: Change default shell
-  become: yes
-  user:
-    name: "{{ user }}"
-    shell: /usr/bin/zsh
-- name: Source rc.d
-  become_user: "{{ user }}"
-  blockinfile:
-    path: "{{ ansible_env.HOME }}/.zshrc"
-    create: true
-    marker_begin: INIT_BEGIN
-    marker_end: INIT_END
-    block: |
-      for RC in "$HOME/.config/rc.d/"*.rc; do
-        source "${RC}"
-      done
+################################################################################
+# zsh
+################################################################################
+- name: zsh
+  when: zsh | default(false) | bool or zsh | default({})
+  block:
+### 1. Install zsh
+    - name: Install zsh
+      become: yes
+      apt:
+        name:
+          - zsh
+        update_cache: yes
+      when: zsh | default(false) | bool or zsh | default({})
+### (OPTION) Install Oh My Zsh
+    - name: Install oh-my-zsh
+      become_user: "{{ user }}"
+      git:
+        repo: https://github.com/ohmyzsh/ohmyzsh.git
+        dest: "{{ ansible_env.HOME }}/.config/oh-my-zsh"
+      when: zsh.omz | bool
+### 2. Write ~/.zshrc
+    - name: .zshrc
+      become_user: "{{ user }}"
+      copy:
+        src: zsh/zshrc.zsh-template
+        dest: "{{ ansible_env.HOME }}/.zshrc"
+### 3. After writing .zshrc, change the shell
+    - name: Change default shell
+      become: yes
+      user:
+        name: "{{ user }}"
+        shell: /usr/bin/zsh
+### 4. Get all your settings in one place
+    - name: Source rc.d
+      become_user: "{{ user }}"
+      blockinfile:
+        path: "{{ ansible_env.HOME }}/.zshrc"
+        create: true
+        block: |
+          for RC in "$HOME/.config/rc.d/"*.rc; do
+            source "${RC}"
+          done
+        marker_begin: INIT_BEGIN
+        marker_end: INIT_END
 ################################################################################
 

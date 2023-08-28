@@ -106,6 +106,8 @@ alias emacs='emacs -nw' # --no-window-system
 alias ll='ls --color=auto -alFhv'
 # macos
 alias ll='ls -alFhGv'
+# vagrant
+alias vssh='TERM=xterm-256color vagrant ssh'
 
 # fzf
 # mac

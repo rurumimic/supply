@@ -10,8 +10,7 @@
 - name: Copy Self-Signed Certs
   become: yes
   copy:
-    # src path ends with "/", inside contents are copied
-    src: "{{ certs }}/"
+    src: "{{ certs }}/" # src path ends with "/", inside contents are copied
     dest: /usr/local/share/ca-certificates/
 - name: Update CA Certs
   become: yes
