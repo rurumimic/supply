@@ -1,5 +1,5 @@
 ################################################################################
-# Pass Corporate SSL Certificates
+# Add Corporate SSL Certificates
 ################################################################################
 - name: Install Packages
   become: yes

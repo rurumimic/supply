@@ -42,14 +42,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ```bash
 git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
-ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
-ln -s "$ZSH_CUSTOM/themes/typewritten/async.zsh" "$ZSH_CUSTOM/themes/async"
+
+# (option: create symlinks)
+# ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
+# ln -s "$ZSH_CUSTOM/themes/typewritten/async.zsh" "$ZSH_CUSTOM/themes/async"
 ```
 
 ```bash
 # ~/.zshrc
 
-ZSH_THEME="typewritten"
+ZSH_THEME="typewritten/typewritten"
+
+# (option: create symlinks)
+# ZSH_THEME="typewritten"
 ```
 
 ```bash
@@ -58,11 +63,16 @@ ZSH_THEME="typewritten"
 # typewritten
 export TYPEWRITTEN_SYMBOL="λ"
 export TYPEWRITTEN_CURSOR="block"
-# export TYPEWRITTEN_RELATIVE_PATH="adaptive"
-export TYPEWRITTEN_RELATIVE_PATH="home"
-# export TYPEWRITTEN_PROMPT_LAYOUT="singleline_verbose"
 export TYPEWRITTEN_PROMPT_LAYOUT="pure_verbose"
-# export TYPEWRITTEN_LEFT_PROMPT_PREFIX_FUNCTION=(date +%H:%M:%S)
+export TYPEWRITTEN_RELATIVE_PATH="home"
+# export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+```
+
+result:
+
+```bash
+user@host ~/code/github/repo.git -> master + »
+λ 
 ```
 
 ### noefetch

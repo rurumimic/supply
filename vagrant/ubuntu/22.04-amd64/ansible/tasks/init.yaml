@@ -32,19 +32,19 @@
     path: "{{ ansible_env.HOME }}/.bashrc"
     create: true
     block: |
-      for RC in "$HOME/.config/rc.d/"*.rc; do
+      for RC in "$HOME/.config/rc.d/"*.sh; do
         source "${RC}"
       done
     marker_begin: INIT_BEGIN
     marker_end: INIT_END
-- name: Create default .rc files
+- name: Create default rc.sh files
   become_user: "{{ user }}"
   copy:
     src: "{{ item }}"
     dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
   with_items:
-    - rc.d/alias.rc
-    - rc.d/export.rc
+    - rc.d/alias.sh
+    - rc.d/export.sh
 #################################################################################
 # Git
 ################################################################################

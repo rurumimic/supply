@@ -2,8 +2,9 @@
 - hosts: all
   vars:
     user: vagrant
-    zsh:
-      omz: yes
+    zsh: yes
+    version:
+      clang: 16
   tasks:
     - import_tasks: tasks/init.yaml
     # Activate, when you are at work
