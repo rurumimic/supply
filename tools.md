@@ -358,7 +358,7 @@ sudo port select --set llvm mp-llvm-16
 sudo port select --set clang mp-clang-16
 
 sudo ln -s $(which clangd-mp-16) /opt/local/bin/clangd
-sudo ln -s $(which lldb-16) /opt/local/bin/lldb
+sudo ln -s $(which lldb-mp-16) /opt/local/bin/lldb
 
 llc --version
 clang --version
