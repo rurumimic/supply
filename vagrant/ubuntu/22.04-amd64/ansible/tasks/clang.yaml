@@ -1,0 +1,84 @@
+################################################################################
+# Start
+################################################################################
+- name: Add a GPG key for LLVM
+  become: yes
+  get_url:
+    url: https://apt.llvm.org/llvm-snapshot.gpg.key
+    dest: /etc/apt/trusted.gpg.d/apt.llvm.org.asc
+- name: Add APT repositories
+  become: yes
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+    filename: llvm
+    update_cache: yes
+  with_items:
+    - "deb http://apt.llvm.org/{{ ansible_distribution_release }}/ llvm-toolchain-{{ ansible_distribution_release }}-{{ version.clang }} main"
+    - "deb-src http://apt.llvm.org/{{ ansible_distribution_release }}/ llvm-toolchain-{{ ansible_distribution_release }}-{{ version.clang }} main"
+################################################################################
+# Install packages
+################################################################################
+- name: Install basic packages
+  become: yes
+  apt:
+    name:
+      - "clang-{{ version.clang }}"
+      - "lldb-{{ version.clang }}"
+      - "lld-{{ version.clang }}"
+- name: Install LLVM packages
+  become: yes
+  apt:
+    name:
+      - "libllvm-{{ version.clang }}-ocaml-dev"
+      - "libllvm{{ version.clang }}"
+      - "llvm-{{ version.clang }}"
+      - "llvm-{{ version.clang }}-dev"
+      - "llvm-{{ version.clang }}-doc"
+      - "llvm-{{ version.clang }}-examples"
+      - "llvm-{{ version.clang }}-runtime"
+- name: Install Clang packages
+  become: yes
+  apt:
+    name:
+      - "clang-{{ version.clang }}"
+      - "clang-tools-{{ version.clang }}"
+      - "clang-{{ version.clang }}-doc"
+      - "libclang-common-{{ version.clang }}-dev"
+      - "libclang-{{ version.clang }}-dev"
+      - "libclang1-{{ version.clang }}"
+      - "clang-format-{{ version.clang }}"
+      - "python3-clang-{{ version.clang }}"
+      - "clangd-{{ version.clang }}"
+      - "clang-tidy-{{ version.clang }}"
+- name: Install compiler-rt
+  become: yes
+  apt:
+    name:
+      - "libclang-rt-{{ version.clang }}-dev"
+- name: Install libc++
+  become: yes
+  apt:
+    name:
+      - "libc++-{{ version.clang }}-dev"
+      - "libc++abi-{{ version.clang }}-dev"
+################################################################################
+# Finish
+################################################################################
+- name: Update Alternatives - LLVM
+  become: yes
+  script: "clang/alternatives.sh {{ version.clang }} 50"
+- name: Install C/C++ development tools
+  become: yes
+  apt:
+    name:
+      - cmake
+      - ninja-build
+      - global
+      - universal-ctags
+- name: Update APT
+  become: yes
+  apt: 
+    update_cache: yes
+################################################################################
+
