@@ -634,15 +634,26 @@ cd ~/.local/kitty.app/lib/kitty/logo
 kitty +runpy 'from kitty.fast_data_types import cocoa_set_app_icon; import sys; cocoa_set_app_icon(*sys.argv[1:]); print("OK")' kitty.png
 ```
 
-#### Alias Vagrant SSH
+#### Kitty Remote SSH with vagrant
 
 ```bash
-alias vsh='vagrant ssh-config > vagrant.ssh && kitty +kitten ssh -F vagrant.ssh default'
+vsh() {
+  if [ ! -f Vagrantfile ]; then
+    echo -e "\e[31mThere is no 'Vagrantfile' here.\e[0m" >&2
+    return 1
+  fi
+  if [ ! -d .vagrant ]; then
+    echo -e "\e[31mThere is no '.vagrant/' here.\e[0m" >&2
+    return 1
+  fi
+  if [ ! -f .vagrant/ssh-config ]; then
+    vagrant ssh-config > .vagrant/ssh-config
+  fi
+  kitty +kitten ssh -F .vagrant/ssh-config "${1:-default}"
+}
 ```
 
-Add "vagrant.ssh" in `.gitignore`
-
-#### with Remote SSH
+#### Kitty Remote SSH with terminfo
 
 Save in `.terminfo`:
 
