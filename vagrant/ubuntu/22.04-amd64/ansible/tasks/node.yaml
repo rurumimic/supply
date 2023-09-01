@@ -1,0 +1,45 @@
+################################################################################
+# Start
+################################################################################
+# - name: Add Node SSL Certs
+#   become: yes
+#   blockinfile:
+#     path: /etc/environment
+#     create: true
+#     block: |
+#       NODE_EXTRA_CA_CERTS={{ certs }}
+#     marker_begin: NODE_BEGIN
+#     marker_end: NODE_END
+################################################################################
+# NVM
+################################################################################
+- name: Install NVM
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/nvm-sh/nvm.git
+    dest: "{{ ansible_env.HOME }}/.nvm"
+    version: v0.39.5
+################################################################################
+# rc.d
+################################################################################
+- name: Create node rc.sh file
+  become_user: "{{ user }}"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+  with_items:
+    - rc.d/node.sh
+################################################################################
+# Install Node
+################################################################################
+- name: Install Node
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/node.sh
+    nvm install {{ version.node }}
+    nvm alias default {{ version.node }}
+    corepack enable
+  args:
+    executable: /usr/bin/bash
+################################################################################
+

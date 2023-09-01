@@ -34,7 +34,7 @@ If you see the error below, check if LC_ALL is set correctly.
 ### Validate the Ansible Playbook
 
 ```bash
-ansible-playbook -c local -i localhost, --check --diff playbook.yaml
+ansible-playbook -c local -i localhost, --check --diff --verbose playbook.yaml
 ```
 
 ### Run the Ansible Playbook

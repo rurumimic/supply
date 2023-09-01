@@ -12,10 +12,13 @@
     repo: "{{ item }}"
     state: present
     filename: llvm
-    update_cache: yes
   with_items:
     - "deb http://apt.llvm.org/{{ ansible_distribution_release }}/ llvm-toolchain-{{ ansible_distribution_release }}-{{ version.clang }} main"
     - "deb-src http://apt.llvm.org/{{ ansible_distribution_release }}/ llvm-toolchain-{{ ansible_distribution_release }}-{{ version.clang }} main"
+- name: Update APT
+  become: yes
+  apt: 
+    update_cache: yes
 ################################################################################
 # Install packages
 ################################################################################
@@ -62,12 +65,6 @@
     name:
       - "libc++-{{ version.clang }}-dev"
       - "libc++abi-{{ version.clang }}-dev"
-################################################################################
-# Finish
-################################################################################
-- name: Update Alternatives - LLVM
-  become: yes
-  script: "clang/alternatives.sh {{ version.clang }} 50"
 - name: Install C/C++ development tools
   become: yes
   apt:
@@ -76,9 +73,11 @@
       - ninja-build
       - global
       - universal-ctags
-- name: Update APT
+################################################################################
+# Finish
+################################################################################
+- name: Update Alternatives - LLVM
   become: yes
-  apt: 
-    update_cache: yes
+  script: "clang/alternatives.sh {{ version.clang }} 50"
 ################################################################################
 

@@ -1,0 +1,92 @@
+################################################################################
+# Start
+################################################################################
+- name: Update APT
+  become: yes
+  apt:
+    update_cache: yes
+- name: Install python build tools
+  become: yes
+  apt:
+    name:
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - curl
+      - libncursesw5-dev
+      - xz-utils
+      - tk-dev
+      - libxml2-dev
+      - libxmlsec1-dev
+      - libffi-dev
+      - liblzma-dev
+      # - llvm # installed in clang.yaml
+################################################################################
+# Pyenv
+################################################################################
+- name: Install Pyenv
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/pyenv/pyenv.git
+    dest: "{{ ansible_env.HOME }}/.pyenv"
+################################################################################
+# Pyenv Plugins
+################################################################################
+- name: Add Pyenv Doctor
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/pyenv/pyenv-doctor.git
+    dest: "{{ ansible_env.HOME }}/.pyenv/plugins/pyenv-doctor"
+- name: Add Pyenv Update
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/pyenv/pyenv-update.git
+    dest: "{{ ansible_env.HOME }}/.pyenv/plugins/pyenv-update"
+- name: Add Pyenv Virtualenv
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/pyenv/pyenv-virtualenv.git
+    dest: "{{ ansible_env.HOME }}/.pyenv/plugins/pyenv-virtualenv"
+################################################################################
+# Autoenv
+################################################################################
+- name: Install Autoenv
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/hyperupcall/autoenv
+    dest: "{{ ansible_env.HOME }}/.autoenv"
+################################################################################
+# rc.d
+################################################################################
+- name: Create python rc.sh file
+  become_user: "{{ user }}"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+  with_items:
+    - rc.d/python.sh
+################################################################################
+# Install Python
+################################################################################
+- name: Install Python
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/python.sh
+    pyenv install {{ version.python }}
+    pyenv global system {{ version.python }}
+  args:
+    executable: /usr/bin/bash
+    creates: "{{ ansible_env.HOME }}/.pyenv/versions/{{ version.clang }}/bin/python"
+- name: Install PIP Packages
+  become_user: "{{ user }}"
+  pip:
+    executable: "{{ ansible_env.HOME }}/.pyenv/shims/pip"
+    name:
+      - pip
+      - setuptools
+      - wheel
+    extra_args: --upgrade
+################################################################################
+

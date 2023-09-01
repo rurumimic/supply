@@ -1,0 +1,61 @@
+################################################################################
+# Start
+################################################################################
+- name: Update APT
+  become: yes
+  apt:
+    update_cache: yes
+- name: Install Java
+  become: yes
+  apt:
+    name:
+      # - openjdk-8-jdk-headless
+      # - openjdk-11-jdk-headless
+      - openjdk-17-jdk-headless
+################################################################################
+# jenv
+################################################################################
+- name: Install jenv
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/jenv/jenv.git
+    dest: "{{ ansible_env.HOME }}/.jenv"
+################################################################################
+# rc.d
+################################################################################
+- name: Create java rc.sh file
+  become_user: "{{ user }}"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+  with_items:
+    - rc.d/java.sh
+################################################################################
+# Add Java
+################################################################################
+- name: Set JAVA_HOME
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/java.sh
+    jenv enable-plugin export
+  args:
+    executable: /usr/bin/bash
+- name: Add Java versions
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/java.sh
+    find /usr/lib/jvm -maxdepth 1 -type d -regex ".*/java-[0-9]+-openjdk-.*" -exec jenv add {} \;
+  args:
+    executable: /usr/bin/bash
+- name: Select Java Version
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/java.sh
+    jenv global 17
+  args:
+    executable: /usr/bin/bash
+################################################################################
+# Add Keytool
+################################################################################
+################################################################################
+
