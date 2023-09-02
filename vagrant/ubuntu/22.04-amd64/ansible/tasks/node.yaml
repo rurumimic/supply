@@ -36,8 +36,21 @@
   become_user: "{{ user }}"
   shell: |
     source {{ ansible_env.HOME }}/.config/rc.d/node.sh
-    nvm install {{ version.node }}
-    nvm alias default {{ version.node }}
+    nvm install {{ item }}
+  args:
+    executable: /usr/bin/bash
+  with_list: "{{ version.node }}"
+- name: "Default Node Version {{ version.node[0] }}"
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/node.sh
+    nvm alias default {{ version.node[0] }}
+  args:
+    executable: /usr/bin/bash
+- name: Enable Yarn.js
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/node.sh
     corepack enable
   args:
     executable: /usr/bin/bash

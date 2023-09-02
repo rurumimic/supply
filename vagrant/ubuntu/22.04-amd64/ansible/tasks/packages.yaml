@@ -1,0 +1,107 @@
+################################################################################
+- name: Update APT
+  become: yes
+  apt:
+    update_cache: yes
+- name: Extra Packages
+  become: yes
+  apt:
+    name:
+      - neofetch
+      - highlight
+      - tree
+      - ripgrep # for nvim
+      - unzip # for nvim
+################################################################################
+- name: bat
+  block:
+    - name: Install bat
+      become: yes
+      apt:
+        name:
+          - bat
+    - name: Symlink of bat
+      become_user: "{{ user }}"
+      file:
+        src: /usr/bin/batcat
+        dest: "{{ ansible_env.HOME }}/.local/bin/bat"
+        state: link
+################################################################################
+- name: fzf # for nvim
+  block:
+    - name: Install fzf
+      become: yes
+      apt:
+        name:
+          - fzf
+    - name: Create fzf rc.sh files
+      become_user: "{{ user }}"
+      copy:
+        src: "{{ item }}"
+        dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+      with_items:
+        - rc.d/fzf.bash
+        - rc.d/fzf.zsh
+################################################################################
+- name: fd
+  block:
+    - name: Install fd
+      become: yes
+      apt:
+        name:
+          - fd-find
+    - name: Symlink of fd
+      become_user: "{{ user }}"
+      file:
+        src: /usr/bin/fdfind
+        dest: "{{ ansible_env.HOME }}/.local/bin/fd"
+        state: link
+- name: delta
+  block:
+    - name: Install delta on amd64
+      become: yes
+      apt:
+        deb: https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb
+      when: ansible_architecture in ["x86_64", "amd64"]
+    - name: Install delta on arm64
+      become: yes
+      apt:
+        deb: https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_arm64.deb
+      when: ansible_architecture in ["aarch64", "arm64", "armv8"]
+    - name: Add gitconfig
+      become_user: "{{ user }}"
+      blockinfile:
+        path: "{{ ansible_env.HOME }}/.gitconfig"
+        block: |
+          [core]
+            pager = delta
+
+          [interactive]
+            diffFilter = delta --color-only
+
+          [delta]
+            navigate = true    # use n and N to move between diff sections
+            light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+            side-by-side = true
+            line-numbers = true
+
+          [merge]
+            conflictstyle = diff3
+
+          [diff]
+            colorMoved = default
+        marker_begin: DELTA_BEGIN
+        marker_end: DELTA_END
+################################################################################
+- name: Add Plugins at zshrc
+  become_user: "{{ user }}"
+  blockinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    create: true
+    block: |
+      fzf
+    marker_begin: PLUGINS_BEGIN
+    marker_end: PLUGINS_END
+  when: zsh | default(false) | bool
+################################################################################
+

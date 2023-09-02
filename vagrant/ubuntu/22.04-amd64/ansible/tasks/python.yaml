@@ -74,11 +74,17 @@
   become_user: "{{ user }}"
   shell: |
     source {{ ansible_env.HOME }}/.config/rc.d/python.sh
-    pyenv install {{ version.python }}
-    pyenv global system {{ version.python }}
+    pyenv install --skip-existing {{ item }}
   args:
     executable: /usr/bin/bash
-    creates: "{{ ansible_env.HOME }}/.pyenv/versions/{{ version.clang }}/bin/python"
+  with_list: "{{ version.python }}"
+- name: "Default Python {{ version.python[0] }}"
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/python.sh
+    pyenv global system {{ version.python[0] }}
+  args:
+    executable: /usr/bin/bash
 - name: Install PIP Packages
   become_user: "{{ user }}"
   pip:

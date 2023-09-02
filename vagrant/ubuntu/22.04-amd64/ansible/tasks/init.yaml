@@ -32,9 +32,11 @@
     path: "{{ ansible_env.HOME }}/.bashrc"
     create: true
     block: |
-      for RC in "$HOME/.config/rc.d/"*.sh; do
+      shopt -s nullglob
+      for RC in "$HOME/.config/rc.d/"*.{sh,bash}; do
         source "${RC}"
       done
+      shopt -u nullglob
     marker_begin: INIT_BEGIN
     marker_end: INIT_END
 - name: Create default rc.sh files

@@ -5,20 +5,21 @@
     zsh: yes
     version:
       clang: 16
-      python: 3.11.5
-      node: 18
-      go: 1.20.1
+      go: 1.21.0
+      python: [3.11.5, 2.7.18]
+      node: [18, 16]
+      java: [17, 8]
   tasks:
-    # - import_tasks: tasks/init.yaml
+    - import_tasks: tasks/init.yaml
     # Activate, when you are at work
     # - import_tasks: tasks/certs.yaml
-    # - import_tasks: tasks/zsh.yaml
-    # - import_tasks: tasks/clang.yaml
-    # - import_tasks: tasks/python.yaml
-    # - import_tasks: tasks/node.yaml
+    - import_tasks: tasks/zsh.yaml
+    - import_tasks: tasks/clang.yaml
+    - import_tasks: tasks/python.yaml
+    - import_tasks: tasks/node.yaml
     - import_tasks: tasks/java.yaml
-    # - import_tasks: tasks/go.yaml
-    # - import_tasks: tasks/rust.yaml
-    # - import_tasks: tasks/packages.yaml
-    # - import_tasks: tasks/nvim.yaml
+    - import_tasks: tasks/go.yaml
+    - import_tasks: tasks/rust.yaml
+    - import_tasks: tasks/packages.yaml
+    - import_tasks: tasks/nvim.yaml
 

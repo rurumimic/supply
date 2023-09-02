@@ -8,10 +8,8 @@
 - name: Install Java
   become: yes
   apt:
-    name:
-      # - openjdk-8-jdk-headless
-      # - openjdk-11-jdk-headless
-      - openjdk-17-jdk-headless
+    name: "openjdk-{{ item }}-jdk-headless"
+  with_list: "{{ version.java }}"
 ################################################################################
 # jenv
 ################################################################################
@@ -47,15 +45,26 @@
     find /usr/lib/jvm -maxdepth 1 -type d -regex ".*/java-[0-9]+-openjdk-.*" -exec jenv add {} \;
   args:
     executable: /usr/bin/bash
-- name: Select Java Version
+- name: "Default Java Version {{ version.java[0] }}"
   become_user: "{{ user }}"
   shell: |
     source {{ ansible_env.HOME }}/.config/rc.d/java.sh
-    jenv global 17
+    jenv global {{ version.java[0] }}
   args:
     executable: /usr/bin/bash
 ################################################################################
 # Add Keytool
 ################################################################################
+# - name: Verify certificate registration
+#   become: yes
+#   shell: |
+#     keytool -list -cacerts -storepass changeit -alias {{ cert_name }}
+#   register: cacerts_java
+#   ignore_errors: true
+# - name: Loads a trusted CA certificate into a keystore
+#   become: yes
+#   shell: |
+#     keytool -importcert -noprompt -trustcacerts -cacerts -storepass changeit -file {{ cert }} -alias {{ cert_name }}
+#   when: cacerts_java.failed | bool
 ################################################################################
 

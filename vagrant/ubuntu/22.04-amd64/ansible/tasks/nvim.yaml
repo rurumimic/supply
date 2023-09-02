@@ -1,0 +1,56 @@
+################################################################################
+- name: Neovim Directory
+  become: yes
+  file:
+    path: /opt/nvim
+    state: directory
+- name: Install Neovim
+  become: yes
+  unarchive:
+    remote_src: yes
+    src: https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+    dest: /opt/nvim
+    creates: /opt/nvim/bin/nvim
+    extra_opts:
+      - --strip-components=1
+- name: Create neovim rc.sh files
+  become_user: "{{ user }}"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+  with_items:
+    - rc.d/nvim.sh
+################################################################################
+- name: Install NvChad
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/NvChad/NvChad
+    dest: "{{ ansible_env.HOME }}/.config/nvim"
+    depth: 1
+    version: v2.0
+- name: Neovim Configurations
+  become_user: "{{ user }}"
+  git:
+    repo: https://github.com/rurumimic/nvim
+    dest: "{{ ansible_env.HOME }}/.config/nvim/lua/custom"
+################################################################################
+- name: Create a virtualenv for nvim
+  become_user: "{{ user }}"
+  shell: |
+    source {{ ansible_env.HOME }}/.config/rc.d/python.sh
+    pyenv virtualenv {{ version.python[0] }} vim
+  args:
+    executable: /usr/bin/bash
+    creates: "{{ ansible_env.HOME }}/.pyenv/versions/vim/bin/python"
+- name: Install PIP Packages for nvim
+  become_user: "{{ user }}"
+  pip:
+    executable: "{{ ansible_env.HOME }}/.pyenv/versions/vim/bin/pip"
+    name:
+      - pip
+      - setuptools
+      - wheel
+      - pynvim
+    extra_args: --upgrade
+################################################################################
+

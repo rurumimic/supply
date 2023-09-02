@@ -1,0 +1,26 @@
+################################################################################
+# Start
+################################################################################
+- name: Install Rust
+  become_user: "{{ user }}"
+  shell: |
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -q -y --profile complete
+  args:
+    executable: /usr/bin/bash
+    creates: "{{ ansible_env.HOME }}/.cargo/bin/rustc"
+- name: Create Rust rc.sh file
+  become_user: "{{ user }}"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+  with_items:
+    - rc.d/rust.sh
+- name: Update Rust
+  become_user: "{{ user }}"
+  shell: |
+    source "$HOME/.config/rc.d/rust.sh"
+    rustup update stable
+  args:
+    executable: /usr/bin/bash
+################################################################################
+

@@ -17,11 +17,17 @@ ZSH_THEME="typewritten/typewritten"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+# PLUGINS_BEGIN ANSIBLE MANAGED BLOCK
+# PLUGINS_END ANSIBLE MANAGED BLOCK
+)
 
 source $ZSH/oh-my-zsh.sh
 
-for RC in "$HOME/.config/rc.d/"*.sh; do
+setopt null_glob
+for RC in "$HOME/.config/rc.d/"*.{sh,zsh}; do
   source "${RC}"
 done
+unsetopt null_glob
 

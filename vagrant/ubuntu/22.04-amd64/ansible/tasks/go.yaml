@@ -1,0 +1,42 @@
+################################################################################
+# Start
+################################################################################
+- name: Read Go Version
+  shell: |
+    if [ -f /usr/local/go/bin/go ]; then
+      /usr/local/go/bin/go version | { read _ _ v _; echo ${v#go};}
+    else
+      echo '0.0.0'
+    fi
+  register: installed_version_go
+- name: Update Go
+  when: installed_version_go.stdout is version(version.go, '<')
+  block:
+    - name: Delete old version Go
+      become: yes
+      file:
+        path: /usr/local/go
+        state: absent
+    - name: Install Go on amd64
+      become: yes
+      unarchive:
+        remote_src: yes
+        src: "https://go.dev/dl/go{{ version.go }}.linux-amd64.tar.gz"
+        dest: /usr/local/
+      when: ansible_architecture in ["x86_64", "amd64"]
+    - name: Install Go on arm64
+      become: yes
+      unarchive:
+        remote_src: yes
+        src: "https://go.dev/dl/go{{ version.go }}.linux-arm64.tar.gz"
+        dest: /usr/local/
+      when: ansible_architecture in ["aarch64", "arm64", "armv8"]
+- name: Create Go rc.sh file
+  become_user: "{{ user }}"
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+  with_items:
+    - rc.d/go.sh
+###############################################################################
+

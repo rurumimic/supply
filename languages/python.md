@@ -119,28 +119,13 @@ pip install black
 
 ### for neovim virtualenv
 
-#### vim3
-
 ```bash
-pyenv virtualenv 3.11.4 vim3
-pyenv activate vim3
+pyenv virtualenv 3.11.4 vim
+pyenv activate vim
 
-pyenv which python # ~/.pyenv/versions/vim3/bin/python
+pyenv which python # ~/.pyenv/versions/vim/bin/python
 
 pip install --upgrade pip setuptools wheel 
-pip install pynvim
-
-pyenv deactivate
-```
-
-#### vim2
-
-```bash
-pyenv virtualenv 2.7.18 vim2
-pyenv activate vim2
-
-pyenv which python # ~/.pyenv/versions/vim2/bin/python
-
 pip install pynvim
 
 pyenv deactivate
