@@ -34,6 +34,7 @@
   - [universal ctags](tools.md#universal-ctags): maintained ctags implementation
   - [astyle](tools.md#astyle): source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages
   - [gdb](tools.md#gdb): GNU Project debugger
+  - [bear](tools.md#bear): a tool that generates a compilation database for clang tooling
 - [git](tools.md#git)
   - [github cli](tools.md#github-cli)
 - [terminal](tools.md#terminal)

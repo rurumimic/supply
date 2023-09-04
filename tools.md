@@ -512,6 +512,21 @@ sudo apt install astyle
 sudo port install gdb
 ```
 
+### Bear
+
+- [Build EAR](https://github.com/rizsotto/Bear)
+
+```bash
+# ubuntu
+sudo apt insatll bear
+```
+
+```bash
+bear -- make
+
+vi compile_commands.json
+```
+
 ---
 
 ## git
