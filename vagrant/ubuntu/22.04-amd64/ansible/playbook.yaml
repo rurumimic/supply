@@ -6,13 +6,11 @@
     version:
       clang: 16
       go: 1.21.0
-      python: [3.11.5, 2.7.18]
-      node: [18, 16]
-      java: [17, 8]
+      python: [3.11.5] # [3.11.5, 2.7.18]
+      node: [18] # [18, 16]
+      java: [17] # [17, 8]
   tasks:
     - import_tasks: tasks/init.yaml
-    # Activate, when you are at work
-    # - import_tasks: tasks/certs.yaml
     - import_tasks: tasks/zsh.yaml
     - import_tasks: tasks/clang.yaml
     - import_tasks: tasks/python.yaml

@@ -2,7 +2,9 @@
 - name: zsh
   when: zsh | default(false) | bool
   block:
+################################################################################
 ### 1. Install zsh
+################################################################################
     - name: Install zsh
       become: yes
       apt:
@@ -19,7 +21,9 @@
       git:
         repo: https://github.com/reobin/typewritten.git
         dest: "{{ ansible_env.HOME }}/.config/ohmyzsh/custom/themes/typewritten"
+################################################################################
 ### 2. Write .zshrc file
+################################################################################
     - name: Write .zsh files
       become_user: "{{ user }}"
       copy:
@@ -29,7 +33,9 @@
         - { src: zshrc.zsh, dest: .zshrc }
         - { src: zshenv.zsh, dest: .zshenv }
         - { src: zprofile.zsh, dest: .zprofile }
+################################################################################
 ### 3. After writing .zshrc, change the shell
+################################################################################
     - name: Change default shell
       become: yes
       user:

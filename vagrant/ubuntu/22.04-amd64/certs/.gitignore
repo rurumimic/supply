@@ -5,4 +5,4 @@
 *.cer
 *.der
 *.priv
-
+!localhost.crt

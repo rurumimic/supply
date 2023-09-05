@@ -1,6 +1,4 @@
 ################################################################################
-# Start
-################################################################################
 - name: Add a GPG key for LLVM
   become: yes
   get_url:
@@ -73,15 +71,13 @@
       - ninja-build
       - global
       - universal-ctags
-      - autotools-dev
+      - m4
       - autoconf
       - automake
-      - m4
-      - pkg-config
+      - autotools-dev
       - libtool
+      - pkg-config
       - bear
-################################################################################
-# Finish
 ################################################################################
 - name: Update Alternatives - LLVM
   become: yes

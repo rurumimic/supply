@@ -1,6 +1,4 @@
 ################################################################################
-# Start
-################################################################################
 - name: Update APT
   become: yes
   apt:
@@ -53,18 +51,45 @@
   args:
     executable: /usr/bin/bash
 ################################################################################
-# Add Keytool
+- name: Create a Maven directory
+  become: yes
+  file:
+    path: /opt/maven
+    state: directory
+- name: Install Maven
+  become: yes
+  unarchive:
+    remote_src: yes
+    src: "https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz"
+    dest: /opt/maven
+- name: Add Maven PATH
+  become_user: "{{ user }}"
+  blockinfile:
+    path: "{{ ansible_env.HOME }}/.config/rc.d/java.sh"
+    create: true
+    block:
+      export PATH="$PATH:/opt/maven/apache-maven-3.9.4/bin"
+    marker_begin: MAVEN_BEGIN
+    marker_end: MAVEN_END
 ################################################################################
-# - name: Verify certificate registration
-#   become: yes
-#   shell: |
-#     keytool -list -cacerts -storepass changeit -alias {{ cert_name }}
-#   register: cacerts_java
-#   ignore_errors: true
-# - name: Loads a trusted CA certificate into a keystore
-#   become: yes
-#   shell: |
-#     keytool -importcert -noprompt -trustcacerts -cacerts -storepass changeit -file {{ cert }} -alias {{ cert_name }}
-#   when: cacerts_java.failed | bool
-################################################################################
+- name: Create a Gradle directory
+  become: yes
+  file:
+    path: /opt/gradle
+    state: directory
+- name: Install Gradle
+  become: yes
+  unarchive:
+    remote_src: yes
+    src: "https://github.com/gradle/gradle/releases/download/v8.3.0/gradle-8.3-bin.zip"
+    dest: /opt/gradle
+- name: Add Gradle PATH
+  become_user: "{{ user }}"
+  blockinfile:
+    path: "{{ ansible_env.HOME }}/.config/rc.d/java.sh"
+    create: true
+    block:
+      export PATH="$PATH:/opt/gradle/gradle-8.3/bin"
+    marker_begin: GRADLE_BEGIN
+    marker_end: GRADLE_END
 

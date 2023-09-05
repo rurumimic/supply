@@ -41,5 +41,7 @@ ansible-playbook -c local -i localhost, --check --diff --verbose playbook.yaml
 
 ```bash
 ansible-playbook -c local -i localhost, playbook.yaml
+ansible-playbook -c local -i localhost, --diff playbook.yaml
+ansible-playbook -c local -i localhost, --diff --verbose playbook.yaml
 ```
 
