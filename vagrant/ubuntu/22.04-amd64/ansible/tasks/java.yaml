@@ -47,7 +47,7 @@
   become_user: "{{ user }}"
   shell: |
     source {{ ansible_env.HOME }}/.config/rc.d/java.sh
-    jenv global {{ version.java[0] }}
+    jenv global {{ version.java[0] if version.java[0]|int > 8 else '1.' + version.java[0]|string }}
   args:
     executable: /usr/bin/bash
 ################################################################################

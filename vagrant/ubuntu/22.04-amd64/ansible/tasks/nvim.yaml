@@ -2,10 +2,14 @@
 - name: Neovim Directory
   become: yes
   file:
-    path: /opt/nvim
+    path: "{{ item }}"
     state: directory
-- name: Install Neovim
+  with_items:
+    - /opt/src/neovim
+    - /opt/nvim
+- name: Install Neovim on amd64
   become: yes
+  when: ansible_architecture in ["x86_64", "amd64"]
   unarchive:
     remote_src: yes
     src: https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
@@ -13,6 +17,35 @@
     creates: /opt/nvim/bin/nvim
     extra_opts:
       - --strip-components=1
+- name: Install Neovim on arm64
+  become: yes
+  when: ansible_architecture in ["aarch64", "arm64", "armv8"]
+  block:
+    - name: Install Neovim Build Tools
+      apt:
+        name:
+          - cmake 
+          - curl
+          - gettext
+          - ninja-build
+          - unzip
+    - name: Download Neovim Source
+      git:
+        repo: https://github.com/neovim/neovim.git
+        dest: /opt/src/neovim
+        version: stable
+    - name: Build Neovim
+      shell: |
+        make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=/opt/nvim"
+      args:
+        chdir: /opt/src/neovim
+        executable: /usr/bin/bash
+    - name: Install Neovim
+      shell: |
+        make install
+      args:
+        chdir: /opt/src/neovim
+        executable: /usr/bin/bash
 - name: Create neovim rc.sh files
   become_user: "{{ user }}"
   copy:

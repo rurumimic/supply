@@ -13,6 +13,8 @@
       - ripgrep # for nvim
       - unzip # for nvim
 ################################################################################
+# bat
+################################################################################
 - name: bat
   block:
     - name: Install bat
@@ -26,6 +28,45 @@
         src: /usr/bin/batcat
         dest: "{{ ansible_env.HOME }}/.local/bin/bat"
         state: link
+    - name: Create a bat themes directory
+      become_user: "{{ user }}"
+      file:
+        path: "{{ ansible_env.HOME }}/.config/bat/themes"
+        state: directory
+    - name: Download bat themes
+      become_user: "{{ user }}"
+      git:
+        repo: https://github.com/catppuccin/bat.git
+        dest: /tmp/catppuccin_bat
+    - name: Select bat themes
+      become_user: "{{ user }}"
+      find:
+        path: /tmp/catppuccin_bat
+        patterns: "*.tmTheme"
+      register: bat_themes
+    - name: Copy to themes
+      become_user: "{{ user }}"
+      copy:
+        src: "{{ item.path }}"
+        dest: "{{ ansible_env.HOME }}/.config/bat/themes"
+      with_items: "{{ bat_themes.files }}"
+    - name: Rebuild bat cache
+      become_user: "{{ user }}"
+      shell: |
+        bat cache --build
+      args:
+        executable: /usr/bin/bash
+    - name: Add bat themes
+      become_user: "{{ user }}"
+      blockinfile:
+        path: "{{ ansible_env.HOME }}/.config/export.sh"
+        create: yes
+        block: |
+          export BAT_THEME="Catppuccin-mocha"
+        marker_begin: BAT_BEGIN
+        marker_end: BAT_END
+################################################################################
+# fzf
 ################################################################################
 - name: fzf # for nvim
   block:
@@ -42,6 +83,8 @@
       with_items:
         - rc.d/fzf.bash
         - rc.d/fzf.zsh
+################################################################################
+# fd
 ################################################################################
 - name: fd
   block:
@@ -92,6 +135,8 @@
             colorMoved = default
         marker_begin: DELTA_BEGIN
         marker_end: DELTA_END
+################################################################################
+# ZSH plugins
 ################################################################################
 - name: Add Plugins at zshrc
   become_user: "{{ user }}"
