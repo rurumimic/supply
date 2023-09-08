@@ -25,7 +25,6 @@
   - [tree](tools.md#tree): recursive directory listing command
   - [fzf](tools.md#fzf): command-line fuzzy finder
   - [fd](tools.md#fd): simple, fast and user-friendly alternative to 'find'
-  - [delta](tools.md#delta): syntax-highlighting pager for git, diff, and grep output
   - [clang](tools.md#clang): c language family frontend for llvm 
   - [cmake](tools.md#cmake): build, test and package
   - [ninja](tools.md#ninja): small build system

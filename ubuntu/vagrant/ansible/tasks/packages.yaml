@@ -99,42 +99,6 @@
         src: /usr/bin/fdfind
         dest: "{{ ansible_env.HOME }}/.local/bin/fd"
         state: link
-- name: delta
-  block:
-    - name: Install delta on amd64
-      become: yes
-      apt:
-        deb: https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb
-      when: ansible_architecture in ["x86_64", "amd64"]
-    - name: Install delta on arm64
-      become: yes
-      apt:
-        deb: https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_arm64.deb
-      when: ansible_architecture in ["aarch64", "arm64", "armv8"]
-    - name: Add gitconfig
-      become_user: "{{ user }}"
-      blockinfile:
-        path: "{{ ansible_env.HOME }}/.gitconfig"
-        block: |
-          [core]
-            pager = delta
-
-          [interactive]
-            diffFilter = delta --color-only
-
-          [delta]
-            navigate = true    # use n and N to move between diff sections
-            light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-            side-by-side = true
-            line-numbers = true
-
-          [merge]
-            conflictstyle = diff3
-
-          [diff]
-            colorMoved = default
-        marker_begin: DELTA_BEGIN
-        marker_end: DELTA_END
 ################################################################################
 # ZSH plugins
 ################################################################################

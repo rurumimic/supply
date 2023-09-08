@@ -308,43 +308,6 @@ sudo dnf install ripgrep
 sudo pkg install ripgrep
 ```
 
-### delta
-
-- [delta](https://github.com/dandavison/delta)
-  - [install](https://dandavison.github.io/delta/installation.html)
-  - [releases](https://github.com/dandavison/delta/releases)
-
-```bash
-# mac
-sudo port install git-delta
-
-# ubuntu
-dpkg -i git-delta_0.15.1_amd64.deb 
-
-# redhat
-tar xf delta-*-x86_64-unknown-linux-musl.tar.gz
-cd delta-*-x86_64-unknown-linux-musl
-sudo mkdir -p /opt/delta/bin
-sudo cp delta /opt/delta/bin/delta
-sudo ln -s /opt/delta/bin/delta /usr/local/bin
-
-# freebsd
-sudo pkg install git-delta
-```
-
-1. install [git](#git)
-2. edit: [~/.gitconfig](config/gitconfig)
-
-
-```bash
-git lg -n 5
-git lg -5
-```
-
-```bash
-git diff | delta
-```
-
 ### clang
 
 - [llvm](https://llvm.org)
@@ -551,11 +514,6 @@ git config --global user.email johndoe@example.com
 git config --global core.editor nvim # /usr/bin/nvim
 git config --list
 ```
-
-1. install [delta](#delta)
-2. edit: [~/.gitconfig](config/gitconfig)
-
-git diff: `git lg -n 5`
 
 ### github cli
 
