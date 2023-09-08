@@ -4,7 +4,7 @@
 
 - [mac](mac.md)
 - linux
-  - [ubuntu](ubuntu/README.md)
+  - [ubuntu](ubuntu/README.md): [vagrant](ubuntu/vagrant/Vagrantfile), [ansible/playbook.yaml](ubuntu/vagrant/ansible/playbook.yaml)
   - [redhat](redhat.md): [podman](docs/podman.md)
   - [arch](arch.md)
 - [freebsd](freebsd.md)
@@ -61,7 +61,7 @@
 
 ### Fonts
 
-- [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+- [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
 - [Hasklig](https://github.com/i-tu/Hasklig): `editor.fontWeight: 500`
 - [MesloLGS NF](https://github.com/romkatv/powerlevel10k#manual-font-installation)
 - [Cartograph CF](https://connary.com/cartograph.html): $50
@@ -105,12 +105,6 @@ mkdir -p ~/vm/virtualbox
 1. Preferences
 2. Default machine folder: `~/vm/virtualbox`
 
-### Vagrant
-
-- Ubuntu
-  - 23.10: Mantic Minotaur
-    - AMD64: [Vagrantfile](vagrant/ubuntu/23.10-amd64/Vagrantfile)
-
 ---
 
 ## Refs
@@ -120,18 +114,3 @@ mkdir -p ~/vm/virtualbox
 - [.gitignore](https://www.toptal.com/developers/gitignore?templates=vim,emacs,linux,macos,windows,visualstudiocode,tags): macos,windows,linux,vim,emacs,visualstudiocode,tags
 - [readme](https://readme.so/editor)
 
----
-
-## Code hierarchy
-
-```bash
-~/
-├── code/
-│   ├── github/
-│   │   ├── <my-repos>
-│   │   └── <organiation-repos>
-│   ├── opensources/
-│   └── workspace/       # sandbox: vagrant
-└── vm/
-    └── virtualbox/      # virtual box files: .vbox, .vmdk
-```
