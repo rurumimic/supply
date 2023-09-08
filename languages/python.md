@@ -1,6 +1,6 @@
 # Python
 
-## dependencies
+## Build Tools
 
 - pyenv/wiki/[Suggested build environment](https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
 
@@ -8,12 +8,11 @@
 # mac
 sudo port selfupdate
 sudo port upgrade outdated
-sudo port install openssl readline sqlite3 xz zlib tcl sqlite3-tcl
-
+sudo port install openssl readline sqlite3 xz zlib tcl sqlite3-tcl pkgconfig tk +quartz
 
 # ubuntu
 sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev curl llvm \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # redhat
@@ -23,29 +22,18 @@ sudo dnf install make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sql
 ## pyenv
 
 - pyenv: [installation](https://github.com/pyenv/pyenv#installation)
-- pyenv-virtualenv: [installation](https://github.com/pyenv/pyenv-virtualenv#installation)
+- plugins
+    - pyenv-virtualenv
+    - pyenv-doctor
+    - pyenv-update
 
 ```bash
-# linux
 curl https://pyenv.run | zsh
-
-# macos, freebsd
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-cd ~/.pyenv && src/configure && make -C src
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-```
-
-### pyenv-virtualenv
-
-```bash
-# macos, freebsd
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 ```
 
 ### Download Python
+
+usually:
 
 ```bash
 pyenv install --list
@@ -53,14 +41,22 @@ pyenv install 3.11.4
 pyenv install 2.7.18
 ```
 
+macports user:
+
 ```bash
-# curl-config --ca
-port info zlib
-port contents zlib
 export LDFLAGS="-L/opt/local/lib"
 export CPPFLAGS="-I/opt/local/include"
 
 pyenv install 3.11.4
+```
+
+#### Pyenv Init
+
+```bash
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 ```
 
 #### Offline Install
@@ -109,12 +105,9 @@ CC=/opt/local/bin/clang pyenv install 3.7.0
 
 ### Global Python
 
-- [black](https://github.com/psf/black)
-
 ```bash
-pyenv global system 3.11.4
+pyenv global 3.11.4
 pip install --upgrade pip setuptools wheel
-pip install black
 ```
 
 ### for neovim virtualenv
@@ -129,25 +122,6 @@ pip install --upgrade pip setuptools wheel
 pip install pynvim
 
 pyenv deactivate
-```
-
-### SpaceVim with Python
-
-```bash
-# vi
-
-:checkhealth
-```
-
-```bash
-## Python 3 provider (optional)
-  - INFO: pyenv: Path: ~/.pyenv/libexec/pyenv
-  - INFO: pyenv: Root: ~/.pyenv
-  - INFO: Using: g:python3_host_prog = "~/.pyenv/versions/vim3/bin/python"
-  - INFO: Executable: ~/.pyenv/versions/vim3/bin/python
-  - INFO: Python version: 3.11.4
-  - INFO: pynvim version: 0.4.3
-  - OK: Latest pynvim is installed.
 ```
 
 ## autoenv
@@ -191,3 +165,4 @@ plugins(
 
 export PATH="$HOME/.local/bin:$PATH"
 ```
+
