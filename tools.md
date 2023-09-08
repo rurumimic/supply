@@ -10,9 +10,8 @@
 ```bash
 # ubuntu
 sudo apt install zsh
-# autoload -Uz zsh-newuser-install
-# zsh-newuser-install -f
-chsh -s /usr/bin/zsh
+touch ~/.zshrc
+sudo chsh -s /usr/bin/zsh
 # vagrant password is vagrant
 
 # redhat
@@ -20,10 +19,8 @@ sudo dnf install -y zsh
 sudo chsh -s $(which zsh) # root
 chsh -s $(which zsh)      # user
 
-
 # freebsd
 sudo pkg install zsh
-
 sudo chsh -s /usr/local/bin/zsh  # root
 chsh -s /usr/local/bin/zsh $USER # user
 ```
@@ -127,11 +124,9 @@ sudo pkg install highlight
 # mac
 xcode-select --install
 
-
 # ubuntu
 sudo apt update
 sudo apt install build-essential
-
 
 # redhat
 sudo dnf groupinfo "Development Tools"
@@ -358,7 +353,8 @@ sudo apt install clang-format clang-tidy clang-tools clang clangd libc++-dev lib
 
 #### link clang
 
-- [update alternatives](https://gist.github.com/junkdog/70231d6953592cd6f27def59fe19e50d)
+- update-alternatives: [gists](https://gist.github.com/junkdog/70231d6953592cd6f27def59fe19e50d)
+  - [ubuntu/vagrant/ansible/files/clang/alternatives.sh](/ubuntu/vagrant/ansible/files/clang/alternatives.sh)
 
 ### cmake
 
@@ -388,6 +384,9 @@ sudo pkg install cmake
 ```bash
 # mac
 sudo port install ninja
+
+# ubuntu
+sudo apt install ninja-build
 
 # freebsd
 sudo port install ninja
@@ -435,6 +434,9 @@ sudo dnf install cscope
 ```bash
 # mac
 sudo port install universal-ctags
+
+# ubuntu
+sudo port install universal-ctags
 ```
 
 #### Ctags on RedHat
@@ -479,6 +481,9 @@ sudo port install gdb
 - [Build EAR](https://github.com/rizsotto/Bear)
 
 ```bash
+# mac
+sudo port install bear
+
 # ubuntu
 sudo apt insatll bear
 ```
@@ -608,7 +613,7 @@ kitty +runpy 'from kitty.fast_data_types import cocoa_set_app_icon; import sys; 
 
 #### Kitty Remote SSH with vagrant
 
-[config/kitty-vagrant.sh](/config/kitty-vagrant.sh)
+- [config/kitty-vagrant.sh](/config/kitty-vagrant.sh)
 
 ```bash
 vsh() {

@@ -79,9 +79,8 @@
 - Go
   - gvm: [install.md](https://github.com/rurumimic/golang/blob/main/install.md)
   - go
-  - protobuf3
 - [Java](languages/java.md)
-  - [jenv](https://github.com/jenv/jenv)
+  - jenv
 
 ## Virtualization
 
