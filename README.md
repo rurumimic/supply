@@ -75,7 +75,7 @@
 - [Node](languages/node.md)
   - nvm
   - node
-  - yarn v3
+  - yarn
 - Rust
   - rustup: [install.md](https://github.com/rurumimic/rust#install-by-rustup)
 - Go

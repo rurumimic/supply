@@ -1,7 +1,6 @@
 # Node
 
 - [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
-- spacevim [JS IDE](https://spacevim.org/use-vim-as-a-javascript-ide/)
 
 ## Install NVM
 
@@ -17,14 +16,13 @@ nvm --help
 ## Install Node
 
 ```bash
-nvm install lts/hydrogen # v18+
-nvm install lts/gallium  # v16+
-nvm ls
+nvm install --lts
+nvm install 18
+nvm install 16
 ```
 
 ```bash
-nvm alias default lts/gallium
-default -> lts/gallium (-> v16.19.1)
+nvm alias default lts/*
 ```
 
 ```bash
@@ -32,12 +30,17 @@ node --version
 npm --version
 ```
 
-## Setup Yarn v3
+## Setup Yarn.js
 
 ```bash
 corepack enable
 yarn --version # 1.22.19
+```
 
+## (option) Set Certs
+
+```bash
+export NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
 npm config set "strict-ssl" false -g
 yarn config set "strict-ssl" false -g
 set NODE_TLS_REJECT_UNAUTHORIZED=0
@@ -54,3 +57,4 @@ in project dir:
 yarn set version stable
 yarn --version # 3+
 ```
+
