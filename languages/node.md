@@ -5,7 +5,7 @@
 ## Install NVM
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 # ~/.zshrc
 source /opt/local/share/nvm/init-nvm.sh
