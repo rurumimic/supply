@@ -4,7 +4,7 @@
 
 - [mac](mac.md)
 - linux
-  - [ubuntu](ubuntu.md)
+  - [ubuntu](ubuntu/README.md)
   - [redhat](redhat.md): [podman](docs/podman.md)
   - [arch](arch.md)
 - [freebsd](freebsd.md)
