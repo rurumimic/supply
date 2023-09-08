@@ -52,7 +52,6 @@
     - my [.config/nvim/lua/custom](https://github.com/rurumimic/nvim)
     - package manager
     - plugins
-  - [spacevim](vim/spacevim.md): [init.toml](config/vim/init.toml), [init.vim](config/vim/init.vim)
 - [emacs](emacs/README.md)
   - [doom emacs](emacs/doomemacs.md)
 - [code](code.md)
@@ -82,7 +81,6 @@
   - gvm: [install.md](https://github.com/rurumimic/golang/blob/main/install.md)
   - go
   - protobuf3
-  - spacevim [Go IDE](https://spacevim.org/use-vim-as-a-go-ide/)
 - [Java](languages/java.md)
   - [jenv](https://github.com/jenv/jenv)
 

@@ -436,7 +436,6 @@ sudo port install ninja
   - [download](https://www.gnu.org/software/global/download.html)
   - ftp: [global](https://ftp.gnu.org/pub/gnu/global/)
   - [macports](https://ports.macports.org/port/global)
-- SpaceVim [gtags](https://spacevim.org/layers/gtags/)
 
 ```bash
 # mac

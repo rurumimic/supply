@@ -31,8 +31,6 @@ Check all
 
 #### (option) Function Keys
 
-To use Text Editor(SpaceVim) conveniently
-
 1. `Keyboard` Tab
    - [x] Use F1, F2, etc. keys as standard function keys
 
