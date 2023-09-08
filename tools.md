@@ -613,7 +613,7 @@ kitty +runpy 'from kitty.fast_data_types import cocoa_set_app_icon; import sys; 
 
 #### Kitty Remote SSH with vagrant
 
-- [config/kitty-vagrant.sh](/config/kitty-vagrant.sh)
+- [config/kitty/vagrant-ssh.sh](/config/kitty/vagrant-ssh.sh)
 
 ```bash
 vsh() {
