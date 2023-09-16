@@ -37,7 +37,7 @@ usually:
 
 ```bash
 pyenv install --list
-pyenv install 3.11.4
+pyenv install 3.11.5
 pyenv install 2.7.18
 ```
 
@@ -46,8 +46,9 @@ macports user:
 ```bash
 export LDFLAGS="-L/opt/local/lib"
 export CPPFLAGS="-I/opt/local/include"
+export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-pyenv install 3.11.4
+pyenv install 3.11.5
 ```
 
 #### Pyenv Init
@@ -75,7 +76,7 @@ Download Python `.tar.xz` archive and save:
 mkdir -p ~/.pyenv/sources
 cd ~/.pyenv/sources
 
-VERSION=3.11.4
+VERSION=3.11.5
 curl -O https://www.python.org/ftp/python/$VERSION/Python-$VERSION.tar.xz
 ```
 
@@ -106,14 +107,14 @@ CC=/opt/local/bin/clang pyenv install 3.7.0
 ### Global Python
 
 ```bash
-pyenv global 3.11.4
+pyenv global 3.11.5
 pip install --upgrade pip setuptools wheel
 ```
 
 ### for neovim virtualenv
 
 ```bash
-pyenv virtualenv 3.11.4 vim
+pyenv virtualenv 3.11.5 vim
 pyenv activate vim
 
 pyenv which python # ~/.pyenv/versions/vim/bin/python
