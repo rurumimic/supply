@@ -124,6 +124,14 @@ export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap 
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # Languages
+## Compiler
+### macports
+export CC=clang
+export CXX=clang++
+export LDFLAGS="-L/opt/local/lib"
+export CPPFLAGS="-I/opt/local/include"
+export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 ## Python
 ### pyenv
 export PYENV_ROOT="$HOME/.pyenv"
