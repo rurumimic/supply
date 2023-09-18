@@ -8,7 +8,7 @@
   - [redhat](redhat.md): [podman](docs/podman.md)
   - [fedora](fedora/README.md): [vagrant](fedora/vagrant/Vagrantfile)
   - [arch](arch.md)
-- [freebsd](freebsd.md)
+- [freebsd](freebsd/README.md): [vagrant](freebsd/vagrant/Vagrantfile)
 - [windows](windows.md)
 
 ## CLI tools
