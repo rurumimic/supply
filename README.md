@@ -6,6 +6,7 @@
 - linux
   - [ubuntu](ubuntu/README.md): [vagrant](ubuntu/vagrant/Vagrantfile), [ansible/playbook.yaml](ubuntu/vagrant/ansible/playbook.yaml)
   - [redhat](redhat.md): [podman](docs/podman.md)
+  - [fedora](fedora/README.md): [vagrant](fedora/vagrant/Vagrantfile)
   - [arch](arch.md)
 - [freebsd](freebsd.md)
 - [windows](windows.md)
