@@ -43,6 +43,14 @@ uname -r
 
 ---
 
+## Ignore OS version
+
+```bash
+export IGNORE_OSVERSION=yes
+```
+
+---
+
 ## Apply security patches
 
 ```bash
