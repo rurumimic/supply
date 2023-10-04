@@ -76,7 +76,13 @@ sudo port selfupdate
 
 - [git install](https://guide.macports.org/#installing.macports.git)
 
-`sudo port -vd sync`
+Update port:
+
+```bash
+sudo port -vd sync
+```
+
+Upgrade oudated pacakges:
 
 ```bash
 sudo port outdated
