@@ -4,6 +4,7 @@
   apt:
     name:
       - build-essential
+      - curl
       - unzip # neovim, gradle
     update_cache: yes
 ################################################################################
