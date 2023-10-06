@@ -206,6 +206,11 @@ sudo apt install zsh
 chsh -s $(which zsh)
 ```
 
+```bash
+autoload -Uz zsh-newuser-install
+zsh-newuser-install -f
+```
+
 ---
 
 ## Terminal
