@@ -199,6 +199,13 @@ sudo apt install build-essential
 sudo apt install curl
 ```
 
+#### zsh
+
+```bash
+sudo apt install zsh
+chsh -s $(which zsh)
+```
+
 ---
 
 ## Terminal
