@@ -162,6 +162,39 @@ sudo apt update
 sudo apt install --install-suggests gnome-software
 ```
 
+#### gnome tweaks
+
+1. Search: `tweaks`
+2. Download `GNOME Tweaks`
+
+##### Caps Lock to Ctrl
+
+1. Tweaks
+2. Keyboard & Mouse
+3. Additional Layout Options
+4. Ctrl position
+5. Caps Lock as Ctrl
+
+##### Hangul
+
+```bash
+ibus-setup
+```
+
+1. Input Method
+2. Add: `Hangul` in Korean
+
+![](images/hangul.png)
+
+Settings:
+1. Keyboard
+2. Input Sources
+3. Add `Hangul`
+4. Preferences - IBusHangul Setup
+5. Hangul Toggle Key
+
+![](images/hangul_toggle.png)
+
 ### Install Firefox
 
 ```bash
