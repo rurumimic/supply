@@ -1,5 +1,7 @@
 # Ubuntu
 
+- wiki: [lenovo](https://wiki.ubuntu.com/Lenovo)
+
 ## Start
 
 ### Remove Snap
