@@ -258,3 +258,41 @@ zsh-newuser-install -f
 sudo apt install xclip
 ```
 
+---
+
+## .deb
+
+### Get a .deb package
+
+```bash
+apt download [package]
+```
+
+#### Extract a .deb package
+
+```bash
+mkdir package_deb
+dpkg-deb -R pakcage.deb package_deb/
+```
+
+`.deb`:
+
+```bash
+DEBIAN/
+usr/
+```
+
+#### Extract a control file
+
+```bash
+mkdir package_deb
+dpkg-deb -e package.deb/
+```
+
+`DEBIAN`:
+
+```bash
+control
+md5sums
+```
+
