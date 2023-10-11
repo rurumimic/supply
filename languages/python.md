@@ -28,7 +28,7 @@ sudo dnf install make gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sql
     - pyenv-update
 
 ```bash
-curl https://pyenv.run | zsh
+curl https://pyenv.run | bash
 ```
 
 ### Download Python
