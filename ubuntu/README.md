@@ -208,7 +208,9 @@ Auto PPA Update:
 ```bash
 sudo vi /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 
-Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";
+Unattended-Upgrade::Allowed-Origins {
+    "LP-PPA-mozillateam:${distro_codename}";
+};
 ```
 
 ```bash
