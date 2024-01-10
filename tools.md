@@ -140,16 +140,14 @@ sudo dnf group install -y "Development Tools"
 ```bash
 # mac
 sudo port install git
-```
 
-#### global gitignore
+# ubuntu
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
 
-- [.gitignore](https://www.toptal.com/developers/gitignore?templates=vim,emacs,linux,macos,windows,visualstudiocode,tags)
-- [subfuzion/global-gitignore.md](https://gist.github.com/subfuzion/db7f57fff2fb6998a16c)
-
-```bash
-vi ~/.gitignore
-git config --global core.excludesfile ~/.gitignore
+# freebsd
+sudo pkg install git
 ```
 
 ### bat
@@ -496,15 +494,7 @@ vi compile_commands.json
 
 ---
 
-## git
-
-```bash
-# ubuntu
-sudo apt install git
-
-# freebsd
-sudo pkg install git
-```
+## git config
 
 ### config
 
@@ -518,6 +508,16 @@ git config --global user.email johndoe@example.com
 #git config --global core.editor vi
 git config --global core.editor nvim # /usr/bin/nvim
 git config --list
+```
+
+#### global gitignore
+
+- [.gitignore](https://www.toptal.com/developers/gitignore?templates=vim,emacs,linux,macos,windows,visualstudiocode,tags)
+- [subfuzion/global-gitignore.md](https://gist.github.com/subfuzion/db7f57fff2fb6998a16c)
+
+```bash
+vi ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
 ```
 
 ### github cli
