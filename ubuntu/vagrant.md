@@ -18,12 +18,12 @@ mkdir ~/vm/guests
 ```
 
 ```bash
-mkdir ~/vm/guests/bento/centos-7.2
-cd ~/vm/guests/bento/centos-7.2
+mkdir ~/vm/guests/bento/centos-7.9
+cd ~/vm/guests/bento/centos-7.9
 ```
 
 ```bash
-vagrant init bento/centos-7.2 --box-version 2.3.1
+vagrant init bento/centos-7.9
 vagrant up
 ```
 
