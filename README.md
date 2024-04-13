@@ -91,7 +91,9 @@
     - mac ↔ redhat
     - Run podman in container
 - VirtualBox: [download](https://www.virtualbox.org/wiki/Downloads)
+  - [ubuntu](ubuntu/virtualbox.md)
 - Vagrant: [Download](https://www.vagrantup.com/downloads)
+  - [ubuntu](ubuntu/vagrant.md)
 
 ### VirtualBox
 
