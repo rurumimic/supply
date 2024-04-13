@@ -13,6 +13,17 @@ sudo apt update && sudo apt install vagrant
 
 ## Setup
 
+### Default Provider
+
+
+```bash
+if command -v virtualbox; then
+    export VAGRANT_DEFAULT_PROVIDER=virtualbox
+fi
+```
+
+### Guests
+
 ```bash
 mkdir ~/vm/guests
 ```
