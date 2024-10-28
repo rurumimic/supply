@@ -90,6 +90,7 @@
   - [podman](redhat.md#podman) on RedHat
     - mac ↔ redhat
     - Run podman in container
+  - [minikube](docs/minikube.md): kvm2, qemu
 - VirtualBox: [download](https://www.virtualbox.org/wiki/Downloads)
   - [ubuntu](ubuntu/virtualbox.md)
 - Vagrant: [Download](https://www.vagrantup.com/downloads)
