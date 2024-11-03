@@ -42,9 +42,7 @@ g # create a new empty GPT partition table
 Created a new GPT disklabel.
 ```
 
-#### EFI system partition
-
-- [EFI system partition](https://wiki.archlinux.org/title/EFI_system_partition)
+#### Boot Partition
 
 ```bash
 n # add a new partition
@@ -60,7 +58,9 @@ Do you want to remove the signature? [Y]es/[N]o: y
 The signature will be removed by a write command.
 ```
 
-#### Boot Partition
+#### EFI system partition
+
+- [EFI system partition](https://wiki.archlinux.org/title/EFI_system_partition)
 
 ```bash
 n # add a new Partition
@@ -181,14 +181,29 @@ pacman -S networkmanager openssh
 pacman -S amd-ucode
 ```
 
+#### Add sudoers to wheel
+
+```bash
+EDITOR=vim visudo
+```
+
+Uncomment:
+
+```bash
+%wheel ALL=(ALL:ALL) ALL
+```
+
 #### Localization
+
+```bash
+vim /etc/locale.gen
+```
 
 Uncomment:
 - en_US.UTF-8 UTF-8
 - ko_KR.UTF-8 UTF-8
 
 ```bash
-vim /etc/locale.gen
 locale-gen
 ```
 
@@ -209,17 +224,39 @@ systemctl enable NetworkManager
 #### Install Boot Loader
 
 ```bash
-mkinitcpio -p linux
 mkinitcpio -p linux-lts
+mkinitcpio -p linux
+```
+
+```bash
+cat /etc/mkinitcpio.d/linux.preset
+
+ALL_kver="/boot/vmlinuz-linux"
+
+PRESETS=('default' 'fallback')
+
+default_image="/boot/initramfs-linux.img"
+
+fallback_image="/boot/initramfs-linux-fallback.img"
+fallback_options="-S autodetect"
 ```
 
 #### Grub
 
 ```bash
-mkdir /efi
-mount /dev/nvme0n1p1 /efi
-grub-install --target=x86_64-efi --bootloader-id=LINUX --efi-directory=/efi --recheck
+mkdir /boot/efi
+mount /dev/nvme0n1p1 /boot/efi
+grub-install --target=x86_64-efi --bootloader-id=LINUX --efi-directory=/boot/efi --recheck
 cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
+```
+
+```bash
+vim /etc/default/grub
+
+GRUB_DEFAULT="saved"
+```
+
+```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
@@ -230,4 +267,16 @@ exit
 umount -a
 reboot
 ```
+
+---
+
+## BIOS
+
+### MSI
+
+1. Motherboard settings
+2. Boot
+3. UEFI Hard Disk Drive BBS Priorities
+4. Fixed boot order priorities
+5. UEFI Hard Disk: Linux
 
