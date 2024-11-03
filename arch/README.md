@@ -254,6 +254,7 @@ cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 vim /etc/default/grub
 
 GRUB_DEFAULT="saved"
+GRUB_SAVEDDEFAULT="true"
 ```
 
 ```bash
