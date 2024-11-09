@@ -6,8 +6,6 @@
 
 ### dunst
 
-Install:
-
 ```bash
 sudo pacman -S dunst
 ```
@@ -78,14 +76,19 @@ Key: `Super` + `R`
 
 ## Clipboard managers
 
-### clipboard
+### cliphist
 
 ```bash
-yay -S clipbaord
+sudo pacman -S cliphist
 ```
 
+hyprland.conf:
+
 ```conf
-exec-once = cb
+exec-once = wl-paste --type text --watch cliphist store # Stores only text data
+exec-once = wl-paste --type image --watch cliphist store # Stores only image data
+
+bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
 ```
 
 ## File Managers
@@ -102,5 +105,4 @@ hyprland.conf:
 ```bash
 $fileManager = nautilus
 ```
-
 
