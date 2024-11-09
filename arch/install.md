@@ -253,7 +253,8 @@ cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 ```bash
 vim /etc/default/grub
 
-GRUB_DEFAULT="saved"
+# GRUB_DEFAULT="saved"
+GRUB_DEFAULT="Advanced options for Arch Linux>Arch Linux, with Linux linux"
 GRUB_SAVEDDEFAULT="true"
 ```
 
