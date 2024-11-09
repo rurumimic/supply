@@ -15,4 +15,5 @@
   - [nvidia](nvidia.md)
 - window manager
   - [hyprland](hyprland.md)
+- [sounds](sounds.md)
 
