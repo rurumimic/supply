@@ -20,7 +20,7 @@ fcitx5-configtool
   - Hangul
   - Keyboard - English (US)
 - Global Options
-  - Trigger Input Method: Hangul, Alt+Space
+  - Trigger Input Method: Hangul, Shift+Space
   - Share Input State: disable Show Input Method Information when switch input method
 
 ### Hyprland
