@@ -16,4 +16,5 @@
 - window manager
   - [hyprland](hyprland.md)
 - [sounds](sounds.md)
+- [utilities](utilities.md)
 
