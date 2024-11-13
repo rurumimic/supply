@@ -6,6 +6,7 @@
   - [PipeWire](https://wiki.archlinux.org/title/PipeWire)
 - github
   - [easyeffects](https://github.com/wwmm/easyeffects)
+  - [pwvucontrol](https://github.com/saivert/pwvucontrol)
 
 ## Install
 
