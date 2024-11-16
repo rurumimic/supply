@@ -17,4 +17,5 @@
   - [hyprland](hyprland.md)
 - [sounds](sounds.md)
 - [utilities](utilities.md)
+- [wallpaper](wallpaper.md)
 
