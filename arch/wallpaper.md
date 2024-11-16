@@ -13,8 +13,30 @@ sudo pacman -S hyprpaper
 
 ### Configuration hyprpaper
 
+```bash
+vi ~/.config/hypr/hyprpaper.conf
+```
+
 ```conf
-preload = /home/.config/hypr/wallpapers/wallpaper.png
-wallpaper = , contain:/home/.config/hypr/wallpapers/wallpaper.png
+preload = /home/me/.config/hypr/wallpapers/1.jpg
+preload = /home/me/.config/hypr/wallpapers/2.jpg
+wallpaper = DP-1, /home/me/.config/hypr/wallpapers/1.jpg
+wallpaper = HDMI-A-1, /home/me/.config/hypr/wallpapers/2.jpg
+```
+
+#### Monitors
+
+```bash
+hyprctl monitors
+```
+
+### Autoload hyprpaper
+
+```bash
+vi ~/.config/hypr/hyprland.conf
+```
+
+```conf
+exec-once = hyprpaper
 ```
 
