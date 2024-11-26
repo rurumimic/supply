@@ -15,6 +15,8 @@
   - [nvidia](nvidia.md)
 - window manager
   - [hyprland](hyprland.md)
+- login manager
+  - [lemurs](lemurs.md)
 - [sounds](sounds.md)
 - [utilities](utilities.md)
 - [wallpaper](wallpaper.md)
