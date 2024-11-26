@@ -50,6 +50,11 @@ lemurs --preview
 vi /etc/lemurs/config.toml
 ```
 
+```toml
+# The tty which contains lemurs. This has to be mirrored in the lemurs.service
+tty = 2
+```
+
 ---
 
 ## TTY

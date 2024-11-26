@@ -91,6 +91,8 @@ exec-once = wl-paste --type image --watch cliphist store # Stores only image dat
 bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
 ```
 
+Press SUPER + V
+
 ## File Managers
 
 ### nautilus
