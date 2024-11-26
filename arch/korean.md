@@ -19,6 +19,7 @@ fcitx5-configtool
 - Group: Default
   - Hangul
   - Keyboard - English (US)
+  - Right Alt (108)
 - Global Options
   - Trigger Input Method: Hangul, Shift+Space
   - Share Input State: disable Show Input Method Information when switch input method
@@ -38,4 +39,9 @@ env = GLFW_IM_MODULE,fcitx
 env = XMODIFIERS,@im=fcitx
 exec-once = fcitx5 -d
 ```
+
+## Firfox
+
+1. `about:config`
+2. `ui.key.menuAccessKeyFocuses` = `false`
 
