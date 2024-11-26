@@ -18,4 +18,5 @@
 - [sounds](sounds.md)
 - [utilities](utilities.md)
 - [wallpaper](wallpaper.md)
+- [fonts](fonts.md)
 
