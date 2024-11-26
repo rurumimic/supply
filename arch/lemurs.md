@@ -50,3 +50,18 @@ lemurs --preview
 vi /etc/lemurs/config.toml
 ```
 
+---
+
+## TTY
+
+```bash
+Ctrl + Alt + F1 ~ F6
+```
+
+```bash
+ps -e | grep tty
+
+    562 tty2     00:00:00 lemurs
+    584 tty2     00:00:14 hyprland
+```
+
