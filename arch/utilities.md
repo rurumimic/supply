@@ -38,6 +38,46 @@ notify-send 'Hello' 'Hello, World!'
 
 ## Status bar
 
+### Eww
+
+- [eww](https://elkowar.github.io/eww/)
+
+#### Build
+
+```bash
+git clone https://github.com/elkowar/eww
+cd eww
+cargo build --release --no-default-features --features=wayland
+```
+
+#### Running
+
+```bash
+cd target/release
+chmod +x ./eww
+```
+
+```bash
+mkdir -p ~/.local/bin
+cp ./eww ~/.local/bin
+```
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+#### hyprland
+
+```bash
+exec-once = eww daemon
+```
+
+#### customization
+
+```bash
+mkdir -p ~/.config/eww
+```
+
 ### waybar
 
 ```bash
