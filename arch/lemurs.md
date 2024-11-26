@@ -23,6 +23,27 @@ sudo systemctl enable lemurs.service
 cd /etc/lemurs/wayland
 ```
 
+#### Hyprland
+
+```bash
+sudo vim hyprland
+```
+
+```bash
+#!/bin/sh
+exec hyprland
+```
+
+```bash
+sudo chmod 755 hyprland
+```
+
+### Preview
+
+```bash
+lemurs --preview
+```
+
 ## Configuration
 
 ```bash
