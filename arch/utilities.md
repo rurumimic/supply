@@ -38,6 +38,25 @@ notify-send 'Hello' 'Hello, World!'
 
 ## Status bar
 
+### waybar
+
+```bash
+sudo pacman -S waybar
+```
+
+hyprland.conf:
+
+```bash
+exec-once = waybar
+```
+
+conf:
+
+```bash
+mkdir -p ~/.config/waybar
+cp "/etc/xdg/waybar/*" ~/.config/waybar
+```
+
 ### Eww
 
 - [eww](https://elkowar.github.io/eww/)
@@ -78,24 +97,6 @@ exec-once = eww daemon
 mkdir -p ~/.config/eww
 ```
 
-### waybar
-
-```bash
-sudo pacman -S waybar
-```
-
-hyprland.conf:
-
-```bash
-exec-once = waybar
-```
-
-conf:
-
-```bash
-mkdir -p ~/.config/waybar
-cp "/etc/xdg/waybar/*" ~/.config/waybar
-```
 
 ## App Launcher
 
