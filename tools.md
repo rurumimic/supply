@@ -117,6 +117,7 @@ sudo pkg install highlight
 ### developer tool kit
 
 - mac: command line tools
+  - macports help: [reinstall clt](https://trac.macports.org/wiki/ProblemHotlist#reinstall-clt)
 - ubuntu: build essential
 - redhat: development tools
 
