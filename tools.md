@@ -134,6 +134,27 @@ sudo dnf groupinfo "Development Tools"
 sudo dnf group install -y "Development Tools"
 ```
 
+#### Reinstall Command Line Tools
+
+```bash
+pkgutil --pkg-info=com.apple.pkg.{CLTools_Executables,CLTools_Base,DeveloperToolsCLI,DeveloperToolsCLILeo} 2>/dev/null | sed -n 's/^version: //p'
+```
+
+If it doesn't print anything, you don't have a receipt and should reinstall the Command Line Tools as follows.
+
+```bash
+touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+softwareupdate -l
+```
+
+Run Software Update
+
+```bash
+xcode-select --install
+rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+softwareupdate -l
+```
+
 ### git
 
 - [git](https://git-scm.com)
