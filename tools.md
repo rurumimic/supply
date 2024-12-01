@@ -19,6 +19,10 @@ sudo dnf install -y zsh
 sudo chsh -s $(which zsh) # root
 chsh -s $(which zsh)      # user
 
+# arch
+sudo pacman -S zsh
+chsh -s /usr/bin/zsh
+
 # freebsd
 sudo pkg install zsh
 sudo chsh -s /usr/local/bin/zsh  # root
@@ -38,7 +42,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 - [typewritten](https://typewritten.dev/#/installation?id=oh-my-zsh)
 
 ```bash
-git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
+ZSH_CUSTOM=$HOME/.zsh
+mkdir -p $ZSH_CUSTOM
+git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/typewritten
+# git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
 
 # (option: create symlinks)
 # ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"

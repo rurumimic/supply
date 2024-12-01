@@ -21,4 +21,5 @@
 - [utilities](utilities.md)
 - [wallpaper](wallpaper.md)
 - [fonts](fonts.md)
+- [zsh](zsh.md)
 
