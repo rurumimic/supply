@@ -82,6 +82,30 @@ cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 sudo make install
 ```
 
+##### Update Neovim
+
+```bash
+cd neovim/neovim
+make distclean
+git fetch
+git branch -a
+git checkout -b release-10 origin/release-10
+make CMAKE_BUILD_TYPE=Release
+
+# ubuntu / debian
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+
+# other linux
+sudo make install
+```
+
+###### nvim version
+
+```bash
+which nvim # /usr/bin/nvim
+nvim --version # NVIM v0.10.4
+```
+
 #### Remove Neovim
 
 ```bash
