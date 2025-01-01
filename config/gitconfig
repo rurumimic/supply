@@ -3,7 +3,7 @@
   email = 
 
 [core]
-  editor = vim
+  editor = nvim # vim
   excludesfile = ~/.gitignore
 
 [alias]
