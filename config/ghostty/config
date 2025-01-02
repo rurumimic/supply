@@ -1,0 +1,20 @@
+theme = MaterialDarker
+
+font-size = 12
+font-family = Hack Nerd Font
+font-family = D2Coding
+
+window-padding-x = 8
+window-padding-y = 8
+
+# window-decoration = false
+gtk-titlebar = false
+gtk-wide-tabs = false
+
+scrollback-limit = 10000
+
+keybind = unconsumed:ctrl+h=goto_split:left
+keybind = unconsumed:ctrl+l=goto_split:right
+keybind = unconsumed:ctrl+j=goto_split:bottom
+keybind = unconsumed:ctrl+k=goto_split:top
+

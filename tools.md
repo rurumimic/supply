@@ -76,7 +76,7 @@ result:
 
 ```bash
 user@host ~/code/github/repo.git -> master + »
-λ 
+λ
 ```
 
 ### noefetch
@@ -512,7 +512,7 @@ sudo port install gdb
 sudo port install bear
 
 # ubuntu
-sudo apt insatll bear
+sudo apt install bear
 ```
 
 ```bash
@@ -587,6 +587,15 @@ gh auth login
 ---
 
 ## terminal
+
+### wezterm
+
+- wezterm/[install](https://wezfurlong.org/wezterm/installation.html)
+
+### ghostty
+
+- ghostty/[install](https://ghostty.org/docs/install/binary)
+  - ubuntu: [github](https://github.com/mkasberg/ghostty-ubuntu)
 
 ### kitty
 

@@ -26,7 +26,7 @@
   - [tree](tools.md#tree): recursive directory listing command
   - [fzf](tools.md#fzf): command-line fuzzy finder
   - [fd](tools.md#fd): simple, fast and user-friendly alternative to 'find'
-  - [clang](tools.md#clang): c language family frontend for llvm 
+  - [clang](tools.md#clang): c language family frontend for llvm
   - [cmake](tools.md#cmake): build, test and package
   - [ninja](tools.md#ninja): small build system
   - [gnu global](tools.md#gnu-global): source code tag system
@@ -38,6 +38,8 @@
 - [git](tools.md#git)
   - [github cli](tools.md#github-cli)
 - [terminal](tools.md#terminal)
+  - [wezterm](tools.md#wezterm)
+  - [ghostty](tools.md#ghostty)
   - [kitty](tools.md#kitty): fast, feature-rich, GPU based terminal emulator
   - [warp](tools.md#warp): blazingly fast, rust-based terminal
   - [fig](tools.md#fig): command line tool
