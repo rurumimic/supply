@@ -180,6 +180,10 @@ sudo apt install --install-suggests gnome-software
 ##### Hangul
 
 ```bash
+sudo apt install ibus-hangul
+```
+
+```bash
 ibus-setup
 ```
 
