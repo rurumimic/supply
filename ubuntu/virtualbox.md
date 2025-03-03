@@ -21,8 +21,16 @@ sudo apt search virtualbox
 Install VirtualBox:
 
 ```bash
-sudo apt install virtualbox-7.0
+sudo apt install virtualbox-7.1
 ```
+
+### enumerate host USB devices
+
+```bash
+sudo usermod -a -G vboxusers $USER
+```
+
+reboot.
 
 ## Setup
 
@@ -31,7 +39,9 @@ sudo apt install virtualbox-7.0
 3. Default Machine Folder: `~/vm/virtualbox`
 4. Check for updates: Once a month
 
-## (option) Fix Error
+---
+
+## (option) 7.0 Fix Error
 
 ### Check Version
 
