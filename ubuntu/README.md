@@ -1,6 +1,7 @@
 # Ubuntu
 
 - wiki: [lenovo](https://wiki.ubuntu.com/Lenovo)
+- docs: [upgrade release](https://documentation.ubuntu.com/server/how-to/software/upgrade-your-release/)
 
 ## Start
 
