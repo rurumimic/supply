@@ -298,6 +298,12 @@ dpkg-deb -e package.deb/
 
 `DEBIAN`:
 
+---
+
+## Intel MIPI IPU6 Camera
+
+- wiki: [IntelMIPICamera](https://wiki.ubuntu.com/IntelMIPICamera)
+
 ```bash
 control
 md5sums
