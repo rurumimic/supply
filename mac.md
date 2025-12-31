@@ -89,6 +89,22 @@ sudo port outdated
 sudo port upgrade outdated
 ```
 
+Select a pacakge version:
+
+```bash
+sudo port select --summary
+sudo port select --show clang
+sudo port select --list clang
+sudo port select --set clang mp-clang-devel
+```
+
+Clean configure and reinstall:
+
+```bash
+sudo port clean mysql8
+sudo port upgrade mysql8 configure.cxx=/opt/local/bin/clang++ configure.cc=/opt/local/bin/clang
+```
+
 ---
 
 ## Commands
