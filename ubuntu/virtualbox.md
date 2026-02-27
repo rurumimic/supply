@@ -15,13 +15,27 @@ Update APT:
 
 ```bash
 sudo apt update
+```
+
+Search for VirtualBox packages:
+
+```bash
 sudo apt search virtualbox
+
+virtualbox-7.0/unknown 7.0.26-168464~Ubuntu~noble amd64
+  Oracle VM VirtualBox
+
+virtualbox-7.1/unknown,now 7.1.16-172425~Ubuntu~noble amd64 [residual-config]
+  Oracle VirtualBox
+
+virtualbox-7.2/unknown 7.2.6-172322~Ubuntu~noble amd64
+  Oracle VirtualBox
 ```
 
 Install VirtualBox:
 
 ```bash
-sudo apt install virtualbox-7.1
+sudo apt install virtualbox-7.2
 ```
 
 ### enumerate host USB devices
@@ -38,6 +52,20 @@ reboot.
 2. Preferences
 3. Default Machine Folder: `~/vm/virtualbox`
 4. Check for updates: Once a month
+
+---
+
+## VirtualBox Extension Pack
+
+- virtualbox: [Downloads](https://www.virtualbox.org/wiki/Downloads)
+
+Install the VirtualBox Extension Pack:
+
+1. Download the Extension Pack from the VirtualBox website.
+2. Open VirtualBox.
+3. Go to File > Tools > Extensions.
+4. Install
+5. Select the downloaded Extension Pack file.
 
 ---
 
