@@ -119,6 +119,18 @@ sudo pkg install highlight
 
 ---
 
+## Fonts
+
+### fontconfig
+
+- [~/.config/fontconfig/fonts.conf](config/fontconfig/fonts.conf)
+
+```bash
+fc-match -s "Hack Nerd Font"
+```
+
+---
+
 ## Packages
 
 ### developer tool kit
@@ -723,33 +735,87 @@ vi ~/.warp/themes/monokai_pro.yaml
 - [alacritty](https://github.com/alacritty/alacritty)
   - [releases](https://github.com/alacritty/alacritty/releases)
 
+#### Install alacritty
+
 ```bash
-cargo install alacritty
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty
+```
 
-# ubuntu
-curl -L -O https://github.com/alacritty/alacritty/releases/download/v0.12.2/Alacritty.desktop
-sudo desktop-file-install Alacritty.desktop
+##### Prerequisites
 
-curl -L -O https://github.com/alacritty/alacritty/releases/download/v0.12.2/Alacritty.svg
-sudo cp Alacritty.svg /usr/share/pixmaps/Alacritty.svg
+###### Ubuntu
+
+```bash
+apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+```
+
+##### Set Rust compiler
+
+```bash
+rustup override set stable
+rustup update stable
+```
+
+##### Build
+
+```bash
+cargo build --release
+```
+
+##### Post Build
+
+###### Terminfo
+
+```bash
+infocmp alacritty
+```
+
+```bash
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+```
+
+###### Desktop Entry
+
+```bash
+sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
 sudo update-desktop-database
 ```
 
-#### alacritty.yml
+###### Shell completions
+
+ZSH:
+
+```bash
+mkdir -p ${ZDOTDIR:-~}/.zsh_functions
+echo 'fpath+=${ZDOTDIR:-~}/.zsh_functions' >> ${ZDOTDIR:-~}/.zshrc
+cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
+```
+
+#### alacritty.toml
 
 ```bash
 mkdir -p ~/.config/alacritty
-curl -L -o ~/.config/alacritty/alacritty.yml https://github.com/alacritty/alacritty/releases/download/v0.12.2/alacritty.yml
+vi ~/.config/alacritty/alacritty.toml
 ```
 
-```yml
-window:
- dimensions:
-    columns: 140
-    lines: 40
-font:
-  normal:
-   family: Hack Nerd Font
+```toml
+[window.dimensions]
+columns = 120
+lines = 45
+
+[scrolling]
+history = 10000
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[cursor.style]
+shape = "Block"
+blinking = "On"
 ```
 
 ### tmux

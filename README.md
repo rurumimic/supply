@@ -63,6 +63,7 @@
 
 ### Fonts
 
+- [fontconfig](tools.md#/fontconfig)
 - [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
 - [Hasklig](https://github.com/i-tu/Hasklig): `editor.fontWeight: 500`
 - [MesloLGS NF](https://github.com/romkatv/powerlevel10k#manual-font-installation)
