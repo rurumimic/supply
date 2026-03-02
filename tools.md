@@ -584,6 +584,22 @@ sudo pkg install gh
 gh auth login
 ```
 
+### LazyGit
+
+- github: [jesseduffield/lazygit](https://github.com/jesseduffield/lazygit)
+  - [config.md](https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md)
+
+#### Install LazyGit
+
+```bash
+go install github.com/jesseduffield/lazygit@latest
+```
+
+#### Configuration
+
+- [config.yml](config/lazygit/config.yml)
+- [alias.sh](config/lazygit/alias.sh)
+
 ---
 
 ## terminal

@@ -1,0 +1,5 @@
+gui:
+  nerdFontsVersion: "3"
+git:
+  autoFetch: false
+  disableForcePushing: true

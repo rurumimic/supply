@@ -37,6 +37,7 @@
   - [bear](tools.md#bear): a tool that generates a compilation database for clang tooling
 - [git](tools.md#git)
   - [github cli](tools.md#github-cli)
+  - [lazygit](tools.md#lazygit)
 - [terminal](tools.md#terminal)
   - [wezterm](tools.md#wezterm)
   - [ghostty](tools.md#ghostty)
