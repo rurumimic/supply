@@ -117,6 +117,15 @@ sudo apt install highlight
 sudo pkg install highlight
 ```
 
+### zoxide
+
+- [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+cargo install zoxide --locked
+```
+
 ---
 
 ## Fonts

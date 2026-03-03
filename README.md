@@ -19,6 +19,7 @@
     - [.zshrc](config/zshrc.sh)
   - [neofetch](tools.md#noefetch): command-line system information tool
   - [highlight](tools.md#highlight): syntax highlighting
+  - [zoxide](tools.md#zoxide): smarter cd command
 - [packages](tools.md#packages)
   - [developer tool kit](tools.md#developer-tool-kit)
   - [git](tools.md#git): distributed version control system
