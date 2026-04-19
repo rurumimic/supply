@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Obsidian
+Exec=/home/USER_NAME/applications/obsidian/Obsidian-1.12.7.AppImage --no-sandbox %u
+Terminal=false
+Type=Application
+Icon=/home/USER_NAME/.local/share/icons/obsidian.png
+StartupWMClass=obsidian
+Comment=Knowledge base on top of local Markdown files
+Categories=Office;TextEditor;Utility;
+MimeType=text/markdown;x-scheme-handler/obsidian;
+
