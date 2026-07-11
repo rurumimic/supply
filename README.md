@@ -111,6 +111,10 @@ mkdir -p ~/vm/virtualbox
 1. Preferences
 2. Default machine folder: `~/vm/virtualbox`
 
+### mcp
+
+- [code-review-graph](mcp/code-review-graph.md)
+
 ---
 
 ## Refs
