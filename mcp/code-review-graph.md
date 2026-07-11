@@ -7,6 +7,7 @@
 
 ```bash
 claude mcp add code-review-graph -s local -- uvx code-review-graph serve
+uvx code-review-graph build
 ```
 
 ### .claude
