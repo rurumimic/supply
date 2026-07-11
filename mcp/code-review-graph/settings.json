@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat >/dev/null || true; command -v uvx >/dev/null 2>&1 && git rev-parse --git-dir >/dev/null 2>&1 && uvx code-review-graph update --skip-flows --repo \"$CLAUDE_PROJECT_DIR\" || true",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat >/dev/null || true; command -v uvx >/dev/null 2>&1 || exit 0; git rev-parse --git-dir >/dev/null 2>&1 && uvx code-review-graph status --repo \"$CLAUDE_PROJECT_DIR\" || echo 'Not a git repo, skipping'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

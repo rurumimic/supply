@@ -1,32 +1,17 @@
 # code-review-graph
 
 - github: [tirth8205/code-review-graph](https://github.com/tirth8205/code-review-graph)
+  - [/skills](https://github.com/tirth8205/code-review-graph/tree/main/skills)
 
 ## settings
 
 ```bash
-uvx code-review-graph install claude
-```
-
-### .mcp.json
-
-```json
-{
-  "mcpServers": {
-    "code-review-graph": {
-      "command": "uvx",
-      "args": [
-        "code-review-graph",
-        "serve"
-      ],
-      "cwd": "/home/user/myproject",
-      "type": "stdio"
-    }
-  }
-}
+claude mcp add code-review-graph -s local -- uvx code-review-graph serve
 ```
 
 ### .claude
+
+- [./code-review-graph](./code-review-graph/)
 
 ```bash
 .claude
