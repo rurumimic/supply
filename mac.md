@@ -58,6 +58,14 @@ Check all
 
 ## Terminal
 
+### Homebrew
+
+- [Homebrew](https://brew.sh/)
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 ### MacPorts
 
 Install [port](https://www.macports.org) with `pkg` installer
