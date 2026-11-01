@@ -66,6 +66,12 @@ Check all
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+```bash
+echo >> $HOME/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> $HOME/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+```
+
 ### MacPorts
 
 Install [port](https://www.macports.org) with `pkg` installer
